@@ -1,0 +1,15 @@
+{
+    "errors": [
+        {
+            "code": "bad_request",
+            "detail": "Unsupported include(s): stops",
+            "source": {
+                "parameter": "include"
+            },
+            "status": "400"
+        }
+    ],
+    "jsonapi": {
+        "version": "1.0"
+    }
+}

@@ -1,0 +1,50 @@
+{
+    "data": {
+        "attributes": {
+            "latitude": 42.348813,
+            "long_name": "Lee's 2 Market",
+            "longitude": -71.137287,
+            "properties": [
+                {
+                    "name": "address",
+                    "value": "1383 Commonwealth Ave, Allston, MA 02134"
+                },
+                {
+                    "name": "contact-phone",
+                    "value": "617-254-8274"
+                },
+                {
+                    "name": "dispenses",
+                    "value": "fare-media"
+                },
+                {
+                    "name": "enclosed",
+                    "value": 1
+                },
+                {
+                    "name": "payment-form-accepted",
+                    "value": "cash"
+                },
+                {
+                    "name": "payment-form-accepted",
+                    "value": "credit-debit-card"
+                }
+            ],
+            "short_name": "Lee's 2 Market",
+            "type": "FARE_VENDING_RETAILER"
+        },
+        "id": "retailsale-302028",
+        "links": {
+            "self": "/facilities/retailsale-302028"
+        },
+        "relationships": {
+            "stop": {
+                "data": null
+            }
+        },
+        "type": "facility"
+    },
+    "jsonapi": {
+        "version": "1.0"
+    }
+}

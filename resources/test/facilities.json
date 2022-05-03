@@ -1,0 +1,1640 @@
+{
+    "data": [
+        {
+            "attributes": {
+                "latitude": 42.348813,
+                "long_name": "Lee's 2 Market",
+                "longitude": -71.137287,
+                "properties": [
+                    {
+                        "name": "address",
+                        "value": "1383 Commonwealth Ave, Allston, MA 02134"
+                    },
+                    {
+                        "name": "contact-phone",
+                        "value": "617-254-8274"
+                    },
+                    {
+                        "name": "dispenses",
+                        "value": "fare-media"
+                    },
+                    {
+                        "name": "enclosed",
+                        "value": 1
+                    },
+                    {
+                        "name": "payment-form-accepted",
+                        "value": "cash"
+                    },
+                    {
+                        "name": "payment-form-accepted",
+                        "value": "credit-debit-card"
+                    }
+                ],
+                "short_name": "Lee's 2 Market",
+                "type": "FARE_VENDING_RETAILER"
+            },
+            "id": "retailsale-302028",
+            "links": {
+                "self": "/facilities/retailsale-302028"
+            },
+            "relationships": {
+                "stop": {
+                    "data": null
+                }
+            },
+            "type": "facility"
+        },
+        {
+            "attributes": {
+                "latitude": null,
+                "long_name": "Airport fare vending machine 201005",
+                "longitude": null,
+                "properties": [
+                    {
+                        "name": "enclosed",
+                        "value": 1
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "door-aport-bremen"
+                    },
+                    {
+                        "name": "payment-form-accepted",
+                        "value": "cash"
+                    },
+                    {
+                        "name": "payment-form-accepted",
+                        "value": "credit-debit-card"
+                    }
+                ],
+                "short_name": "Fare vending machine 201005",
+                "type": "FARE_VENDING_MACHINE"
+            },
+            "id": "fvm-201005",
+            "links": {
+                "self": "/facilities/fvm-201005"
+            },
+            "relationships": {
+                "stop": {
+                    "data": {
+                        "id": "place-aport",
+                        "type": "stop"
+                    }
+                }
+            },
+            "type": "facility"
+        },
+        {
+            "attributes": {
+                "latitude": null,
+                "long_name": "Beachmont fare vending machine 202010",
+                "longitude": null,
+                "properties": [
+                    {
+                        "name": "enclosed",
+                        "value": 1
+                    },
+                    {
+                        "name": "payment-form-accepted",
+                        "value": "credit-debit-card"
+                    }
+                ],
+                "short_name": "Fare vending machine 202010",
+                "type": "FARE_VENDING_MACHINE"
+            },
+            "id": "fvm-202010",
+            "links": {
+                "self": "/facilities/fvm-202010"
+            },
+            "relationships": {
+                "stop": {
+                    "data": {
+                        "id": "place-bmmnl",
+                        "type": "stop"
+                    }
+                }
+            },
+            "type": "facility"
+        },
+        {
+            "attributes": {
+                "latitude": null,
+                "long_name": "Longwood bike rack",
+                "longitude": null,
+                "properties": [
+                    {
+                        "name": "capacity",
+                        "value": 15
+                    },
+                    {
+                        "name": "enclosed",
+                        "value": 2
+                    },
+                    {
+                        "name": "secured",
+                        "value": 2
+                    }
+                ],
+                "short_name": "Bike rack",
+                "type": "BIKE_STORAGE"
+            },
+            "id": "bike-longw",
+            "links": {
+                "self": "/facilities/bike-longw"
+            },
+            "relationships": {
+                "stop": {
+                    "data": {
+                        "id": "place-longw",
+                        "type": "stop"
+                    }
+                }
+            },
+            "type": "facility"
+        },
+        {
+            "attributes": {
+                "latitude": 42.0938544,
+                "long_name": "Foxboro Parking Lot",
+                "longitude": -71.2639939,
+                "properties": [
+                    {
+                        "name": "attended",
+                        "value": 2
+                    },
+                    {
+                        "name": "capacity",
+                        "value": "500+"
+                    },
+                    {
+                        "name": "capacity-accessible",
+                        "value": 9
+                    },
+                    {
+                        "name": "contact",
+                        "value": "MBTA Customer Support"
+                    },
+                    {
+                        "name": "contact-phone",
+                        "value": "617-222-3200"
+                    },
+                    {
+                        "name": "contact-url",
+                        "value": "https://www.mbta.com/parking"
+                    },
+                    {
+                        "name": "enclosed",
+                        "value": 2
+                    },
+                    {
+                        "name": "fee-daily",
+                        "value": "Mon-Fri: Free (Lot 4C only)"
+                    },
+                    {
+                        "name": "municipality",
+                        "value": "Foxboro"
+                    },
+                    {
+                        "name": "note",
+                        "value": "Take advantage of free weekday parking (regularly $4 per day) from January 1, 2020, through March 31, 2020, sponsored by Patriot Place."
+                    },
+                    {
+                        "name": "operator",
+                        "value": "Kraft Group"
+                    },
+                    {
+                        "name": "overnight-allowed",
+                        "value": "no"
+                    },
+                    {
+                        "name": "owner",
+                        "value": "Private"
+                    },
+                    {
+                        "name": "payment-app",
+                        "value": "PayByPhone"
+                    },
+                    {
+                        "name": "payment-app-id",
+                        "value": 1792
+                    },
+                    {
+                        "name": "payment-app-url",
+                        "value": "https://www.paybyphone.com/"
+                    },
+                    {
+                        "name": "payment-form-accepted",
+                        "value": "invoice"
+                    },
+                    {
+                        "name": "payment-form-accepted",
+                        "value": "mobile-app"
+                    }
+                ],
+                "short_name": "Parking Lot",
+                "type": "PARKING_AREA"
+            },
+            "id": "park-FS-0049",
+            "links": {
+                "self": "/facilities/park-FS-0049"
+            },
+            "relationships": {
+                "stop": {
+                    "data": {
+                        "id": "place-FS-0049",
+                        "type": "stop"
+                    }
+                }
+            },
+            "type": "facility"
+        },
+        {
+            "attributes": {
+                "latitude": null,
+                "long_name": "Central fare vending machine 201137",
+                "longitude": null,
+                "properties": [
+                    {
+                        "name": "enclosed",
+                        "value": 1
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "door-cntsq-essex"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "door-cntsq-ibmass"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "door-cntsq-obmass"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "door-cntsq-pearl"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "door-cntsq-western"
+                    },
+                    {
+                        "name": "payment-form-accepted",
+                        "value": "cash"
+                    },
+                    {
+                        "name": "payment-form-accepted",
+                        "value": "credit-debit-card"
+                    }
+                ],
+                "short_name": "Fare vending machine 201137",
+                "type": "FARE_VENDING_MACHINE"
+            },
+            "id": "fvm-201137",
+            "links": {
+                "self": "/facilities/fvm-201137"
+            },
+            "relationships": {
+                "stop": {
+                    "data": {
+                        "id": "place-cntsq",
+                        "type": "stop"
+                    }
+                }
+            },
+            "type": "facility"
+        },
+        {
+            "attributes": {
+                "latitude": null,
+                "long_name": "Grafton ramp access",
+                "longitude": null,
+                "properties": [],
+                "short_name": "Ramp access",
+                "type": "RAMP"
+            },
+            "id": "ramp-WML-0364",
+            "links": {
+                "self": "/facilities/ramp-WML-0364"
+            },
+            "relationships": {
+                "stop": {
+                    "data": {
+                        "id": "place-WML-0364",
+                        "type": "stop"
+                    }
+                }
+            },
+            "type": "facility"
+        },
+        {
+            "attributes": {
+                "latitude": null,
+                "long_name": "Hyde Park mini-high platform (Track 2/South Station)",
+                "longitude": null,
+                "properties": [
+                    {
+                        "name": "excludes-stop",
+                        "value": "NEC-2203-03"
+                    },
+                    {
+                        "name": "note",
+                        "value": "Mini high level platform is available to provide level boarding to certain cars in a train set"
+                    }
+                ],
+                "short_name": "Mini-high platform (Track 2/South Station)",
+                "type": "ELEVATED_SUBPLATFORM"
+            },
+            "id": "subplat-NEC-2203-2",
+            "links": {
+                "self": "/facilities/subplat-NEC-2203-2"
+            },
+            "relationships": {
+                "stop": {
+                    "data": {
+                        "id": "place-NEC-2203",
+                        "type": "stop"
+                    }
+                }
+            },
+            "type": "facility"
+        },
+        {
+            "attributes": {
+                "latitude": null,
+                "long_name": "Sullivan Square Escalator 308 (Oak Grove platform to paid lobby)",
+                "longitude": null,
+                "properties": [
+                    {
+                        "name": "direction",
+                        "value": "up"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": 29001
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": 29002
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": 29003
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": 29004
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": 29005
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": 29006
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": 29007
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": 29008
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": 29009
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": 29010
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": 29011
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": 29012
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": 29013
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": 29014
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-307-lobby"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-307-platform"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-308-lobby"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-308-platform"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-840-lobby"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-840-platform"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-881-lobby"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-881-platform"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-lbusramp-lower"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-lbusramp-upper"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-lbusstairs-lower"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-lbusstairs-upper"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-sull-farepaid"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-sull-fareunpaid"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-sull-nbstairs-lobby"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-sull-nbstairs-platform"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-sull-sbstairs-lobby"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-sull-sbstairs-platform"
+                    }
+                ],
+                "short_name": "Oak Grove platform to paid lobby",
+                "type": "ESCALATOR"
+            },
+            "id": "308",
+            "links": {
+                "self": "/facilities/308"
+            },
+            "relationships": {
+                "stop": {
+                    "data": {
+                        "id": "place-sull",
+                        "type": "stop"
+                    }
+                }
+            },
+            "type": "facility"
+        },
+        {
+            "attributes": {
+                "latitude": null,
+                "long_name": "Jackson Square fare vending machine 201093",
+                "longitude": null,
+                "properties": [
+                    {
+                        "name": "enclosed",
+                        "value": 1
+                    },
+                    {
+                        "name": "payment-form-accepted",
+                        "value": "cash"
+                    },
+                    {
+                        "name": "payment-form-accepted",
+                        "value": "credit-debit-card"
+                    }
+                ],
+                "short_name": "Fare vending machine 201093",
+                "type": "FARE_VENDING_MACHINE"
+            },
+            "id": "fvm-201093",
+            "links": {
+                "self": "/facilities/fvm-201093"
+            },
+            "relationships": {
+                "stop": {
+                    "data": {
+                        "id": "place-jaksn",
+                        "type": "stop"
+                    }
+                }
+            },
+            "type": "facility"
+        },
+        {
+            "attributes": {
+                "latitude": null,
+                "long_name": "Sullivan Square fare vending machine 201037",
+                "longitude": null,
+                "properties": [
+                    {
+                        "name": "enclosed",
+                        "value": 1
+                    },
+                    {
+                        "name": "payment-form-accepted",
+                        "value": "cash"
+                    },
+                    {
+                        "name": "payment-form-accepted",
+                        "value": "credit-debit-card"
+                    }
+                ],
+                "short_name": "Fare vending machine 201037",
+                "type": "FARE_VENDING_MACHINE"
+            },
+            "id": "fvm-201037",
+            "links": {
+                "self": "/facilities/fvm-201037"
+            },
+            "relationships": {
+                "stop": {
+                    "data": {
+                        "id": "place-sull",
+                        "type": "stop"
+                    }
+                }
+            },
+            "type": "facility"
+        },
+        {
+            "attributes": {
+                "latitude": null,
+                "long_name": "Chestnut Hill covered bike rack",
+                "longitude": null,
+                "properties": [
+                    {
+                        "name": "capacity",
+                        "value": 12
+                    },
+                    {
+                        "name": "enclosed",
+                        "value": 1
+                    },
+                    {
+                        "name": "secured",
+                        "value": 2
+                    }
+                ],
+                "short_name": "Covered bike rack",
+                "type": "BIKE_STORAGE"
+            },
+            "id": "bike-chhil",
+            "links": {
+                "self": "/facilities/bike-chhil"
+            },
+            "relationships": {
+                "stop": {
+                    "data": {
+                        "id": "place-chhil",
+                        "type": "stop"
+                    }
+                }
+            },
+            "type": "facility"
+        },
+        {
+            "attributes": {
+                "latitude": null,
+                "long_name": "Fenway mobile lift (Riverside)",
+                "longitude": null,
+                "properties": [
+                    {
+                        "name": "excludes-stop",
+                        "value": 1807
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": 70186
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": 9434
+                    },
+                    {
+                        "name": "note",
+                        "value": "Customers can board/exit certain trains using mobile lift"
+                    }
+                ],
+                "short_name": "Mobile lift (Riverside)",
+                "type": "PORTABLE_BOARDING_LIFT"
+            },
+            "id": "portlift-fenwy",
+            "links": {
+                "self": "/facilities/portlift-fenwy"
+            },
+            "relationships": {
+                "stop": {
+                    "data": {
+                        "id": "place-fenwy",
+                        "type": "stop"
+                    }
+                }
+            },
+            "type": "facility"
+        },
+        {
+            "attributes": {
+                "latitude": null,
+                "long_name": "Downtown Crossing fare vending machine 202043",
+                "longitude": null,
+                "properties": [
+                    {
+                        "name": "enclosed",
+                        "value": 1
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "door-dwnxg-franklin"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "door-dwnxg-hawley"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "door-dwnxg-temple"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "door-dwnxg-winter"
+                    },
+                    {
+                        "name": "payment-form-accepted",
+                        "value": "credit-debit-card"
+                    }
+                ],
+                "short_name": "Fare vending machine 202043",
+                "type": "FARE_VENDING_MACHINE"
+            },
+            "id": "fvm-202043",
+            "links": {
+                "self": "/facilities/fvm-202043"
+            },
+            "relationships": {
+                "stop": {
+                    "data": {
+                        "id": "place-dwnxg",
+                        "type": "stop"
+                    }
+                }
+            },
+            "type": "facility"
+        },
+        {
+            "attributes": {
+                "latitude": 42.327019,
+                "long_name": "Chestnut Hill Parking Lot",
+                "longitude": -71.164798,
+                "properties": [
+                    {
+                        "name": "attended",
+                        "value": 2
+                    },
+                    {
+                        "name": "capacity",
+                        "value": 69
+                    },
+                    {
+                        "name": "contact",
+                        "value": "MBTA Customer Support"
+                    },
+                    {
+                        "name": "contact-phone",
+                        "value": "617-222-3200"
+                    },
+                    {
+                        "name": "contact-url",
+                        "value": "https://www.mbta.com/customer-support"
+                    },
+                    {
+                        "name": "enclosed",
+                        "value": 2
+                    },
+                    {
+                        "name": "fee-daily",
+                        "value": "Mon-Fri: $9 | Sat-Sun: $3"
+                    },
+                    {
+                        "name": "fee-monthly",
+                        "value": "$157.50"
+                    },
+                    {
+                        "name": "municipality",
+                        "value": "Newton"
+                    },
+                    {
+                        "name": "operator",
+                        "value": "Keolis Commuter Service"
+                    },
+                    {
+                        "name": "overnight-allowed",
+                        "value": "no"
+                    },
+                    {
+                        "name": "owner",
+                        "value": "MBTA"
+                    },
+                    {
+                        "name": "payment-app",
+                        "value": "PayByPhone"
+                    },
+                    {
+                        "name": "payment-app-id",
+                        "value": 4251
+                    },
+                    {
+                        "name": "payment-app-url",
+                        "value": "https://www.paybyphone.com/"
+                    },
+                    {
+                        "name": "payment-form-accepted",
+                        "value": "invoice"
+                    },
+                    {
+                        "name": "payment-form-accepted",
+                        "value": "mobile-app"
+                    },
+                    {
+                        "name": "weekday-typical-utilization",
+                        "value": 68
+                    }
+                ],
+                "short_name": "Parking Lot",
+                "type": "PARKING_AREA"
+            },
+            "id": "park-chhil",
+            "links": {
+                "self": "/facilities/park-chhil"
+            },
+            "relationships": {
+                "stop": {
+                    "data": {
+                        "id": "place-chhil",
+                        "type": "stop"
+                    }
+                }
+            },
+            "type": "facility"
+        },
+        {
+            "attributes": {
+                "latitude": null,
+                "long_name": "Assembly Escalator 443 (Platform to Foley Street paid lobby)",
+                "longitude": null,
+                "properties": [
+                    {
+                        "name": "direction",
+                        "value": "up"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "door-astao-revol"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-astao-442-ground"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-astao-442-lobby"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-astao-443-lobby"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-astao-443-platform"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-astao-716-ground"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-astao-716-lobby"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-astao-717-lobby"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-astao-717-platform"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-astao-718-ground"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-astao-718-lobby"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-astao-719-lobby"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-astao-719-platform"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-astao-fol-farepaid"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-astao-fol-fareunpaid"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-astao-foldoorstair-ground"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-astao-foldoorstair-lobby"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-astao-folplatstair-lobby"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-astao-folplatstair-platform"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-astao-rev-farepaid"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-astao-rev-fareunpaid"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-astao-revdoorstair-ground"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-astao-revdoorstair-lobby"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-astao-revplatstair-lobby"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-astao-revplatstair-platform"
+                    }
+                ],
+                "short_name": "Platform to Foley Street paid lobby",
+                "type": "ESCALATOR"
+            },
+            "id": "443",
+            "links": {
+                "self": "/facilities/443"
+            },
+            "relationships": {
+                "stop": {
+                    "data": {
+                        "id": "place-astao",
+                        "type": "stop"
+                    }
+                }
+            },
+            "type": "facility"
+        },
+        {
+            "attributes": {
+                "latitude": null,
+                "long_name": "Terminal B Stop 1 - Arrivals Level fare vending machine 202182",
+                "longitude": null,
+                "properties": [
+                    {
+                        "name": "enclosed",
+                        "value": 1
+                    },
+                    {
+                        "name": "payment-form-accepted",
+                        "value": "credit-debit-card"
+                    }
+                ],
+                "short_name": "Fare vending machine 202182",
+                "type": "FARE_VENDING_MACHINE"
+            },
+            "id": "fvm-202182",
+            "links": {
+                "self": "/facilities/fvm-202182"
+            },
+            "relationships": {
+                "stop": {
+                    "data": {
+                        "id": "27092",
+                        "type": "stop"
+                    }
+                }
+            },
+            "type": "facility"
+        },
+        {
+            "attributes": {
+                "latitude": null,
+                "long_name": "Quincy Adams Escalator 346 (Unpaid lobby to garage level 2)",
+                "longitude": null,
+                "properties": [
+                    {
+                        "name": "direction",
+                        "value": "up"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "door-qamnl-burgin"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "door-qamnl-indep"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "door-qamnl-pickup"
+                    }
+                ],
+                "short_name": "Unpaid lobby to garage level 2",
+                "type": "ESCALATOR"
+            },
+            "id": "346",
+            "links": {
+                "self": "/facilities/346"
+            },
+            "relationships": {
+                "stop": {
+                    "data": {
+                        "id": "place-qamnl",
+                        "type": "stop"
+                    }
+                }
+            },
+            "type": "facility"
+        },
+        {
+            "attributes": {
+                "latitude": null,
+                "long_name": "South Station Elevator 918 (Ashmont/Braintree platform to Airport/Design Center/Chelsea platform and lobby)",
+                "longitude": null,
+                "properties": [
+                    {
+                        "name": "alternate-service-text",
+                        "value": "To exit the Red Line, use nearby South Station Elevator 901. To board the Red Line, use South Station Elevator 901 located on the opposide side of the lobby. To board the Silver Line, take Elevator 901 to the Silver Line drop-off platform, then take South Station Elevator 927 to the Alewife platform. At the Alewife platform, use nearby South Station Elevator 919 to access the Airport/Design Center/Chelsea platform."
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "NEC-2287"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "NEC-2287-01"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "NEC-2287-02"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "NEC-2287-03"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "NEC-2287-04"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "NEC-2287-05"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "NEC-2287-06"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "NEC-2287-07"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "NEC-2287-08"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "NEC-2287-09"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "NEC-2287-10"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "NEC-2287-11"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "NEC-2287-12"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "NEC-2287-13"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "NEC-2287-B"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "door-sstat-atlantic"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "door-sstat-bus"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "door-sstat-dewey"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "door-sstat-finctr"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "door-sstat-main"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "door-sstat-outmain"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "door-sstat-reserve"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "door-sstat-summer"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "door-sstat-usps"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-382-lobby"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-382-rl"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-386-lobby"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-387-lobby"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-388-lobby"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-388-sl"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-389-lobby"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-389-rl"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-390-rl"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-390-sl"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-398-rl"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-398-sl"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-399-lobby"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-399-middle"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-400-middle"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-400-rl"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-411-lobby"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-411-sl"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-419-lobby"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-419-middle"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-420-middle"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-420-rl"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-424-lobby"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-6476-ground"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-6476-lobby"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-901-lobby"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-901-rl"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-901-sl"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-918-lobby"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-918-rl"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-918-sl"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-919-rl"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-919-sl"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-926-lobby"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-927-rl"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-927-sl"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-949-lobby"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-sstat-382stair-lobby"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-sstat-382stair-rl"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-sstat-388stair-lobby"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-sstat-388stair-sl"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-sstat-389stair-lobby"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-sstat-389stair-rl"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-sstat-390stair-rl"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-sstat-390stair-sl"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-sstat-398stair-rl"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-sstat-398stair-sl"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-sstat-399stair-lobby"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-sstat-399stair-middle"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-sstat-400sl-middle"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-sstat-400sl-sl"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-sstat-400stair-middle"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-sstat-400stair-rl"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-sstat-411stair-lobby"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-sstat-411stair-sl"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-sstat-419stair-lobby"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-sstat-419stair-middle"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-sstat-420sl-middle"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-sstat-420sl-sl"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-sstat-420stair-middle"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-sstat-420stair-rl"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-sstat-918stair-lobby"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-sstat-918stair-sl"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-sstat-919stair-rl"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-sstat-919stair-sl"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-sstat-alewife-farepaid"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-sstat-alewife-fareunpaid"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-sstat-ashbrain-farepaid"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-sstat-ashbrain-fareunpaid"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-sstat-bldgescdown-ground"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-sstat-bldgescdown-lobby"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-sstat-bldgescup-ground"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-sstat-bldgescup-lobby"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-sstat-bldgstair-ground"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-sstat-bldgstair-lobby"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-sstat-cr-lobby"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-sstat-deweystair-lobby"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-sstat-finctrstair-lobby"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-sstat-north-farepaid"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-sstat-north-fareunpaid"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-sstat-outmainstair-lobby"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-sstat-reservestair-lobby"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-sstat-south-farepaid"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-sstat-south-fareunpaid"
+                    }
+                ],
+                "short_name": "Ashmont/Braintree platform to Airport/Design Center/Chelsea platform and lobby",
+                "type": "ELEVATOR"
+            },
+            "id": "918",
+            "links": {
+                "self": "/facilities/918"
+            },
+            "relationships": {
+                "stop": {
+                    "data": {
+                        "id": "place-sstat",
+                        "type": "stop"
+                    }
+                }
+            },
+            "type": "facility"
+        },
+        {
+            "attributes": {
+                "latitude": null,
+                "long_name": "North Quincy Escalator 327 (Hancock Street parking to unpaid lobby)",
+                "longitude": null,
+                "properties": [
+                    {
+                        "name": "direction",
+                        "value": "up"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": 3125
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "door-nqncy-newport"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "door-nqncy-squantum"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-325-lobby"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-325-platform"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-326-lobby"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-326-platform"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-327-lobby"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-327-street"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-383-lobby"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-383-street"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-897-lobby"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-897-street"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-898-lobby"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-898-street"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-899-lobby"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-899-platform"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-900-lobby"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-900-platform"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-nqncy-hstair-lobby"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-nqncy-hstair-street"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-nqncy-nhfarepaid"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-nqncy-nhfareunpaid"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-nqncy-nhpstair-lobby"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-nqncy-nhpstair-platform"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-nqncy-nstair-lobby"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-nqncy-nstair-street"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-nqncy-senterramp-bus"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-nqncy-senterstair-bus"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-nqncy-sfarepaid"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-nqncy-sfareunpaid"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-nqncy-spstair-lobby"
+                    },
+                    {
+                        "name": "excludes-stop",
+                        "value": "node-nqncy-spstair-platform"
+                    }
+                ],
+                "short_name": "Hancock Street parking to unpaid lobby",
+                "type": "ESCALATOR"
+            },
+            "id": "327",
+            "links": {
+                "self": "/facilities/327"
+            },
+            "relationships": {
+                "stop": {
+                    "data": {
+                        "id": "place-nqncy",
+                        "type": "stop"
+                    }
+                }
+            },
+            "type": "facility"
+        }
+    ],
+    "jsonapi": {
+        "version": "1.0"
+    },
+    "links": {
+        "first": "https://api-v3.mbta.com/facilities?page[limit]=20&page[offset]=0",
+        "last": "https://api-v3.mbta.com/facilities?page[limit]=20&page[offset]=1740",
+        "next": "https://api-v3.mbta.com/facilities?page[limit]=20&page[offset]=20"
+    }
+}

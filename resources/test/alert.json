@@ -1,0 +1,44 @@
+{
+    "data": {
+        "attributes": {
+            "active_period": [
+                {
+                    "end": "2022-05-02T23:37:36-04:00",
+                    "start": "2022-05-02T04:56:56-04:00"
+                }
+            ],
+            "banner": null,
+            "cause": "UNKNOWN_CAUSE",
+            "created_at": "2022-05-02T04:57:21-04:00",
+            "description": null,
+            "effect": "DELAY",
+            "header": "Route 117 experiencing delays of up to 30 minutes",
+            "informed_entity": [
+                {
+                    "activities": [
+                        "BOARD",
+                        "EXIT",
+                        "RIDE"
+                    ],
+                    "route": "117",
+                    "route_type": 3
+                }
+            ],
+            "lifecycle": "NEW",
+            "service_effect": "Route 117 delay",
+            "severity": 7,
+            "short_header": "Route 117 experiencing delays of up to 30 minutes",
+            "timeframe": null,
+            "updated_at": "2022-05-02T15:23:15-04:00",
+            "url": null
+        },
+        "id": "441677",
+        "links": {
+            "self": "/alerts/441677"
+        },
+        "type": "alert"
+    },
+    "jsonapi": {
+        "version": "1.0"
+    }
+}

@@ -1,0 +1,1102 @@
+{
+    "data": [
+        {
+            "attributes": {
+                "active_period": [
+                    {
+                        "end": "2022-05-02T23:36:35-04:00",
+                        "start": "2022-05-02T04:56:56-04:00"
+                    }
+                ],
+                "banner": null,
+                "cause": "UNKNOWN_CAUSE",
+                "created_at": "2022-05-02T04:57:21-04:00",
+                "description": null,
+                "effect": "DELAY",
+                "header": "Route 117 experiencing delays of up to 30 minutes",
+                "informed_entity": [
+                    {
+                        "activities": [
+                            "BOARD",
+                            "EXIT",
+                            "RIDE"
+                        ],
+                        "route": "117",
+                        "route_type": 3
+                    }
+                ],
+                "lifecycle": "NEW",
+                "service_effect": "Route 117 delay",
+                "severity": 7,
+                "short_header": "Route 117 experiencing delays of up to 30 minutes",
+                "timeframe": null,
+                "updated_at": "2022-05-02T15:23:15-04:00",
+                "url": null
+            },
+            "id": "441677",
+            "links": {
+                "self": "/alerts/441677"
+            },
+            "type": "alert"
+        },
+        {
+            "attributes": {
+                "active_period": [
+                    {
+                        "end": null,
+                        "start": "2021-03-14T04:30:00-04:00"
+                    }
+                ],
+                "banner": null,
+                "cause": "UNKNOWN_CAUSE",
+                "created_at": "2021-03-04T10:32:39-05:00",
+                "description": null,
+                "effect": "SUSPENSION",
+                "header": "Route 79 service remains suspended until further notice. Use Route 77 or the Red Line as alternatives.",
+                "informed_entity": [
+                    {
+                        "activities": [
+                            "BOARD",
+                            "EXIT",
+                            "RIDE"
+                        ],
+                        "route": "79",
+                        "route_type": 3
+                    }
+                ],
+                "lifecycle": "ONGOING",
+                "service_effect": "Suspension of service on Route 79",
+                "severity": 7,
+                "short_header": "Route 79 service remains suspended until further notice. Use Route 77 or the Red Line as alternatives.",
+                "timeframe": "ongoing",
+                "updated_at": "2021-12-15T11:39:20-05:00",
+                "url": null
+            },
+            "id": "384238",
+            "links": {
+                "self": "/alerts/384238"
+            },
+            "type": "alert"
+        },
+        {
+            "attributes": {
+                "active_period": [
+                    {
+                        "end": "2022-05-23T02:30:00-04:00",
+                        "start": "2022-05-09T04:30:00-04:00"
+                    }
+                ],
+                "banner": null,
+                "cause": "UNKNOWN_CAUSE",
+                "created_at": "2022-04-07T12:47:45-04:00",
+                "description": "All shuttle buses are accessible. Bikes will not be allowed onboard the shuttle buses.\r\n\r\nThere will be no service at Chelsea and River Works stations. Passenger may consider the Silver Line #3 as an alternative.\r\n\r\nRegular weekday train service will resume on the Newburyport/Rockport Line on Monday, June 6th.",
+                "effect": "SERVICE_CHANGE",
+                "header": "Mon 5/9 through Sun 5/22, buses replace all Rockport Line service. Newburyport service replaced between Boston & Beverly. Buses will connect to the Blue Line at Orient Heights for service to/from Boston. Normal train service between Beverly & Newburyport.",
+                "informed_entity": [
+                    {
+                        "activities": [
+                            "BOARD",
+                            "EXIT",
+                            "RIDE"
+                        ],
+                        "route": "CR-Newburyport",
+                        "route_type": 2
+                    }
+                ],
+                "lifecycle": "UPCOMING",
+                "service_effect": "Newburyport/Rockport Line notice",
+                "severity": 10,
+                "short_header": "Mon 5/9 through Sun 5/22, buses replace all Rockport Ln. Newburyport service replaced between Boston & Beverly. Buses will connect to the Bl",
+                "timeframe": "May 9-22",
+                "updated_at": "2022-04-27T07:14:07-04:00",
+                "url": null
+            },
+            "id": "438574",
+            "links": {
+                "self": "/alerts/438574"
+            },
+            "type": "alert"
+        },
+        {
+            "attributes": {
+                "active_period": [
+                    {
+                        "end": "2022-05-02T23:36:36-04:00",
+                        "start": "2022-05-02T18:55:28-04:00"
+                    }
+                ],
+                "banner": null,
+                "cause": "UNKNOWN_CAUSE",
+                "created_at": "2022-05-02T18:55:30-04:00",
+                "description": null,
+                "effect": "DELAY",
+                "header": "Route 111 experiencing delays of up to 20 minutes",
+                "informed_entity": [
+                    {
+                        "activities": [
+                            "BOARD",
+                            "EXIT",
+                            "RIDE"
+                        ],
+                        "route": "111",
+                        "route_type": 3
+                    }
+                ],
+                "lifecycle": "NEW",
+                "service_effect": "Route 111 delay",
+                "severity": 5,
+                "short_header": "Route 111 experiencing delays of up to 20 minutes",
+                "timeframe": null,
+                "updated_at": "2022-05-02T18:55:30-04:00",
+                "url": null
+            },
+            "id": "441837",
+            "links": {
+                "self": "/alerts/441837"
+            },
+            "type": "alert"
+        },
+        {
+            "attributes": {
+                "active_period": [
+                    {
+                        "end": "2022-05-14T02:30:00-04:00",
+                        "start": "2022-03-18T13:52:06-04:00"
+                    }
+                ],
+                "banner": null,
+                "cause": "UNKNOWN_CAUSE",
+                "created_at": "2022-03-18T13:52:11-04:00",
+                "description": null,
+                "effect": "SERVICE_CHANGE",
+                "header": "Route 85 notice: The stop at Avon St @ School Street has permanently closed. Please use Summer St @ School St or Avon St @ Central St as alternatives.",
+                "informed_entity": [
+                    {
+                        "activities": [
+                            "BOARD",
+                            "EXIT",
+                            "RIDE"
+                        ],
+                        "route": "85",
+                        "route_type": 3
+                    }
+                ],
+                "lifecycle": "ONGOING",
+                "service_effect": "Route 85 notice",
+                "severity": 3,
+                "short_header": "Route 85 notice: The stop at Avon St @ School St has permanently closed. Use Summer St @ School St or Avon St @ Central St as alternatives",
+                "timeframe": "through May 13",
+                "updated_at": "2022-04-01T05:47:11-04:00",
+                "url": null
+            },
+            "id": "436132",
+            "links": {
+                "self": "/alerts/436132"
+            },
+            "type": "alert"
+        },
+        {
+            "attributes": {
+                "active_period": [
+                    {
+                        "end": "2022-05-14T02:30:00-04:00",
+                        "start": "2022-03-13T04:30:00-04:00"
+                    }
+                ],
+                "banner": null,
+                "cause": "UNKNOWN_CAUSE",
+                "created_at": "2022-03-04T10:48:34-05:00",
+                "description": null,
+                "effect": "SERVICE_CHANGE",
+                "header": "Route 34E no longer uses Walpole St. All service is via Washington St.",
+                "informed_entity": [
+                    {
+                        "activities": [
+                            "BOARD",
+                            "EXIT",
+                            "RIDE"
+                        ],
+                        "route": "34E",
+                        "route_type": 3
+                    }
+                ],
+                "lifecycle": "ONGOING",
+                "service_effect": "Route 34E notice",
+                "severity": 3,
+                "short_header": "Route 34E no longer uses Walpole St. All service is via Washington St.",
+                "timeframe": "through May 13",
+                "updated_at": "2022-04-01T05:44:33-04:00",
+                "url": null
+            },
+            "id": "434342",
+            "links": {
+                "self": "/alerts/434342"
+            },
+            "type": "alert"
+        },
+        {
+            "attributes": {
+                "active_period": [
+                    {
+                        "end": "2022-05-02T23:00:00-04:00",
+                        "start": "2022-05-02T21:31:16-04:00"
+                    }
+                ],
+                "banner": null,
+                "cause": "UNKNOWN_CAUSE",
+                "created_at": "2022-05-02T21:31:17-04:00",
+                "description": "Affected direction: Inbound",
+                "effect": "DELAY",
+                "header": "Fairmount Line Train 944 (9:30 pm from Readville) has not yet departed Readville and is 10-20 minutes behind schedule.",
+                "informed_entity": [
+                    {
+                        "activities": [
+                            "BOARD",
+                            "EXIT",
+                            "RIDE"
+                        ],
+                        "direction_id": 1,
+                        "route": "CR-Fairmount",
+                        "route_type": 2,
+                        "trip": "CR-501093-944"
+                    }
+                ],
+                "lifecycle": "NEW",
+                "service_effect": "Fairmount Line delay",
+                "severity": 5,
+                "short_header": "Fairmount Line Train 944 (9:30 pm from Readville) has not yet departed Readville and is 10-20 minutes behind schedule.",
+                "timeframe": null,
+                "updated_at": "2022-05-02T21:31:17-04:00",
+                "url": null
+            },
+            "id": "441853",
+            "links": {
+                "self": "/alerts/441853"
+            },
+            "type": "alert"
+        },
+        {
+            "attributes": {
+                "active_period": [
+                    {
+                        "end": "2022-05-14T02:30:00-04:00",
+                        "start": "2022-03-13T10:52:00-04:00"
+                    }
+                ],
+                "banner": null,
+                "cause": "UNKNOWN_CAUSE",
+                "created_at": "2022-03-04T10:52:23-05:00",
+                "description": null,
+                "effect": "SERVICE_CHANGE",
+                "header": "The stop at Washington St @ Columbus Ave has permanently moved to Washington St @ Atherton St.",
+                "informed_entity": [
+                    {
+                        "activities": [
+                            "BOARD",
+                            "EXIT",
+                            "RIDE"
+                        ],
+                        "route": "42",
+                        "route_type": 3
+                    }
+                ],
+                "lifecycle": "ONGOING",
+                "service_effect": "Route 42 notice",
+                "severity": 3,
+                "short_header": "The stop at Washington St @ Columbus Ave has permanently moved to Washington St @ Atherton St.",
+                "timeframe": "through May 13",
+                "updated_at": "2022-04-01T05:46:40-04:00",
+                "url": null
+            },
+            "id": "434343",
+            "links": {
+                "self": "/alerts/434343"
+            },
+            "type": "alert"
+        },
+        {
+            "attributes": {
+                "active_period": [
+                    {
+                        "end": null,
+                        "start": "2021-04-20T14:34:09-04:00"
+                    }
+                ],
+                "banner": null,
+                "cause": "CONSTRUCTION",
+                "created_at": "2021-04-20T14:34:14-04:00",
+                "description": "Riders can continue to use PayByPhone or pay-by-plate with the same parking fees as other MBTA surface lots.\r\n\r\nAffected routes:\r\nRed Line",
+                "effect": "STATION_ISSUE",
+                "header": "The Braintree Parking Garage has re-opened with 350 parking spots available.  Additional spaces will be added as construction finishes up. The surface lot on Ivory St will remain open as an alternate parking option.",
+                "informed_entity": [
+                    {
+                        "activities": [
+                            "BOARD"
+                        ],
+                        "route": "Red",
+                        "route_type": 1,
+                        "stop": "70103"
+                    },
+                    {
+                        "activities": [
+                            "BOARD"
+                        ],
+                        "route": "Red",
+                        "route_type": 1,
+                        "stop": "70104"
+                    },
+                    {
+                        "activities": [
+                            "BOARD"
+                        ],
+                        "route": "Red",
+                        "route_type": 1,
+                        "stop": "70105"
+                    },
+                    {
+                        "activities": [
+                            "BOARD"
+                        ],
+                        "route": "Red",
+                        "route_type": 1,
+                        "stop": "place-brntn"
+                    },
+                    {
+                        "activities": [
+                            "BOARD"
+                        ],
+                        "route": "Red",
+                        "route_type": 1,
+                        "stop": "place-qamnl"
+                    }
+                ],
+                "lifecycle": "ONGOING",
+                "service_effect": "Change at Braintree and Quincy Adams",
+                "severity": 1,
+                "short_header": "The Braintree Parking Garage has re-opened with 350 parking spots available. Additional spaces will be added as construction finishes up. Th",
+                "timeframe": "ongoing",
+                "updated_at": "2021-06-13T08:16:49-04:00",
+                "url": null
+            },
+            "id": "387124",
+            "links": {
+                "self": "/alerts/387124"
+            },
+            "type": "alert"
+        },
+        {
+            "attributes": {
+                "active_period": [
+                    {
+                        "end": "2022-05-02T23:36:36-04:00",
+                        "start": "2022-05-02T16:22:47-04:00"
+                    }
+                ],
+                "banner": null,
+                "cause": "UNKNOWN_CAUSE",
+                "created_at": "2022-05-02T16:22:48-04:00",
+                "description": null,
+                "effect": "DELAY",
+                "header": "Route 106 experiencing delays of up to 30 minutes",
+                "informed_entity": [
+                    {
+                        "activities": [
+                            "BOARD",
+                            "EXIT",
+                            "RIDE"
+                        ],
+                        "route": "106",
+                        "route_type": 3
+                    }
+                ],
+                "lifecycle": "NEW",
+                "service_effect": "Route 106 delay",
+                "severity": 7,
+                "short_header": "Route 106 experiencing delays of up to 30 minutes",
+                "timeframe": null,
+                "updated_at": "2022-05-02T16:22:48-04:00",
+                "url": null
+            },
+            "id": "441811",
+            "links": {
+                "self": "/alerts/441811"
+            },
+            "type": "alert"
+        },
+        {
+            "attributes": {
+                "active_period": [
+                    {
+                        "end": null,
+                        "start": "2022-02-15T13:17:31-05:00"
+                    }
+                ],
+                "banner": null,
+                "cause": "MAINTENANCE",
+                "created_at": "2022-02-15T13:17:31-05:00",
+                "description": null,
+                "effect": "ESCALATOR_CLOSURE",
+                "header": "Back Bay Escalator 142 (Commuter Rail tracks 1 and 3 to lobby) unavailable due to maintenance",
+                "informed_entity": [
+                    {
+                        "activities": [
+                            "USING_ESCALATOR"
+                        ],
+                        "facility": "142",
+                        "stop": "NEC-2276"
+                    },
+                    {
+                        "activities": [
+                            "USING_ESCALATOR"
+                        ],
+                        "facility": "142",
+                        "stop": "NEC-2276-01"
+                    },
+                    {
+                        "activities": [
+                            "USING_ESCALATOR"
+                        ],
+                        "facility": "142",
+                        "stop": "NEC-2276-03"
+                    },
+                    {
+                        "activities": [
+                            "USING_ESCALATOR"
+                        ],
+                        "facility": "142",
+                        "stop": "place-bbsta"
+                    }
+                ],
+                "lifecycle": "ONGOING",
+                "service_effect": "Back Bay escalator unavailable",
+                "severity": 3,
+                "short_header": "Back Bay Escalator 142 (Commuter Rail tracks 1 and 3 to lobby) unavailable due to maintenance",
+                "timeframe": "ongoing",
+                "updated_at": "2022-02-22T13:18:15-05:00",
+                "url": null
+            },
+            "id": "431936",
+            "links": {
+                "self": "/alerts/431936"
+            },
+            "type": "alert"
+        },
+        {
+            "attributes": {
+                "active_period": [
+                    {
+                        "end": null,
+                        "start": "2022-04-26T08:17:55-04:00"
+                    }
+                ],
+                "banner": null,
+                "cause": "CONSTRUCTION",
+                "created_at": "2022-04-26T08:18:36-04:00",
+                "description": "Outbound riders may also use westbound Route 87 stops on Somerville Ave between Bow St and Central St.\r\nInbound riders may also use as temporary stop on School St between Avon and Summer St and eastbound Route 87 stops on Somerville Ave between School St and Kilby St\r\n\r\n\r\nAffected stops:\r\nSummer St @ Wesley Park (outbound)\r\nSummer St @ School St (outbound)\r\n117 Summer St (outbound)\r\nSummer St opp Carter Terr (outbound)\r\nSummer St @ School St (inbound)\r\nSummer St @ Vinal Ave (inbound)\r\n51 Bow St (inbound)",
+                "effect": "DETOUR",
+                "header": "Route 85 detoured due to Spring Hill Sewer Separation construction until further notice. Buses will not serve Summer St & Bow St.",
+                "informed_entity": [
+                    {
+                        "activities": [
+                            "BOARD",
+                            "EXIT"
+                        ],
+                        "route": "85",
+                        "route_type": 3,
+                        "stop": "2507"
+                    },
+                    {
+                        "activities": [
+                            "BOARD",
+                            "EXIT"
+                        ],
+                        "route": "85",
+                        "route_type": 3,
+                        "stop": "2508"
+                    },
+                    {
+                        "activities": [
+                            "BOARD",
+                            "EXIT"
+                        ],
+                        "route": "85",
+                        "route_type": 3,
+                        "stop": "2532"
+                    },
+                    {
+                        "activities": [
+                            "BOARD",
+                            "EXIT"
+                        ],
+                        "route": "85",
+                        "route_type": 3,
+                        "stop": "2533"
+                    },
+                    {
+                        "activities": [
+                            "BOARD",
+                            "EXIT"
+                        ],
+                        "route": "85",
+                        "route_type": 3,
+                        "stop": "2534"
+                    },
+                    {
+                        "activities": [
+                            "BOARD",
+                            "EXIT"
+                        ],
+                        "route": "85",
+                        "route_type": 3,
+                        "stop": "2574"
+                    },
+                    {
+                        "activities": [
+                            "BOARD",
+                            "EXIT"
+                        ],
+                        "route": "85",
+                        "route_type": 3,
+                        "stop": "2614"
+                    }
+                ],
+                "lifecycle": "NEW",
+                "service_effect": "Route 85 detour",
+                "severity": 7,
+                "short_header": "Route 85 detoured due to Spring Hill Sewer Separation construction until further notice. Buses will not serve Summer St & Bow St.",
+                "timeframe": null,
+                "updated_at": "2022-04-26T10:25:58-04:00",
+                "url": null
+            },
+            "id": "440944",
+            "links": {
+                "self": "/alerts/440944"
+            },
+            "type": "alert"
+        },
+        {
+            "attributes": {
+                "active_period": [
+                    {
+                        "end": null,
+                        "start": "2021-11-04T15:14:51-04:00"
+                    }
+                ],
+                "banner": null,
+                "cause": "UNKNOWN_CAUSE",
+                "created_at": "2021-11-04T15:14:54-04:00",
+                "description": "Vehicular access to the upper 2 levels of the garage is restricted. The garage has sufficient parking capacity to accommodate daily demand.",
+                "effect": "PARKING_ISSUE",
+                "header": "Lynn Parking Garage arcade stairs 1 and 2 are closed until further notice due to structural issues. Customers may exit the garage via elevators to the ground level or by using the south stairs located on the Market street side of the garage.",
+                "informed_entity": [
+                    {
+                        "activities": [
+                            "PARK_CAR"
+                        ],
+                        "facility": "park-ER-0115-garage",
+                        "stop": "14748"
+                    },
+                    {
+                        "activities": [
+                            "PARK_CAR"
+                        ],
+                        "facility": "park-ER-0115-garage",
+                        "stop": "ER-0115"
+                    },
+                    {
+                        "activities": [
+                            "PARK_CAR"
+                        ],
+                        "facility": "park-ER-0115-garage",
+                        "stop": "ER-0115-01"
+                    },
+                    {
+                        "activities": [
+                            "PARK_CAR"
+                        ],
+                        "facility": "park-ER-0115-garage",
+                        "stop": "ER-0115-02"
+                    },
+                    {
+                        "activities": [
+                            "PARK_CAR"
+                        ],
+                        "facility": "park-ER-0115-garage",
+                        "stop": "place-ER-0115"
+                    }
+                ],
+                "lifecycle": "ONGOING",
+                "service_effect": "parking issue",
+                "severity": 3,
+                "short_header": "Lynn Parking Garage arcade stairs 1 & 2 are closed until further notice. Customers may exit the garage via elevators to the ground level or ",
+                "timeframe": "ongoing",
+                "updated_at": "2021-11-04T15:14:54-04:00",
+                "url": null
+            },
+            "id": "416078",
+            "links": {
+                "self": "/alerts/416078"
+            },
+            "type": "alert"
+        },
+        {
+            "attributes": {
+                "active_period": [
+                    {
+                        "end": "2022-06-11T02:30:00-04:00",
+                        "start": "2022-04-08T04:30:00-04:00"
+                    }
+                ],
+                "banner": null,
+                "cause": "UNKNOWN_CAUSE",
+                "created_at": "2022-04-01T17:12:09-04:00",
+                "description": "Affected routes:\r\n85",
+                "effect": "STOP_CLOSURE",
+                "header": "The following Route 85 stop is permanently closed due to long-term construction: Webster Ave @ Columbia St (outbound)",
+                "informed_entity": [
+                    {
+                        "activities": [
+                            "BOARD",
+                            "EXIT"
+                        ],
+                        "route": "85",
+                        "route_type": 3,
+                        "stop": "2527"
+                    }
+                ],
+                "lifecycle": "ONGOING",
+                "service_effect": "Webster Ave @ Columbia St (outbound) closed",
+                "severity": 5,
+                "short_header": "The following Route 85 stop is permanently closed due to long-term construction: Webster Ave @ Columbia St (outbound)",
+                "timeframe": "through June 10",
+                "updated_at": "2022-04-08T04:00:16-04:00",
+                "url": null
+            },
+            "id": "437848",
+            "links": {
+                "self": "/alerts/437848"
+            },
+            "type": "alert"
+        },
+        {
+            "attributes": {
+                "active_period": [
+                    {
+                        "end": null,
+                        "start": "2022-02-07T12:54:41-05:00"
+                    }
+                ],
+                "banner": null,
+                "cause": "UNKNOWN_CAUSE",
+                "created_at": "2022-02-07T12:55:00-05:00",
+                "description": "Affected routes:\r\n210\r\n211\r\n217",
+                "effect": "STOP_CLOSURE",
+                "header": "The City of Quincy has temporarily closed the stop at Hancock St @ Merrymount Rd. Connections can be made at Hancock St @ Greenleaf St.",
+                "informed_entity": [
+                    {
+                        "activities": [
+                            "BOARD",
+                            "EXIT"
+                        ],
+                        "route": "210",
+                        "route_type": 3,
+                        "stop": "3042"
+                    },
+                    {
+                        "activities": [
+                            "BOARD",
+                            "EXIT"
+                        ],
+                        "route": "211",
+                        "route_type": 3,
+                        "stop": "3042"
+                    },
+                    {
+                        "activities": [
+                            "BOARD",
+                            "EXIT"
+                        ],
+                        "route": "217",
+                        "route_type": 3,
+                        "stop": "3042"
+                    }
+                ],
+                "lifecycle": "ONGOING",
+                "service_effect": "Hancock St @ Merrymount Rd closed",
+                "severity": 5,
+                "short_header": "The City of Quincy has temporarily closed the stop at Hancock St @ Merrymount Rd. Connections can be made at Hancock St @ Greenleaf St.",
+                "timeframe": "ongoing",
+                "updated_at": "2022-02-14T12:55:16-05:00",
+                "url": null
+            },
+            "id": "430759",
+            "links": {
+                "self": "/alerts/430759"
+            },
+            "type": "alert"
+        },
+        {
+            "attributes": {
+                "active_period": [
+                    {
+                        "end": "2022-05-02T23:36:36-04:00",
+                        "start": "2022-05-02T13:51:08-04:00"
+                    }
+                ],
+                "banner": null,
+                "cause": "UNKNOWN_CAUSE",
+                "created_at": "2022-05-02T13:51:09-04:00",
+                "description": null,
+                "effect": "DELAY",
+                "header": "Route 104 experiencing delays of up to 25 minutes",
+                "informed_entity": [
+                    {
+                        "activities": [
+                            "BOARD",
+                            "EXIT",
+                            "RIDE"
+                        ],
+                        "route": "104",
+                        "route_type": 3
+                    }
+                ],
+                "lifecycle": "NEW",
+                "service_effect": "Route 104 delay",
+                "severity": 6,
+                "short_header": "Route 104 experiencing delays of up to 25 minutes",
+                "timeframe": null,
+                "updated_at": "2022-05-02T13:51:09-04:00",
+                "url": null
+            },
+            "id": "441780",
+            "links": {
+                "self": "/alerts/441780"
+            },
+            "type": "alert"
+        },
+        {
+            "attributes": {
+                "active_period": [
+                    {
+                        "end": "2022-05-30T02:30:00-04:00",
+                        "start": "2022-05-12T04:30:00-04:00"
+                    }
+                ],
+                "banner": null,
+                "cause": "CONSTRUCTION",
+                "created_at": "2022-05-01T12:24:01-04:00",
+                "description": "All shuttle buses are accessible to customers with disabilities, see station personnel if you need assistance.\r\nAffected stops:\r\nWonderland\r\nRevere Beach\r\nBeachmont\r\nSuffolk Downs\r\nOrient Heights",
+                "effect": "SHUTTLE",
+                "header": "Shuttle buses replace Blue Line service between Wonderland and Orient Heights from Thursday, May 12 through Sunday, May 29 to allow for repair work on the pedestrian bridge at Suffolk Downs.",
+                "informed_entity": [
+                    {
+                        "activities": [
+                            "EXIT",
+                            "RIDE"
+                        ],
+                        "route": "Blue",
+                        "route_type": 1,
+                        "stop": "70051"
+                    },
+                    {
+                        "activities": [
+                            "BOARD",
+                            "RIDE"
+                        ],
+                        "route": "Blue",
+                        "route_type": 1,
+                        "stop": "70052"
+                    },
+                    {
+                        "activities": [
+                            "BOARD",
+                            "EXIT",
+                            "RIDE"
+                        ],
+                        "route": "Blue",
+                        "route_type": 1,
+                        "stop": "70053"
+                    },
+                    {
+                        "activities": [
+                            "BOARD",
+                            "EXIT",
+                            "RIDE"
+                        ],
+                        "route": "Blue",
+                        "route_type": 1,
+                        "stop": "70054"
+                    },
+                    {
+                        "activities": [
+                            "BOARD",
+                            "EXIT",
+                            "RIDE"
+                        ],
+                        "route": "Blue",
+                        "route_type": 1,
+                        "stop": "70055"
+                    },
+                    {
+                        "activities": [
+                            "BOARD",
+                            "EXIT",
+                            "RIDE"
+                        ],
+                        "route": "Blue",
+                        "route_type": 1,
+                        "stop": "70056"
+                    },
+                    {
+                        "activities": [
+                            "BOARD",
+                            "EXIT",
+                            "RIDE"
+                        ],
+                        "route": "Blue",
+                        "route_type": 1,
+                        "stop": "70057"
+                    },
+                    {
+                        "activities": [
+                            "BOARD",
+                            "EXIT",
+                            "RIDE"
+                        ],
+                        "route": "Blue",
+                        "route_type": 1,
+                        "stop": "70058"
+                    },
+                    {
+                        "activities": [
+                            "BOARD",
+                            "RIDE"
+                        ],
+                        "route": "Blue",
+                        "route_type": 1,
+                        "stop": "70059"
+                    },
+                    {
+                        "activities": [
+                            "EXIT",
+                            "RIDE"
+                        ],
+                        "route": "Blue",
+                        "route_type": 1,
+                        "stop": "70060"
+                    },
+                    {
+                        "activities": [
+                            "BOARD",
+                            "EXIT",
+                            "RIDE"
+                        ],
+                        "route": "Blue",
+                        "route_type": 1,
+                        "stop": "place-bmmnl"
+                    },
+                    {
+                        "activities": [
+                            "BOARD",
+                            "EXIT",
+                            "RIDE"
+                        ],
+                        "route": "Blue",
+                        "route_type": 1,
+                        "stop": "place-orhte"
+                    },
+                    {
+                        "activities": [
+                            "BOARD",
+                            "EXIT",
+                            "RIDE"
+                        ],
+                        "route": "Blue",
+                        "route_type": 1,
+                        "stop": "place-rbmnl"
+                    },
+                    {
+                        "activities": [
+                            "BOARD",
+                            "EXIT",
+                            "RIDE"
+                        ],
+                        "route": "Blue",
+                        "route_type": 1,
+                        "stop": "place-sdmnl"
+                    },
+                    {
+                        "activities": [
+                            "BOARD",
+                            "EXIT",
+                            "RIDE"
+                        ],
+                        "route": "Blue",
+                        "route_type": 1,
+                        "stop": "place-wondl"
+                    }
+                ],
+                "lifecycle": "UPCOMING",
+                "service_effect": "Blue Line shuttle",
+                "severity": 1,
+                "short_header": "Shuttle buses replace Blue Ln between Wonderland & Orient Heights from Thu, May 12 through Sun, May 29 to allow for repair work on the pedes",
+                "timeframe": "May 12-29",
+                "updated_at": "2022-05-01T12:56:50-04:00",
+                "url": null
+            },
+            "id": "441611",
+            "links": {
+                "self": "/alerts/441611"
+            },
+            "type": "alert"
+        },
+        {
+            "attributes": {
+                "active_period": [
+                    {
+                        "end": null,
+                        "start": "2021-06-29T04:30:00-04:00"
+                    }
+                ],
+                "banner": null,
+                "cause": "CONSTRUCTION",
+                "created_at": "2021-06-28T16:59:09-04:00",
+                "description": "No service on Dorchester Ave between Andrew and Columbia Rd. Customers should make connections on Boston St:\r\n\r\nOutbound connections: Boston St @ Ellery St or Boston St @ Washburn St. \r\nInbound connections: Boston St @ Mayhew St or Boston St @ Dorset St\r\n\r\nAffected stops: \r\nDorchester Ave @ Kemp St (inbound) \r\nDorchester Ave opp Kemp St (outbound) \r\nDorchester Ave opp Howell St (inbound) \r\nDorchester Ave @ Howell St (outbound) \r\nDorchester Ave @ Locust St (inbound) \r\nDorchester Ave @ Dorset St (outbound) \r\nDorchester Ave @ Mt Vernon St (outbound) \r\nDorchester Ave @ Columbia Rd (outbound) \r\nDorchester Ave @ Columbia Rd (inbound)",
+                "effect": "DETOUR",
+                "header": "Route 18 remains detoured around the Dorchester Ave Bridge until further notice. The Dorchester Ave railroad bridge requires structural repairs.",
+                "informed_entity": [
+                    {
+                        "activities": [
+                            "BOARD",
+                            "EXIT"
+                        ],
+                        "route": "18",
+                        "route_type": 3
+                    }
+                ],
+                "lifecycle": "ONGOING",
+                "service_effect": "Route 18 detour",
+                "severity": 1,
+                "short_header": "Rt. 18 remains detoured around the Dorchester Ave Bridge until further notice. The Dorchester Ave railroad bridge requires structural repair",
+                "timeframe": "ongoing",
+                "updated_at": "2021-12-15T11:43:17-05:00",
+                "url": null
+            },
+            "id": "394228",
+            "links": {
+                "self": "/alerts/394228"
+            },
+            "type": "alert"
+        },
+        {
+            "attributes": {
+                "active_period": [
+                    {
+                        "end": "2022-05-12T02:30:00-04:00",
+                        "start": "2022-05-10T04:30:00-04:00"
+                    }
+                ],
+                "banner": null,
+                "cause": "MAINTENANCE",
+                "created_at": "2022-05-02T12:15:49-04:00",
+                "description": null,
+                "effect": "ESCALATOR_CLOSURE",
+                "header": "Andrew Escalator 124 (Ashmont/Braintree platform to busway) unavailable from Tue May 10 through Wed May 11 due to maintenance",
+                "informed_entity": [
+                    {
+                        "activities": [
+                            "USING_ESCALATOR"
+                        ],
+                        "facility": "124",
+                        "stop": "70083"
+                    },
+                    {
+                        "activities": [
+                            "USING_ESCALATOR"
+                        ],
+                        "facility": "124",
+                        "stop": "door-andrw-busway"
+                    },
+                    {
+                        "activities": [
+                            "USING_ESCALATOR"
+                        ],
+                        "facility": "124",
+                        "stop": "place-andrw"
+                    }
+                ],
+                "lifecycle": "UPCOMING",
+                "service_effect": "Andrew escalator unavailable",
+                "severity": 3,
+                "short_header": "Andrew Escalator 124 (Ashmont/Braintree platform to busway) unavailable from Tue May 10 through Wed May 11 due to maintenance",
+                "timeframe": "May 10-11",
+                "updated_at": "2022-05-02T12:15:49-04:00",
+                "url": null
+            },
+            "id": "441762",
+            "links": {
+                "self": "/alerts/441762"
+            },
+            "type": "alert"
+        },
+        {
+            "attributes": {
+                "active_period": [
+                    {
+                        "end": null,
+                        "start": "2020-09-24T04:30:00-04:00"
+                    }
+                ],
+                "banner": null,
+                "cause": "MAINTENANCE",
+                "created_at": "2020-09-24T07:41:08-04:00",
+                "description": "To exit the Red Line, take nearby South Station Elevator 919 to the Airport/Design Center/Chelsea platform, then use South Station Elevator 918 to access the lobby. To board the Red Line, take South Station Elevator 918 to the Airport/Design Center/Chelsea platform, then use South Station Elevator 919 to access the Alewife platform.",
+                "effect": "ELEVATOR_CLOSURE",
+                "header": "South Station Elevator 927 (Alewife platform to Silver Line Drop-off platform) unavailable due to maintenance",
+                "informed_entity": [
+                    {
+                        "activities": [
+                            "USING_WHEELCHAIR"
+                        ],
+                        "facility": "927",
+                        "stop": "70080"
+                    },
+                    {
+                        "activities": [
+                            "USING_WHEELCHAIR"
+                        ],
+                        "facility": "927",
+                        "stop": "74617"
+                    },
+                    {
+                        "activities": [
+                            "USING_WHEELCHAIR"
+                        ],
+                        "facility": "927",
+                        "stop": "place-sstat"
+                    }
+                ],
+                "lifecycle": "ONGOING",
+                "service_effect": "South Station elevator unavailable",
+                "severity": 3,
+                "short_header": "South Station Elevator 927 (Alewife platform to Silver Line Drop-off platform) unavailable due to maintenance",
+                "timeframe": "ongoing",
+                "updated_at": "2020-09-24T07:41:08-04:00",
+                "url": null
+            },
+            "id": "372389",
+            "links": {
+                "self": "/alerts/372389"
+            },
+            "type": "alert"
+        }
+    ],
+    "jsonapi": {
+        "version": "1.0"
+    },
+    "links": {
+        "first": "https://api-v3.mbta.com/alerts?page[limit]=20&page[offset]=0",
+        "last": "https://api-v3.mbta.com/alerts?page[limit]=20&page[offset]=100",
+        "next": "https://api-v3.mbta.com/alerts?page[limit]=20&page[offset]=20"
+    }
+}
