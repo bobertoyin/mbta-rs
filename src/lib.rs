@@ -1,7 +1,7 @@
 #![deny(missing_docs)]
 #![doc(
-    html_logo_url = "https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/MBTA.svg/1200px-MBTA.svg.png",
-    html_favicon_url = "https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/MBTA.svg/1200px-MBTA.svg.png"
+    html_logo_url = "https://raw.githubusercontent.com/bobertoyin/bobertoyin/main/mbta-rs-logo.png",
+    html_favicon_url = "https://raw.githubusercontent.com/bobertoyin/bobertoyin/main/mbta-rs-logo.png"
 )]
 #![doc = include_str!("../README.md")]
 
