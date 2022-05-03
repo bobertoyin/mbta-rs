@@ -1,6 +1,6 @@
 <!-- PROJECT LOGO -->
 <div align="center">
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/MBTA.svg/1200px-MBTA.svg.png" alt="MBTA Logo" width="80" height="80">
+<img src="https://raw.githubusercontent.com/bobertoyin/bobertoyin/main/mbta-rs-logo.png" alt="MBTA Logo" width="80" height="80">
 <h2>MBTA-RS</h2>
 <p>A simple Rust client for interacting with the <a href="https://www.mbta.com/developers/v3-api">Massachusetts Bay Transport Authority's V3 API</a>*</p>
 <small>*This project is not affiliated with any official development work from the MBTA</small>
