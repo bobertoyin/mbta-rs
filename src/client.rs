@@ -1,5 +1,7 @@
 //! The client for interacting with the V3 API.
 
+use std::collections::{HashMap, HashSet};
+
 use serde::de::DeserializeOwned;
 
 use super::*;
@@ -10,20 +12,34 @@ pub const BASE_URL: &str = "https://api-v3.mbta.com";
 /// Attribute macro for quickly implementing MBTA client endpoints with multiple return objects.
 #[macro_export]
 macro_rules! mbta_endpoint_multiple {
-    (model=$return_type:ident, func=$endpoint_fn:ident) => {
+    (model=$return_type:ident, func=$endpoint_fn:ident, allowed_query_params=$allowed_query_params:expr) => {
         impl Client {
             #[doc = "Returns a [Vec] of"]
             #[doc = stringify!($endpoint_fn)]
             #[doc = "in the MBTA system."]
+            /// 
+            /// Consult the [API swagger docs](https://api-v3.mbta.com/docs/swagger/index.html) for each parameter's meaning and which are required,
+            /// but the request will fail if you include any that are *not* the ones specified below 
+            /// (we limit them to avoid any return type behaviors that we currently can't support).
+            /// 
+            /// # Allowed Query Parameters
+            ///
+            #[doc = concat!("`", stringify!($allowed_query_params), "`")]
+            ///
             /// # Arguments
-            /// * `page_limit` - max number of results per page
-            /// * `page_offset` - zero-based number of results to offset by
+            /// 
+            /// * `query_params` - a [HashMap] of query parameter names to values
             pub fn $endpoint_fn(
                 &self,
-                page_limit: Option<u64>,
-                page_offset: Option<u64>,
+                query_params: HashMap<String, String>,
             ) -> Result<Response<Vec<Resource<$return_type>>>, ClientError> {
-                self.get(stringify!($endpoint_fn), page_limit, page_offset)
+                let allowed_query_params: HashSet<String> = $allowed_query_params.into_iter().map(|s| s.to_string()).collect();
+                for (k, v) in &query_params {
+                    if !allowed_query_params.contains(&k.to_string()) {
+                        return Err(ClientError::InvalidQueryParam(k.to_string(), v.to_string()))
+                    }
+                }
+                self.get(stringify!($endpoint_fn), query_params)
             }
         }
     };
@@ -32,43 +48,156 @@ macro_rules! mbta_endpoint_multiple {
 /// Attribute macro for quickly implementing MBTA client endpoints with single return objects.
 #[macro_export]
 macro_rules! mbta_endpoint_single {
-    (model=$return_type:ident, func=$endpoint_fn:ident, endpoint=$endpoint:expr) => {
+    (model=$return_type:ident, func=$endpoint_fn:ident, endpoint=$endpoint:expr, allowed_query_params=$allowed_query_params:expr) => {
         impl Client {
             #[doc = "Returns a"]
             #[doc = stringify!($endpoint_fn)]
             #[doc = "in the MBTA system given its id."]
+            ///
+            /// Consult the [API swagger docs](https://api-v3.mbta.com/docs/swagger/index.html) for each parameter's meaning and which are required,
+            /// but the request will fail if you include any that are *not* the ones specified below 
+            /// (we limit them to avoid any return type behaviors that we currently can't support).
+            /// 
+            /// # Allowed Query Parameters
+            ///
+            #[doc = concat!("`", stringify!($allowed_query_params), "`")]
+            ///
             /// # Arguments
             #[doc = "* `id` - the id of the"]
             #[doc = stringify!($endpoint_fn)]
             #[doc = "to return"]
+            /// * `query_params` - a [HashMap] of query parameter names to values
             pub fn $endpoint_fn(
                 &self,
                 id: &str,
+                query_params: HashMap<String, String>
             ) -> Result<Response<Resource<$return_type>>, ClientError> {
-                self.get(&format!("{}/{}", $endpoint, id), None, None)
+                let allowed_query_params: HashSet<String> = $allowed_query_params.into_iter().map(|s| s.to_string()).collect();
+                for (k, v) in &query_params {
+                    if !allowed_query_params.contains(&k.to_string()) {
+                        return Err(ClientError::InvalidQueryParam(k.to_string(), v.to_string()))
+                    }
+                }
+                self.get(&format!("{}/{}", $endpoint, id), query_params)
             }
         }
     };
 }
 
-mbta_endpoint_multiple!(model = AlertAttributes, func = alerts);
-mbta_endpoint_multiple!(model = FacilityAttributes, func = facilities);
-mbta_endpoint_multiple!(model = LineAttributes, func = lines);
-mbta_endpoint_multiple!(model = RouteAttributes, func = routes);
-mbta_endpoint_multiple!(model = RoutePatternAttributes, func = route_patterns);
+mbta_endpoint_multiple!(
+    model = AlertAttributes, 
+    func = alerts, 
+    allowed_query_params = [
+        "page[offset]", 
+        "page[limit]", 
+        "sort", 
+        "include",
+        "filter[activity]", 
+        "filter[route_type]", 
+        "filter[direction_id]",
+        "filter[route]",
+        "filter[stop]",
+        "filter[trip]",
+        "filter[facility]",
+        "filter[id]",
+        "filter[banner]",
+        "filter[datetime]",
+        "filter[lifecycle]",
+        "filter[severity]",
+    ]
+);
+mbta_endpoint_multiple!(
+    model = FacilityAttributes, 
+    func = facilities, 
+    allowed_query_params = [
+        "page[offset]",
+        "page[limit]",
+        "sort",
+        "include",
+        "filter[stop]",
+        "filter[type]",
+        ]
+);
+mbta_endpoint_multiple!(
+    model = LineAttributes, 
+    func = lines, 
+    allowed_query_params = [
+        "page[offset]",
+        "page[limit]",
+        "sort",
+        "include",
+        "filter[id]",
+    ]
+);
+mbta_endpoint_multiple!(
+    model = RouteAttributes, 
+    func = routes, 
+    allowed_query_params = [
+        "page[offset]",
+        "page[limit]",
+        "sort",
+        "include",
+        "filter[stop]",
+        "filter[type]",
+        "filter[direction_id]",
+        "filter[date]",
+        "filter[id]",
+    ]
+);
+mbta_endpoint_multiple!(
+    model = RoutePatternAttributes, 
+    func = route_patterns, 
+    allowed_query_params = [
+        "page[offset]",
+        "page[limit]",
+        "sort",
+        "include",
+        "filter[id]",
+        "filter[route]",
+        "filter[direction_id]",
+        "filter[stop]",
+    ]
+);
 
-mbta_endpoint_single!(model = AlertAttributes, func = alert, endpoint = "alerts");
+mbta_endpoint_single!(
+    model = AlertAttributes, 
+    func = alert, 
+    endpoint = "alerts",
+    allowed_query_params = [
+        "include"
+    ]
+);
 mbta_endpoint_single!(
     model = FacilityAttributes,
     func = facility,
-    endpoint = "facilities"
+    endpoint = "facilities",
+    allowed_query_params = [
+        "include"
+    ]
 );
-mbta_endpoint_single!(model = LineAttributes, func = line, endpoint = "lines");
-mbta_endpoint_single!(model = RouteAttributes, func = route, endpoint = "routes");
+mbta_endpoint_single!(
+    model = LineAttributes, 
+    func = line, 
+    endpoint = "lines",
+    allowed_query_params = [
+        "include"
+    ]
+);
+mbta_endpoint_single!(
+    model = RouteAttributes, 
+    func = route, 
+    endpoint = "routes",
+    allowed_query_params = [
+        "include"
+    ]
+);
 mbta_endpoint_single!(
     model = RoutePatternAttributes,
     func = route_pattern,
-    endpoint = "route_patterns"
+    endpoint = "route_patterns",
+    allowed_query_params = [
+        "include"
+    ]
 );
 
 /// Synchronous client for interacting with the MBTA V3 API.
@@ -117,17 +246,15 @@ impl Client {
     }
 
     /// Helper method for making generalized GET requests to any endpoint with any query parameters.
+    /// Presumes that all query parameters given in the [HashMap] are valid.
     ///
     /// # Arguments
     ///
-    /// * `endpoint` - the HTTP endpoint to make a request to
-    /// * `page_limit` - max number of results per page
-    /// * `page_offset` - zero-based number of results to offset by
+    /// * query_params - a [HashMap] of query parameter names to values
     fn get<T: DeserializeOwned>(
         &self,
         endpoint: &str,
-        page_limit: Option<u64>,
-        page_offset: Option<u64>,
+        query_params: HashMap<String, String>,
     ) -> Result<T, ClientError> {
         let path = format!("{}/{}", self.base_url, endpoint);
         let request = ureq::get(&path);
@@ -135,14 +262,7 @@ impl Client {
             Some(key) => request.set("x-api-key", key),
             None => request,
         };
-        let request = match page_limit {
-            Some(limit) => request.query("page[limit]", &limit.to_string()),
-            None => request,
-        };
-        let request = match page_offset {
-            Some(offset) => request.query("page[offset]", &offset.to_string()),
-            None => request,
-        };
+        let request = query_params.iter().fold(request, |r, (k, v)| r.query(k, v));
         request.call()?.into_json().map_err(|e| e.into())
     }
 }
@@ -186,7 +306,7 @@ mod tests_client {
                     from_str(&response_body).expect("failed to parse");
 
                 // Act
-                let actual = client.$method(None, None).unwrap();
+                let actual = client.$method(HashMap::new()).unwrap();
 
                 // Assert
                 mock_endpoint.assert();
@@ -215,7 +335,7 @@ mod tests_client {
                     from_str(&response_body).expect("failed to parse");
 
                 // Act
-                let actual = client.$method("foobar").unwrap();
+                let actual = client.$method("foobar", HashMap::new()).unwrap();
 
                 // Assert
                 mock_endpoint.assert();

@@ -11,6 +11,8 @@ pub enum ClientError {
     IOError(Box<IOError>),
     /// HTTP request errors.
     RequestError(Box<RequestError>),
+    /// Invalid query parameter error.
+    InvalidQueryParam(String, String),
 }
 
 impl Display for ClientError {
@@ -24,6 +26,9 @@ impl Display for ClientError {
             ClientError::RequestError(r) => {
                 write!(f, "request error: ")?;
                 r.fmt(f)
+            }
+            ClientError::InvalidQueryParam(k,v) => {
+                write!(f, "query parameter error: {}={}", k, v)
             }
         }
     }
