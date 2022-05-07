@@ -62,15 +62,12 @@ Here are some necessary things to setup:
 
 Configure a Github Actions pipeline with the following necessary elements:
 
-- `cargo test` step
-- `cargo clippy` step
+- [x] `cargo test` step
+- [x] `cargo clippy` step
+- [x] `cargo fmt check` step
 
 and potential "nice to have" steps:
 
-- destructive `cargo fmt` step?
-- semantic version change check?
-- publish to crates.io on main
-- github version tag on main
 - [convential commits](https://www.conventionalcommits.org/en/v1.0.0/) check
 
 ### **MAINTENANCE** - Benchmarks and Examples
