@@ -23,10 +23,10 @@ pub struct ScheduleAttributes {
     /// Direction in which the trip is traveling: 0 or 1.
     pub direction_id: u8,
     /// Time when the trip departs the given stop.
-    #[serde(with = "mbta_date_format")]
-    pub departure_time: DateTime<FixedOffset>,
+    #[serde(with = "optional_mbta_datetime_format")]
+    pub departure_time: Option<DateTime<FixedOffset>>,
     /// Time when the trip arrives at the given stop.
-    #[serde(with = "optional_mbta_date_format")]
+    #[serde(with = "optional_mbta_datetime_format")]
     pub arrival_time: Option<DateTime<FixedOffset>>,
 }
 

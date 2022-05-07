@@ -11,10 +11,10 @@ pub struct AlertAttributes {
     /// A URL for extra details, such as outline construction or maintenance plans.
     pub url: Option<String>,
     /// Date/Time alert created.
-    #[serde(with = "mbta_date_format")]
+    #[serde(with = "mbta_datetime_format")]
     pub created_at: DateTime<FixedOffset>,
     /// Date/Time alert last updated.
-    #[serde(with = "mbta_date_format")]
+    #[serde(with = "mbta_datetime_format")]
     pub updated_at: DateTime<FixedOffset>,
     /// Summarizes when an alert is in effect.
     pub timeframe: Option<String>,
@@ -47,10 +47,10 @@ pub struct AlertAttributes {
 #[derive(Deserialize, Serialize, Debug, PartialEq, Clone)]
 pub struct ActivePeriod {
     /// Start date for an active alert.
-    #[serde(with = "mbta_date_format")]
+    #[serde(with = "mbta_datetime_format")]
     pub start: DateTime<FixedOffset>,
     /// End date for an active alert.
-    #[serde(with = "optional_mbta_date_format")]
+    #[serde(with = "optional_mbta_datetime_format")]
     pub end: Option<DateTime<FixedOffset>>,
 }
 

@@ -1,0 +1,179 @@
+{
+    "data": [
+        {
+            "attributes": {
+                "added_dates": [
+                    "2022-05-30"
+                ],
+                "added_dates_notes": [
+                    "Memorial Day"
+                ],
+                "description": "Holiday (Sunday schedule)",
+                "end_date": "2022-05-30",
+                "rating_description": "Spring",
+                "rating_end_date": "2022-06-18",
+                "rating_start_date": "2022-03-13",
+                "removed_dates": [],
+                "removed_dates_notes": [],
+                "schedule_name": "Holiday",
+                "schedule_type": "Sunday",
+                "schedule_typicality": 3,
+                "start_date": "2022-05-30",
+                "valid_days": []
+            },
+            "id": "MemorialDay",
+            "links": {
+                "self": "/services/MemorialDay"
+            },
+            "type": "service"
+        },
+        {
+            "attributes": {
+                "added_dates": [],
+                "added_dates_notes": [],
+                "description": "Saturday schedule",
+                "end_date": "2022-06-18",
+                "rating_description": "Spring",
+                "rating_end_date": "2022-06-18",
+                "rating_start_date": "2022-03-13",
+                "removed_dates": [
+                    "2022-05-21"
+                ],
+                "removed_dates_notes": [
+                    null
+                ],
+                "schedule_name": "Saturday",
+                "schedule_type": "Saturday",
+                "schedule_typicality": 1,
+                "start_date": "2022-04-30",
+                "valid_days": [
+                    6
+                ]
+            },
+            "id": "RTL222-hms22016-Sa-01",
+            "links": {
+                "self": "/services/RTL222-hms22016-Sa-01"
+            },
+            "type": "service"
+        },
+        {
+            "attributes": {
+                "added_dates": [],
+                "added_dates_notes": [],
+                "description": "Saturday schedule",
+                "end_date": "2022-05-21",
+                "rating_description": "Spring",
+                "rating_end_date": "2022-06-18",
+                "rating_start_date": "2022-03-13",
+                "removed_dates": [],
+                "removed_dates_notes": [],
+                "schedule_name": "Saturday",
+                "schedule_type": "Saturday",
+                "schedule_typicality": 4,
+                "start_date": "2022-05-21",
+                "valid_days": [
+                    6
+                ]
+            },
+            "id": "RTL222-hms22016-Sa-01-AlfHrd",
+            "links": {
+                "self": "/services/RTL222-hms22016-Sa-01-AlfHrd"
+            },
+            "type": "service"
+        },
+        {
+            "attributes": {
+                "added_dates": [],
+                "added_dates_notes": [],
+                "description": "Sunday schedule",
+                "end_date": "2022-06-12",
+                "rating_description": "Spring",
+                "rating_end_date": "2022-06-18",
+                "rating_start_date": "2022-03-13",
+                "removed_dates": [
+                    "2022-05-22"
+                ],
+                "removed_dates_notes": [
+                    null
+                ],
+                "schedule_name": "Sunday",
+                "schedule_type": "Sunday",
+                "schedule_typicality": 1,
+                "start_date": "2022-05-01",
+                "valid_days": [
+                    7
+                ]
+            },
+            "id": "RTL222-hms22017-Su-01",
+            "links": {
+                "self": "/services/RTL222-hms22017-Su-01"
+            },
+            "type": "service"
+        },
+        {
+            "attributes": {
+                "added_dates": [],
+                "added_dates_notes": [],
+                "description": "Sunday schedule",
+                "end_date": "2022-05-22",
+                "rating_description": "Spring",
+                "rating_end_date": "2022-06-18",
+                "rating_start_date": "2022-03-13",
+                "removed_dates": [],
+                "removed_dates_notes": [],
+                "schedule_name": "Sunday",
+                "schedule_type": "Sunday",
+                "schedule_typicality": 4,
+                "start_date": "2022-05-22",
+                "valid_days": [
+                    7
+                ]
+            },
+            "id": "RTL222-hms22017-Su-01-AlfHrd",
+            "links": {
+                "self": "/services/RTL222-hms22017-Su-01-AlfHrd"
+            },
+            "type": "service"
+        },
+        {
+            "attributes": {
+                "added_dates": [],
+                "added_dates_notes": [],
+                "description": "Weekday schedule",
+                "end_date": "2022-06-17",
+                "rating_description": "Spring",
+                "rating_end_date": "2022-06-18",
+                "rating_start_date": "2022-03-13",
+                "removed_dates": [
+                    "2022-05-30"
+                ],
+                "removed_dates_notes": [
+                    "Memorial Day"
+                ],
+                "schedule_name": "Weekday",
+                "schedule_type": "Weekday",
+                "schedule_typicality": 1,
+                "start_date": "2022-05-02",
+                "valid_days": [
+                    1,
+                    2,
+                    3,
+                    4,
+                    5
+                ]
+            },
+            "id": "SpringWeekday",
+            "links": {
+                "self": "/services/SpringWeekday"
+            },
+            "type": "service"
+        }
+    ],
+    "jsonapi": {
+        "version": "1.0"
+    },
+    "links": {
+        "first": "https://api-v3.mbta.com/services?filter[route]=Red&page[limit]=20&page[offset]=0",
+        "last": "https://api-v3.mbta.com/services?filter[route]=Red&page[limit]=20&page[offset]=0"
+    }
+}

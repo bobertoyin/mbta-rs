@@ -5,78 +5,6 @@ use std::collections::HashMap;
 use serde::{Deserialize, Serialize};
 use serde_json::Value;
 
-/// Serialization and deserialization for the MBTA datetime format.
-pub mod mbta_date_format {
-    use chrono::{DateTime, FixedOffset};
-    use serde::{Deserialize, Deserializer, Serializer};
-
-    /// Datetime string format.
-    pub const FORMAT: &str = "%FT%T%:z";
-
-    /// Serialize an MBTA datetime.
-    ///
-    /// # Arguments
-    ///
-    /// * `date` - the datetime
-    /// * `serializer` - the serializer
-    pub fn serialize<S: Serializer>(datetime: &DateTime<FixedOffset>, serializer: S) -> Result<S::Ok, S::Error> {
-        serializer.serialize_str(&format!("{}", datetime.format(FORMAT)))
-    }
-
-    /// Attempt to deserialize an MBTA datetime.
-    ///
-    /// # Arguments
-    ///
-    /// * `deserializer` - the deserializer
-    pub fn deserialize<'de, D: Deserializer<'de>>(deserializer: D) -> Result<DateTime<FixedOffset>, D::Error> {
-        let s = String::deserialize(deserializer)?;
-        DateTime::parse_from_str(&s, FORMAT).map_err(serde::de::Error::custom)
-    }
-}
-
-/// Serialization and deserialization for an optional MBTA datetime format.
-pub mod optional_mbta_date_format {
-    use chrono::{DateTime, FixedOffset};
-    use serde::{Deserialize, Deserializer, Serializer};
-
-    use super::mbta_date_format::{serialize as date_serialize, FORMAT};
-
-    /// Serialize an optional MBTA datetime.
-    ///
-    /// # Arguments
-    ///
-    /// * `datetime` - the optional datetime
-    /// * `serializer` - the serializer
-    pub fn serialize<S>(datetime: &Option<DateTime<FixedOffset>>, serializer: S) -> Result<S::Ok, S::Error>
-    where
-        S: Serializer,
-    {
-        match datetime {
-            Some(d) => date_serialize(d, serializer),
-            None => serializer.serialize_none(),
-        }
-    }
-
-    /// Attempt to deserialize an optional MBTA datetime.
-    ///
-    /// # Arguments
-    ///
-    /// * `deserializer` - the deserializer
-    pub fn deserialize<'de, D>(deserializer: D) -> Result<Option<DateTime<FixedOffset>>, D::Error>
-    where
-        D: Deserializer<'de>,
-    {
-        let s = Option::<String>::deserialize(deserializer)?;
-        match s {
-            Some(s) => {
-                let date = DateTime::parse_from_str(&s, FORMAT).map_err(serde::de::Error::custom)?;
-                Ok(Some(date))
-            }
-            None => Ok(None),
-        }
-    }
-}
-
 /// MBTA V3 API response objects.
 #[derive(Deserialize, Serialize, Debug, PartialEq, Clone)]
 #[serde(untagged)]
@@ -131,11 +59,14 @@ pub struct APIVersion {
 #[derive(Deserialize, Serialize, Debug, PartialEq, Clone)]
 pub struct Links {
     /// HTTP link to the first page of the endpoint.
-    pub first: String,
+    #[serde(default)]
+    pub first: Option<String>,
     /// HTTP link to the next page of the endpoint.
-    pub next: String,
+    #[serde(default)]
+    pub next: Option<String>,
     /// HTTP link to the last page of the endpoint.
-    pub last: String,
+    #[serde(default)]
+    pub last: Option<String>,
 }
 
 /// Some MBTA resource, bundling common metadata with the actual model attributes.

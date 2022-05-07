@@ -111,13 +111,30 @@ mbta_endpoint_multiple!(
     allowed_query_params = ["page[offset]", "page[limit]", "sort", "filter[id]",]
 );
 mbta_endpoint_multiple!(
+    model = PredictionAttributes,
+    func = predictions,
+    allowed_query_params = [
+        "page[offset]",
+        "page[limit]",
+        "sort",
+        "filter[latitude]",
+        "filter[longitude]",
+        "filter[radius]",
+        "filter[direction_id]",
+        "filter[route_type]",
+        "filter[stop]",
+        "filter[route]",
+        "filter[trip]",
+        "filter[route_pattern]",
+    ]
+);
+mbta_endpoint_multiple!(
     model = RouteAttributes,
     func = routes,
     allowed_query_params = [
         "page[offset]",
         "page[limit]",
         "sort",
-        "include",
         "filter[stop]",
         "filter[type]",
         "filter[direction_id]",
@@ -132,7 +149,6 @@ mbta_endpoint_multiple!(
         "page[offset]",
         "page[limit]",
         "sort",
-        "include",
         "filter[id]",
         "filter[route]",
         "filter[direction_id]",
@@ -157,6 +173,11 @@ mbta_endpoint_multiple!(
         "filter[stop_sequence]",
     ]
 );
+mbta_endpoint_multiple!(
+    model = ServiceAttributes,
+    func = services,
+    allowed_query_params = ["page[offset]", "page[limit]", "sort", "filter[id]", "filter[route]",]
+);
 
 mbta_endpoint_single!(model = AlertAttributes, func = alert, endpoint = "alerts", allowed_query_params = []);
 mbta_endpoint_single!(model = FacilityAttributes, func = facility, endpoint = "facilities", allowed_query_params = []);
@@ -168,6 +189,7 @@ mbta_endpoint_single!(
     endpoint = "route_patterns",
     allowed_query_params = []
 );
+mbta_endpoint_single!(model = ServiceAttributes, func = service, endpoint = "services", allowed_query_params = []);
 
 /// Synchronous client for interacting with the MBTA V3 API.
 #[derive(Debug, Clone, PartialEq)]
@@ -232,8 +254,7 @@ impl Client {
         let try_success: Result<ResponseSuccess<T>, JSONError> = from_value(json.clone());
         match try_success {
             Ok(result) => Ok(result.into()),
-            Err(e) => {
-                println!("{:?}", e);
+            Err(_e) => {
                 let try_error: Result<ResponseError, JSONError> = from_value(json);
                 try_error.map(|r| r.into()).map_err(|e| e.into())
             }
@@ -328,9 +349,11 @@ mod tests_client {
     test_from_json_multiple!(model = AlertAttributes, test_name = test_client_alerts, method = alerts);
     test_from_json_multiple!(model = FacilityAttributes, test_name = test_client_facilities, method = facilities);
     test_from_json_multiple!(model = LineAttributes, test_name = test_client_lines, method = lines);
+    test_from_json_multiple!(model = PredictionAttributes, test_name = test_client_predictions, method = predictions);
     test_from_json_multiple!(model = RouteAttributes, test_name = test_client_routes, method = routes);
     test_from_json_multiple!(model = RoutePatternAttributes, test_name = test_client_route_patterns, method = route_patterns);
     test_from_json_multiple!(model = ScheduleAttributes, test_name = test_client_schedules, method = schedules);
+    test_from_json_multiple!(model = ServiceAttributes, test_name = test_client_services, method = services);
 
     test_from_json_single!(model = AlertAttributes, test_name = test_client_alert, method = alert, endpoint = "alerts");
     test_from_json_single!(
@@ -347,6 +370,7 @@ mod tests_client {
         method = route_pattern,
         endpoint = "route_patterns"
     );
+    test_from_json_single!(model = ServiceAttributes, test_name = test_client_service, method = service, endpoint = "services");
 
     #[rstest]
     fn test_client_without_key() {

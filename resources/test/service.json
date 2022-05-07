@@ -1,0 +1,32 @@
+{
+    "data": {
+        "attributes": {
+            "added_dates": [
+                "2022-05-30"
+            ],
+            "added_dates_notes": [
+                "Memorial Day"
+            ],
+            "description": "Holiday (Sunday schedule)",
+            "end_date": "2022-05-30",
+            "rating_description": "Spring",
+            "rating_end_date": "2022-06-18",
+            "rating_start_date": "2022-03-13",
+            "removed_dates": [],
+            "removed_dates_notes": [],
+            "schedule_name": "Holiday",
+            "schedule_type": "Sunday",
+            "schedule_typicality": 3,
+            "start_date": "2022-05-30",
+            "valid_days": []
+        },
+        "id": "MemorialDay",
+        "links": {
+            "self": "/services/MemorialDay"
+        },
+        "type": "service"
+    },
+    "jsonapi": {
+        "version": "1.0"
+    }
+}

@@ -1,0 +1,772 @@
+{
+    "data": [
+        {
+            "attributes": {
+                "arrival_time": null,
+                "departure_time": "2022-05-07T18:05:04-04:00",
+                "direction_id": 1,
+                "schedule_relationship": null,
+                "status": null,
+                "stop_sequence": 50
+            },
+            "id": "prediction-50891383-70094-50",
+            "relationships": {
+                "route": {
+                    "data": {
+                        "id": "Red",
+                        "type": "route"
+                    }
+                },
+                "stop": {
+                    "data": {
+                        "id": "70094",
+                        "type": "stop"
+                    }
+                },
+                "trip": {
+                    "data": {
+                        "id": "50891383",
+                        "type": "trip"
+                    }
+                },
+                "vehicle": {
+                    "data": {
+                        "id": "R-5470618E",
+                        "type": "vehicle"
+                    }
+                }
+            },
+            "type": "prediction"
+        },
+        {
+            "attributes": {
+                "arrival_time": null,
+                "departure_time": "2022-05-07T18:10:30-04:00",
+                "direction_id": 1,
+                "schedule_relationship": null,
+                "status": null,
+                "stop_sequence": 50
+            },
+            "id": "prediction-50891384-70094-50",
+            "relationships": {
+                "route": {
+                    "data": {
+                        "id": "Red",
+                        "type": "route"
+                    }
+                },
+                "stop": {
+                    "data": {
+                        "id": "70094",
+                        "type": "stop"
+                    }
+                },
+                "trip": {
+                    "data": {
+                        "id": "50891384",
+                        "type": "trip"
+                    }
+                },
+                "vehicle": {
+                    "data": {
+                        "id": "R-54706405",
+                        "type": "vehicle"
+                    }
+                }
+            },
+            "type": "prediction"
+        },
+        {
+            "attributes": {
+                "arrival_time": null,
+                "departure_time": "2022-05-07T18:25:23-04:00",
+                "direction_id": 1,
+                "schedule_relationship": null,
+                "status": null,
+                "stop_sequence": 50
+            },
+            "id": "prediction-50891385-70094-50",
+            "relationships": {
+                "route": {
+                    "data": {
+                        "id": "Red",
+                        "type": "route"
+                    }
+                },
+                "stop": {
+                    "data": {
+                        "id": "70094",
+                        "type": "stop"
+                    }
+                },
+                "trip": {
+                    "data": {
+                        "id": "50891385",
+                        "type": "trip"
+                    }
+                },
+                "vehicle": {
+                    "data": {
+                        "id": "R-54706406",
+                        "type": "vehicle"
+                    }
+                }
+            },
+            "type": "prediction"
+        },
+        {
+            "attributes": {
+                "arrival_time": null,
+                "departure_time": "2022-05-07T18:41:48-04:00",
+                "direction_id": 1,
+                "schedule_relationship": null,
+                "status": null,
+                "stop_sequence": 50
+            },
+            "id": "prediction-50891386-70094-50",
+            "relationships": {
+                "route": {
+                    "data": {
+                        "id": "Red",
+                        "type": "route"
+                    }
+                },
+                "stop": {
+                    "data": {
+                        "id": "70094",
+                        "type": "stop"
+                    }
+                },
+                "trip": {
+                    "data": {
+                        "id": "50891386",
+                        "type": "trip"
+                    }
+                },
+                "vehicle": {
+                    "data": {
+                        "id": "R-54706575",
+                        "type": "vehicle"
+                    }
+                }
+            },
+            "type": "prediction"
+        },
+        {
+            "attributes": {
+                "arrival_time": null,
+                "departure_time": "2022-05-07T18:47:00-04:00",
+                "direction_id": 1,
+                "schedule_relationship": null,
+                "status": null,
+                "stop_sequence": 50
+            },
+            "id": "prediction-50891387-70094-50",
+            "relationships": {
+                "route": {
+                    "data": {
+                        "id": "Red",
+                        "type": "route"
+                    }
+                },
+                "stop": {
+                    "data": {
+                        "id": "70094",
+                        "type": "stop"
+                    }
+                },
+                "trip": {
+                    "data": {
+                        "id": "50891387",
+                        "type": "trip"
+                    }
+                },
+                "vehicle": {
+                    "data": {
+                        "id": "R-547064C2",
+                        "type": "vehicle"
+                    }
+                }
+            },
+            "type": "prediction"
+        },
+        {
+            "attributes": {
+                "arrival_time": null,
+                "departure_time": "2022-05-07T17:59:44-04:00",
+                "direction_id": 0,
+                "schedule_relationship": null,
+                "status": null,
+                "stop_sequence": 1
+            },
+            "id": "prediction-50891466-Alewife-02-1",
+            "relationships": {
+                "route": {
+                    "data": {
+                        "id": "Red",
+                        "type": "route"
+                    }
+                },
+                "stop": {
+                    "data": {
+                        "id": "Alewife-02",
+                        "type": "stop"
+                    }
+                },
+                "trip": {
+                    "data": {
+                        "id": "50891466",
+                        "type": "trip"
+                    }
+                },
+                "vehicle": {
+                    "data": {
+                        "id": "R-547064C2",
+                        "type": "vehicle"
+                    }
+                }
+            },
+            "type": "prediction"
+        },
+        {
+            "attributes": {
+                "arrival_time": null,
+                "departure_time": "2022-05-07T18:15:14-04:00",
+                "direction_id": 0,
+                "schedule_relationship": null,
+                "status": null,
+                "stop_sequence": 1
+            },
+            "id": "prediction-50891467-70061-1",
+            "relationships": {
+                "route": {
+                    "data": {
+                        "id": "Red",
+                        "type": "route"
+                    }
+                },
+                "stop": {
+                    "data": {
+                        "id": "70061",
+                        "type": "stop"
+                    }
+                },
+                "trip": {
+                    "data": {
+                        "id": "50891467",
+                        "type": "trip"
+                    }
+                },
+                "vehicle": {
+                    "data": {
+                        "id": "R-54706316",
+                        "type": "vehicle"
+                    }
+                }
+            },
+            "type": "prediction"
+        },
+        {
+            "attributes": {
+                "arrival_time": null,
+                "departure_time": "2022-05-07T18:34:52-04:00",
+                "direction_id": 0,
+                "schedule_relationship": null,
+                "status": null,
+                "stop_sequence": 1
+            },
+            "id": "prediction-50891468-70061-1",
+            "relationships": {
+                "route": {
+                    "data": {
+                        "id": "Red",
+                        "type": "route"
+                    }
+                },
+                "stop": {
+                    "data": {
+                        "id": "70061",
+                        "type": "stop"
+                    }
+                },
+                "trip": {
+                    "data": {
+                        "id": "50891468",
+                        "type": "trip"
+                    }
+                },
+                "vehicle": {
+                    "data": {
+                        "id": "R-547065A9",
+                        "type": "vehicle"
+                    }
+                }
+            },
+            "type": "prediction"
+        },
+        {
+            "attributes": {
+                "arrival_time": null,
+                "departure_time": "2022-05-07T18:04:00-04:00",
+                "direction_id": 1,
+                "schedule_relationship": null,
+                "status": null,
+                "stop_sequence": 1
+            },
+            "id": "prediction-50891557-Braintree-01-1",
+            "relationships": {
+                "route": {
+                    "data": {
+                        "id": "Red",
+                        "type": "route"
+                    }
+                },
+                "stop": {
+                    "data": {
+                        "id": "Braintree-01",
+                        "type": "stop"
+                    }
+                },
+                "trip": {
+                    "data": {
+                        "id": "50891557",
+                        "type": "trip"
+                    }
+                },
+                "vehicle": {
+                    "data": {
+                        "id": "R-547063FD",
+                        "type": "vehicle"
+                    }
+                }
+            },
+            "type": "prediction"
+        },
+        {
+            "attributes": {
+                "arrival_time": null,
+                "departure_time": "2022-05-07T18:17:00-04:00",
+                "direction_id": 1,
+                "schedule_relationship": null,
+                "status": null,
+                "stop_sequence": 1
+            },
+            "id": "prediction-50891558-70105-1",
+            "relationships": {
+                "route": {
+                    "data": {
+                        "id": "Red",
+                        "type": "route"
+                    }
+                },
+                "stop": {
+                    "data": {
+                        "id": "70105",
+                        "type": "stop"
+                    }
+                },
+                "trip": {
+                    "data": {
+                        "id": "50891558",
+                        "type": "trip"
+                    }
+                },
+                "vehicle": {
+                    "data": {
+                        "id": "R-54705C52",
+                        "type": "vehicle"
+                    }
+                }
+            },
+            "type": "prediction"
+        },
+        {
+            "attributes": {
+                "arrival_time": null,
+                "departure_time": "2022-05-07T18:31:00-04:00",
+                "direction_id": 1,
+                "schedule_relationship": null,
+                "status": null,
+                "stop_sequence": 1
+            },
+            "id": "prediction-50891559-70105-1",
+            "relationships": {
+                "route": {
+                    "data": {
+                        "id": "Red",
+                        "type": "route"
+                    }
+                },
+                "stop": {
+                    "data": {
+                        "id": "70105",
+                        "type": "stop"
+                    }
+                },
+                "trip": {
+                    "data": {
+                        "id": "50891559",
+                        "type": "trip"
+                    }
+                },
+                "vehicle": {
+                    "data": {
+                        "id": "R-54706357",
+                        "type": "vehicle"
+                    }
+                }
+            },
+            "type": "prediction"
+        },
+        {
+            "attributes": {
+                "arrival_time": null,
+                "departure_time": "2022-05-07T18:44:00-04:00",
+                "direction_id": 1,
+                "schedule_relationship": null,
+                "status": null,
+                "stop_sequence": 1
+            },
+            "id": "prediction-50891560-70105-1",
+            "relationships": {
+                "route": {
+                    "data": {
+                        "id": "Red",
+                        "type": "route"
+                    }
+                },
+                "stop": {
+                    "data": {
+                        "id": "70105",
+                        "type": "stop"
+                    }
+                },
+                "trip": {
+                    "data": {
+                        "id": "50891560",
+                        "type": "trip"
+                    }
+                },
+                "vehicle": {
+                    "data": {
+                        "id": "R-54703C68",
+                        "type": "vehicle"
+                    }
+                }
+            },
+            "type": "prediction"
+        },
+        {
+            "attributes": {
+                "arrival_time": null,
+                "departure_time": "2022-05-07T18:58:00-04:00",
+                "direction_id": 1,
+                "schedule_relationship": null,
+                "status": null,
+                "stop_sequence": 1
+            },
+            "id": "prediction-50891561-70105-1",
+            "relationships": {
+                "route": {
+                    "data": {
+                        "id": "Red",
+                        "type": "route"
+                    }
+                },
+                "stop": {
+                    "data": {
+                        "id": "70105",
+                        "type": "stop"
+                    }
+                },
+                "trip": {
+                    "data": {
+                        "id": "50891561",
+                        "type": "trip"
+                    }
+                },
+                "vehicle": {
+                    "data": {
+                        "id": "R-54705F33",
+                        "type": "vehicle"
+                    }
+                }
+            },
+            "type": "prediction"
+        },
+        {
+            "attributes": {
+                "arrival_time": null,
+                "departure_time": "2022-05-07T18:01:44-04:00",
+                "direction_id": 0,
+                "schedule_relationship": null,
+                "status": "Stopped at station",
+                "stop_sequence": 1
+            },
+            "id": "prediction-50891636-Alewife-01-1",
+            "relationships": {
+                "route": {
+                    "data": {
+                        "id": "Red",
+                        "type": "route"
+                    }
+                },
+                "stop": {
+                    "data": {
+                        "id": "Alewife-01",
+                        "type": "stop"
+                    }
+                },
+                "trip": {
+                    "data": {
+                        "id": "50891636",
+                        "type": "trip"
+                    }
+                },
+                "vehicle": {
+                    "data": {
+                        "id": "R-54705F33",
+                        "type": "vehicle"
+                    }
+                }
+            },
+            "type": "prediction"
+        },
+        {
+            "attributes": {
+                "arrival_time": null,
+                "departure_time": "2022-05-07T18:06:00-04:00",
+                "direction_id": 0,
+                "schedule_relationship": null,
+                "status": null,
+                "stop_sequence": 1
+            },
+            "id": "prediction-50891637-70061-1",
+            "relationships": {
+                "route": {
+                    "data": {
+                        "id": "Red",
+                        "type": "route"
+                    }
+                },
+                "stop": {
+                    "data": {
+                        "id": "70061",
+                        "type": "stop"
+                    }
+                },
+                "trip": {
+                    "data": {
+                        "id": "50891637",
+                        "type": "trip"
+                    }
+                },
+                "vehicle": {
+                    "data": {
+                        "id": "R-54705F5A",
+                        "type": "vehicle"
+                    }
+                }
+            },
+            "type": "prediction"
+        },
+        {
+            "attributes": {
+                "arrival_time": null,
+                "departure_time": "2022-05-07T18:21:02-04:00",
+                "direction_id": 0,
+                "schedule_relationship": null,
+                "status": null,
+                "stop_sequence": 1
+            },
+            "id": "prediction-50891638-70061-1",
+            "relationships": {
+                "route": {
+                    "data": {
+                        "id": "Red",
+                        "type": "route"
+                    }
+                },
+                "stop": {
+                    "data": {
+                        "id": "70061",
+                        "type": "stop"
+                    }
+                },
+                "trip": {
+                    "data": {
+                        "id": "50891638",
+                        "type": "trip"
+                    }
+                },
+                "vehicle": {
+                    "data": {
+                        "id": "R-54705E20",
+                        "type": "vehicle"
+                    }
+                }
+            },
+            "type": "prediction"
+        },
+        {
+            "attributes": {
+                "arrival_time": null,
+                "departure_time": "2022-05-07T18:37:06-04:00",
+                "direction_id": 0,
+                "schedule_relationship": null,
+                "status": null,
+                "stop_sequence": 1
+            },
+            "id": "prediction-50891639-70061-1",
+            "relationships": {
+                "route": {
+                    "data": {
+                        "id": "Red",
+                        "type": "route"
+                    }
+                },
+                "stop": {
+                    "data": {
+                        "id": "70061",
+                        "type": "stop"
+                    }
+                },
+                "trip": {
+                    "data": {
+                        "id": "50891639",
+                        "type": "trip"
+                    }
+                },
+                "vehicle": {
+                    "data": {
+                        "id": "R-547056AF",
+                        "type": "vehicle"
+                    }
+                }
+            },
+            "type": "prediction"
+        },
+        {
+            "attributes": {
+                "arrival_time": null,
+                "departure_time": "2022-05-07T18:48:28-04:00",
+                "direction_id": 0,
+                "schedule_relationship": null,
+                "status": null,
+                "stop_sequence": 1
+            },
+            "id": "prediction-50891640-70061-1",
+            "relationships": {
+                "route": {
+                    "data": {
+                        "id": "Red",
+                        "type": "route"
+                    }
+                },
+                "stop": {
+                    "data": {
+                        "id": "70061",
+                        "type": "stop"
+                    }
+                },
+                "trip": {
+                    "data": {
+                        "id": "50891640",
+                        "type": "trip"
+                    }
+                },
+                "vehicle": {
+                    "data": {
+                        "id": "R-547060E4",
+                        "type": "vehicle"
+                    }
+                }
+            },
+            "type": "prediction"
+        },
+        {
+            "attributes": {
+                "arrival_time": "2022-05-07T17:58:56-04:00",
+                "departure_time": "2022-05-07T18:00:15-04:00",
+                "direction_id": 0,
+                "schedule_relationship": null,
+                "status": null,
+                "stop_sequence": 70
+            },
+            "id": "prediction-50891464-70075-70",
+            "relationships": {
+                "route": {
+                    "data": {
+                        "id": "Red",
+                        "type": "route"
+                    }
+                },
+                "stop": {
+                    "data": {
+                        "id": "70075",
+                        "type": "stop"
+                    }
+                },
+                "trip": {
+                    "data": {
+                        "id": "50891464",
+                        "type": "trip"
+                    }
+                },
+                "vehicle": {
+                    "data": {
+                        "id": "R-54706406",
+                        "type": "vehicle"
+                    }
+                }
+            },
+            "type": "prediction"
+        },
+        {
+            "attributes": {
+                "arrival_time": "2022-05-07T17:59:07-04:00",
+                "departure_time": "2022-05-07T18:00:01-04:00",
+                "direction_id": 1,
+                "schedule_relationship": null,
+                "status": null,
+                "stop_sequence": 180
+            },
+            "id": "prediction-50891381-70070-180",
+            "relationships": {
+                "route": {
+                    "data": {
+                        "id": "Red",
+                        "type": "route"
+                    }
+                },
+                "stop": {
+                    "data": {
+                        "id": "70070",
+                        "type": "stop"
+                    }
+                },
+                "trip": {
+                    "data": {
+                        "id": "50891381",
+                        "type": "trip"
+                    }
+                },
+                "vehicle": {
+                    "data": {
+                        "id": "R-54706316",
+                        "type": "vehicle"
+                    }
+                }
+            },
+            "type": "prediction"
+        }
+    ],
+    "jsonapi": {
+        "version": "1.0"
+    },
+    "links": {
+        "first": "https://api-v3.mbta.com/predictions?filter[route]=Red&page[limit]=20&page[offset]=0",
+        "last": "https://api-v3.mbta.com/predictions?filter[route]=Red&page[limit]=20&page[offset]=420",
+        "next": "https://api-v3.mbta.com/predictions?filter[route]=Red&page[limit]=20&page[offset]=20"
+    }
+}
