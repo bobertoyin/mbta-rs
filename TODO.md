@@ -2,7 +2,7 @@
 |:----------------:|:--------------:|:--------:|:----------:|:-------------------:|
 |     Alert(s)     |        X       |    X     |     X      |          X          |
 |  Facilit(y/ies)  |        X       |    X     |     X      |          X          |
-|      Line(s)     |        X       |    X     |            |          X          |
+|      Line(s)     |        X       |    X     |     X      |          X          |
 |  LiveFacility(?) |                |          |            |                     |
 |    Predictions   |                |          |            |                     |
 |     Route(s)     |        X       |    X     |     X      |          X          |
