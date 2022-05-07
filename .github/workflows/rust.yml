@@ -9,8 +9,8 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      uses: actions/checkout@v3
-        run: cargo test --verbose
+      - uses: actions/checkout@v3
+      - run: cargo test --verbose
   lint:
     runs-on: ubuntu-latest
     steps:
