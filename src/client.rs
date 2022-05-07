@@ -7,12 +7,12 @@ use super::*;
 /// Base url for client request endpoints.
 pub const BASE_URL: &str = "https://api-v3.mbta.com";
 
-/// Procedural macro for quickly implementing MBTA client endpoints with multiple return objects.
+/// Attribute macro for quickly implementing MBTA client endpoints with multiple return objects.
 #[macro_export]
 macro_rules! mbta_endpoint_multiple {
     (model=$return_type:ident, func=$endpoint_fn:ident) => {
         impl Client {
-            #[doc = "Returns a list of"]
+            #[doc = "Returns a [Vec] of"]
             #[doc = stringify!($endpoint_fn)]
             #[doc = "in the MBTA system."]
             /// # Arguments
@@ -29,7 +29,7 @@ macro_rules! mbta_endpoint_multiple {
     };
 }
 
-/// Procedural macro for quickly implementing MBTA client endpoints with single return objects.
+/// Attribute macro for quickly implementing MBTA client endpoints with single return objects.
 #[macro_export]
 macro_rules! mbta_endpoint_single {
     (model=$return_type:ident, func=$endpoint_fn:ident, endpoint=$endpoint:expr) => {
@@ -51,17 +51,52 @@ macro_rules! mbta_endpoint_single {
     };
 }
 
-mbta_endpoint_multiple!(model=AlertAttributes, func=alerts);
-mbta_endpoint_multiple!(model=FacilityAttributes, func=facilities);
-mbta_endpoint_multiple!(model=LineAttributes, func=lines);
-mbta_endpoint_multiple!(model=RouteAttributes, func=routes);
-mbta_endpoint_multiple!(model=RoutePatternAttributes, func=route_patterns);
+mbta_endpoint_multiple!(
+    model = AlertAttributes,
+    func = alerts
+);
+mbta_endpoint_multiple!(
+    model = FacilityAttributes,
+    func = facilities
+);
+mbta_endpoint_multiple!(
+    model = LineAttributes,
+    func = lines
+);
+mbta_endpoint_multiple!(
+    model = RouteAttributes,
+    func = routes
+);
+mbta_endpoint_multiple!(
+    model = RoutePatternAttributes,
+    func = route_patterns
+);
 
-mbta_endpoint_single!(model=AlertAttributes, func=alert, endpoint="alerts");
-mbta_endpoint_single!(model=FacilityAttributes, func=facility, endpoint="facilities");
-mbta_endpoint_single!(model=LineAttributes, func=line, endpoint="lines");
-mbta_endpoint_single!(model=RouteAttributes, func=route, endpoint="routes");
-mbta_endpoint_single!(model=RoutePatternAttributes, func=route_pattern, endpoint="route_patterns");
+mbta_endpoint_single!(
+    model = AlertAttributes, 
+    func = alert, 
+    endpoint = "alerts"
+);
+mbta_endpoint_single!(
+    model = FacilityAttributes,
+    func = facility,
+    endpoint = "facilities"
+);
+mbta_endpoint_single!(
+    model = LineAttributes,
+    func = line, 
+    endpoint = "lines"
+);
+mbta_endpoint_single!(
+    model = RouteAttributes, 
+    func = route, 
+    endpoint = "routes"
+);
+mbta_endpoint_single!(
+    model = RoutePatternAttributes,
+    func = route_pattern,
+    endpoint = "route_patterns"
+);
 
 /// Synchronous client for interacting with the MBTA V3 API.
 #[derive(Debug, Clone, PartialEq)]
@@ -158,6 +193,121 @@ mod tests_client {
         contents
     }
 
+    #[macro_export]
+    macro_rules! test_from_json_multiple {
+        (model=$return_type:ty, test_name=$test_name:ident, method=$method:ident) => {
+            #[rstest]
+            #[case::valid_response(concat!(stringify!($method), ".json"))]
+            #[should_panic]
+            #[case::invalid_response("bad_request.json")]
+            fn $test_name(#[case] file_path: &str) {
+                // Arrange
+                let response_body = load_json_test_file_contents(file_path);
+                let mock_server = MockServer::start();
+                let mock_endpoint = mock_server.mock(|when, then| {
+                    when.method(GET).path(concat!("/", stringify!($method)));
+                    then.status(200).body(&response_body);
+                });
+                let client = Client::with_url(mock_server.base_url());
+                let expected: Response<Vec<Resource<$return_type>>> =
+                    from_str(&response_body).expect("failed to parse");
+
+                // Act
+                let actual = client.$method(None, None).unwrap();
+
+                // Assert
+                mock_endpoint.assert();
+                assert_eq!(actual, expected);
+            }
+        };
+    }
+
+    #[macro_export]
+    macro_rules! test_from_json_single {
+        (model=$return_type:ty, test_name=$test_name:ident, method=$method:ident, endpoint=$endpoint:expr) => {
+            #[rstest]
+            #[case::valid_response(concat!(stringify!($method), ".json"))]
+            #[should_panic]
+            #[case::invalid_response("bad_request.json")]
+            fn $test_name(#[case] file_path: &str) {
+                // Arrange
+                let response_body = load_json_test_file_contents(file_path);
+                let mock_server = MockServer::start();
+                let mock_endpoint = mock_server.mock(|when, then| {
+                    when.method(GET).path(concat!("/", $endpoint, "/foobar"));
+                    then.status(200).body(&response_body);
+                });
+                let client = Client::with_url(mock_server.base_url());
+                let expected: Response<Resource<$return_type>> =
+                    from_str(&response_body).expect("failed to parse");
+
+                // Act
+                let actual = client.$method("foobar").unwrap();
+
+                // Assert
+                mock_endpoint.assert();
+                assert_eq!(actual, expected);
+            }
+        };
+    }
+
+    test_from_json_multiple!(
+        model=AlertAttributes, 
+        test_name=test_client_alerts,
+        method=alerts
+    );
+    test_from_json_multiple!(
+        model=FacilityAttributes, 
+        test_name=test_client_facilities,
+        method=facilities
+    );
+    test_from_json_multiple!(
+        model=LineAttributes, 
+        test_name=test_client_lines,
+        method=lines
+    );
+    test_from_json_multiple!(
+        model=RouteAttributes, 
+        test_name=test_client_routes,
+        method=routes
+    );
+    test_from_json_multiple!(
+        model=RoutePatternAttributes, 
+        test_name=test_client_route_patterns,
+        method=route_patterns
+    );
+
+    test_from_json_single!(
+        model=AlertAttributes, 
+        test_name=test_client_alert,
+        method=alert, 
+        endpoint="alerts"
+    );
+    test_from_json_single!(
+        model=FacilityAttributes, 
+        test_name=test_client_facility,
+        method=facility, 
+        endpoint="facilities"
+    );
+    test_from_json_single!(
+        model=LineAttributes, 
+        test_name=test_client_line,
+        method=line, 
+        endpoint="lines"
+    );
+    test_from_json_single!(
+        model=RouteAttributes, 
+        test_name=test_client_route,
+        method=route, 
+        endpoint="routes"
+    );
+    test_from_json_single!(
+        model=RoutePatternAttributes, 
+        test_name=test_client_route_pattern,
+        method=route_pattern, 
+        endpoint="route_patterns"
+    );
+
     #[rstest]
     fn test_client_without_key() {
         // Arrange
@@ -200,198 +350,6 @@ mod tests_client {
         let actual = Client::with_url("https://foobar.com");
 
         // Assert
-        assert_eq!(actual, expected);
-    }
-
-    #[rstest]
-    #[case::valid_response("alerts.json")]
-    #[should_panic]
-    #[case::invalid_response("bad_request.json")]
-    fn tests_client_alerts(#[case] file_path: &str) {
-        // Arrange
-        let response_body = load_json_test_file_contents(file_path);
-        let mock_server = MockServer::start();
-        let mock_endpoint = mock_server.mock(|when, then| {
-            when.method(GET).path("/alerts");
-            then.status(200).body(&response_body);
-        });
-        let client = Client::with_url(mock_server.base_url());
-        let expected: Response<Vec<Resource<AlertAttributes>>> =
-            from_str(&response_body).expect("failed to parse");
-
-        // Act
-        let actual = client.alerts(None, None).unwrap();
-
-        // Assert
-        mock_endpoint.assert();
-        assert_eq!(actual, expected);
-    }
-
-    #[rstest]
-    #[case::valid_response("alert.json")]
-    #[should_panic]
-    #[case::invalid_response("bad_request.json")]
-    fn tests_client_alert(#[case] file_path: &str) {
-        // Arrange
-        let response_body = load_json_test_file_contents(file_path);
-        let mock_server = MockServer::start();
-        let mock_endpoint = mock_server.mock(|when, then| {
-            when.method(GET).path("/alerts/foobar");
-            then.status(200).body(&response_body);
-        });
-        let client = Client::with_url(mock_server.base_url());
-        let expected: Response<Resource<AlertAttributes>> =
-            from_str(&response_body).expect("failed to parse");
-
-        // Act
-        let actual = client.alert("foobar").unwrap();
-
-        // Assert
-        mock_endpoint.assert();
-        assert_eq!(actual, expected);
-    }
-
-    #[rstest]
-    #[case::valid_response("facilities.json")]
-    #[should_panic]
-    #[case::invalid_response("bad_request.json")]
-    fn tests_client_facilities(#[case] file_path: &str) {
-        // Arrange
-        let response_body = load_json_test_file_contents(file_path);
-        let mock_server = MockServer::start();
-        let mock_endpoint = mock_server.mock(|when, then| {
-            when.method(GET).path("/facilities");
-            then.status(200).body(&response_body);
-        });
-        let client = Client::with_url(mock_server.base_url());
-        let expected: Response<Vec<Resource<FacilityAttributes>>> =
-            from_str(&response_body).expect("failed to parse");
-
-        // Act
-        let actual = client.facilities(None, None).unwrap();
-
-        // Assert
-        mock_endpoint.assert();
-        assert_eq!(actual, expected);
-    }
-
-    #[rstest]
-    #[case::valid_response("facility.json")]
-    #[should_panic]
-    #[case::invalid_response("bad_request.json")]
-    fn tests_client_facility(#[case] file_path: &str) {
-        // Arrange
-        let response_body = load_json_test_file_contents(file_path);
-        let mock_server = MockServer::start();
-        let mock_endpoint = mock_server.mock(|when, then| {
-            when.method(GET).path("/facilities/foobar");
-            then.status(200).body(&response_body);
-        });
-        let client = Client::with_url(mock_server.base_url());
-        let expected: Response<Resource<FacilityAttributes>> =
-            from_str(&response_body).expect("failed to parse");
-
-        // Act
-        let actual = client.facility("foobar").unwrap();
-
-        // Assert
-        mock_endpoint.assert();
-        assert_eq!(actual, expected);
-    }
-
-    #[rstest]
-    #[case::valid_response("routes.json")]
-    #[should_panic]
-    #[case::invalid_response("bad_request.json")]
-    fn tests_client_routes(#[case] file_path: &str) {
-        // Arrange
-        let response_body = load_json_test_file_contents(file_path);
-        let mock_server = MockServer::start();
-        let mock_endpoint = mock_server.mock(|when, then| {
-            when.method(GET).path("/routes");
-            then.status(200).body(&response_body);
-        });
-        let client = Client::with_url(mock_server.base_url());
-        let expected: Response<Vec<Resource<RouteAttributes>>> =
-            from_str(&response_body).expect("failed to parse");
-
-        // Act
-        let actual = client.routes(None, None).unwrap();
-
-        // Assert
-        mock_endpoint.assert();
-        assert_eq!(actual, expected);
-    }
-
-    #[rstest]
-    #[case::valid_response("route.json")]
-    #[should_panic]
-    #[case::invalid_response("bad_request.json")]
-    fn tests_client_route(#[case] file_path: &str) {
-        // Arrange
-        let response_body = load_json_test_file_contents(file_path);
-        let mock_server = MockServer::start();
-        let mock_endpoint = mock_server.mock(|when, then| {
-            when.method(GET).path("/routes/foobar");
-            then.status(200).body(&response_body);
-        });
-        let client = Client::with_url(mock_server.base_url());
-        let expected: Response<Resource<RouteAttributes>> =
-            from_str(&response_body).expect("failed to parse");
-
-        // Act
-        let actual = client.route("foobar").unwrap();
-
-        // Assert
-        mock_endpoint.assert();
-        assert_eq!(actual, expected);
-    }
-
-    #[rstest]
-    #[case::valid_response("route_patterns.json")]
-    #[should_panic]
-    #[case::invalid_response("bad_request.json")]
-    fn tests_client_route_patterns(#[case] file_path: &str) {
-        // Arrange
-        let response_body = load_json_test_file_contents(file_path);
-        let mock_server = MockServer::start();
-        let mock_endpoint = mock_server.mock(|when, then| {
-            when.method(GET).path("/route_patterns");
-            then.status(200).body(&response_body);
-        });
-        let client = Client::with_url(mock_server.base_url());
-        let expected: Response<Vec<Resource<RoutePatternAttributes>>> =
-            from_str(&response_body).expect("failed to parse");
-
-        // Act
-        let actual = client.route_patterns(None, None).unwrap();
-
-        // Assert
-        mock_endpoint.assert();
-        assert_eq!(actual, expected);
-    }
-
-    #[rstest]
-    #[case::valid_response("route_pattern.json")]
-    #[should_panic]
-    #[case::invalid_response("bad_request.json")]
-    fn tests_client_route_pattern(#[case] file_path: &str) {
-        // Arrange
-        let response_body = load_json_test_file_contents(file_path);
-        let mock_server = MockServer::start();
-        let mock_endpoint = mock_server.mock(|when, then| {
-            when.method(GET).path("/route_patterns/foobar");
-            then.status(200).body(&response_body);
-        });
-        let client = Client::with_url(mock_server.base_url());
-        let expected: Response<Resource<RoutePatternAttributes>> =
-            from_str(&response_body).expect("failed to parse");
-
-        // Act
-        let actual = client.route_pattern("foobar").unwrap();
-
-        // Assert
-        mock_endpoint.assert();
         assert_eq!(actual, expected);
     }
 }

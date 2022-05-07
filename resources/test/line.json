@@ -1,0 +1,19 @@
+{
+    "data": {
+        "attributes": {
+            "color": "DA291C",
+            "long_name": "Red Line",
+            "short_name": "",
+            "sort_order": 10010,
+            "text_color": "FFFFFF"
+        },
+        "id": "line-Red",
+        "links": {
+            "self": "/lines/line-Red"
+        },
+        "type": "line"
+    },
+    "jsonapi": {
+        "version": "1.0"
+    }
+}

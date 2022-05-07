@@ -1,0 +1,292 @@
+{
+    "data": [
+        {
+            "attributes": {
+                "color": "DA291C",
+                "long_name": "Red Line",
+                "short_name": "",
+                "sort_order": 10010,
+                "text_color": "FFFFFF"
+            },
+            "id": "line-Red",
+            "links": {
+                "self": "/lines/line-Red"
+            },
+            "type": "line"
+        },
+        {
+            "attributes": {
+                "color": "DA291C",
+                "long_name": "Mattapan Trolley",
+                "short_name": "",
+                "sort_order": 10011,
+                "text_color": "FFFFFF"
+            },
+            "id": "line-Mattapan",
+            "links": {
+                "self": "/lines/line-Mattapan"
+            },
+            "type": "line"
+        },
+        {
+            "attributes": {
+                "color": "ED8B00",
+                "long_name": "Orange Line",
+                "short_name": "",
+                "sort_order": 10020,
+                "text_color": "FFFFFF"
+            },
+            "id": "line-Orange",
+            "links": {
+                "self": "/lines/line-Orange"
+            },
+            "type": "line"
+        },
+        {
+            "attributes": {
+                "color": "00843D",
+                "long_name": "Green Line",
+                "short_name": "",
+                "sort_order": 10032,
+                "text_color": "FFFFFF"
+            },
+            "id": "line-Green",
+            "links": {
+                "self": "/lines/line-Green"
+            },
+            "type": "line"
+        },
+        {
+            "attributes": {
+                "color": "003DA5",
+                "long_name": "Blue Line",
+                "short_name": "",
+                "sort_order": 10040,
+                "text_color": "FFFFFF"
+            },
+            "id": "line-Blue",
+            "links": {
+                "self": "/lines/line-Blue"
+            },
+            "type": "line"
+        },
+        {
+            "attributes": {
+                "color": "7C878E",
+                "long_name": "Silver Line SL1/SL2/SL3",
+                "short_name": "",
+                "sort_order": 10051,
+                "text_color": "FFFFFF"
+            },
+            "id": "line-SLWaterfront",
+            "links": {
+                "self": "/lines/line-SLWaterfront"
+            },
+            "type": "line"
+        },
+        {
+            "attributes": {
+                "color": "7C878E",
+                "long_name": "Silver Line SL4/SL5",
+                "short_name": "",
+                "sort_order": 10055,
+                "text_color": "FFFFFF"
+            },
+            "id": "line-SLWashington",
+            "links": {
+                "self": "/lines/line-SLWashington"
+            },
+            "type": "line"
+        },
+        {
+            "attributes": {
+                "color": "80276C",
+                "long_name": "Fairmount Line",
+                "short_name": "",
+                "sort_order": 20001,
+                "text_color": "FFFFFF"
+            },
+            "id": "line-Fairmount",
+            "links": {
+                "self": "/lines/line-Fairmount"
+            },
+            "type": "line"
+        },
+        {
+            "attributes": {
+                "color": "80276C",
+                "long_name": "Fitchburg Line",
+                "short_name": "",
+                "sort_order": 20002,
+                "text_color": "FFFFFF"
+            },
+            "id": "line-Fitchburg",
+            "links": {
+                "self": "/lines/line-Fitchburg"
+            },
+            "type": "line"
+        },
+        {
+            "attributes": {
+                "color": "80276C",
+                "long_name": "Framingham/Worcester Line",
+                "short_name": "",
+                "sort_order": 20003,
+                "text_color": "FFFFFF"
+            },
+            "id": "line-Worcester",
+            "links": {
+                "self": "/lines/line-Worcester"
+            },
+            "type": "line"
+        },
+        {
+            "attributes": {
+                "color": "80276C",
+                "long_name": "Franklin Line",
+                "short_name": "",
+                "sort_order": 20004,
+                "text_color": "FFFFFF"
+            },
+            "id": "line-Franklin",
+            "links": {
+                "self": "/lines/line-Franklin"
+            },
+            "type": "line"
+        },
+        {
+            "attributes": {
+                "color": "80276C",
+                "long_name": "Greenbush Line",
+                "short_name": "",
+                "sort_order": 20005,
+                "text_color": "FFFFFF"
+            },
+            "id": "line-Greenbush",
+            "links": {
+                "self": "/lines/line-Greenbush"
+            },
+            "type": "line"
+        },
+        {
+            "attributes": {
+                "color": "80276C",
+                "long_name": "Haverhill Line",
+                "short_name": "",
+                "sort_order": 20006,
+                "text_color": "FFFFFF"
+            },
+            "id": "line-Haverhill",
+            "links": {
+                "self": "/lines/line-Haverhill"
+            },
+            "type": "line"
+        },
+        {
+            "attributes": {
+                "color": "80276C",
+                "long_name": "Kingston Line",
+                "short_name": "",
+                "sort_order": 20007,
+                "text_color": "FFFFFF"
+            },
+            "id": "line-Kingston",
+            "links": {
+                "self": "/lines/line-Kingston"
+            },
+            "type": "line"
+        },
+        {
+            "attributes": {
+                "color": "80276C",
+                "long_name": "Lowell Line",
+                "short_name": "",
+                "sort_order": 20008,
+                "text_color": "FFFFFF"
+            },
+            "id": "line-Lowell",
+            "links": {
+                "self": "/lines/line-Lowell"
+            },
+            "type": "line"
+        },
+        {
+            "attributes": {
+                "color": "80276C",
+                "long_name": "Middleborough/Lakeville Line",
+                "short_name": "",
+                "sort_order": 20009,
+                "text_color": "FFFFFF"
+            },
+            "id": "line-Middleborough",
+            "links": {
+                "self": "/lines/line-Middleborough"
+            },
+            "type": "line"
+        },
+        {
+            "attributes": {
+                "color": "80276C",
+                "long_name": "Needham Line",
+                "short_name": "",
+                "sort_order": 20010,
+                "text_color": "FFFFFF"
+            },
+            "id": "line-Needham",
+            "links": {
+                "self": "/lines/line-Needham"
+            },
+            "type": "line"
+        },
+        {
+            "attributes": {
+                "color": "80276C",
+                "long_name": "Newburyport/Rockport Line",
+                "short_name": "",
+                "sort_order": 20011,
+                "text_color": "FFFFFF"
+            },
+            "id": "line-Newburyport",
+            "links": {
+                "self": "/lines/line-Newburyport"
+            },
+            "type": "line"
+        },
+        {
+            "attributes": {
+                "color": "80276C",
+                "long_name": "Providence/Stoughton Line",
+                "short_name": "",
+                "sort_order": 20012,
+                "text_color": "FFFFFF"
+            },
+            "id": "line-Providence",
+            "links": {
+                "self": "/lines/line-Providence"
+            },
+            "type": "line"
+        },
+        {
+            "attributes": {
+                "color": "80276C",
+                "long_name": "Foxboro Event Service",
+                "short_name": "",
+                "sort_order": 20013,
+                "text_color": "FFFFFF"
+            },
+            "id": "line-Foxboro",
+            "links": {
+                "self": "/lines/line-Foxboro"
+            },
+            "type": "line"
+        }
+    ],
+    "jsonapi": {
+        "version": "1.0"
+    },
+    "links": {
+        "first": "https://api-v3.mbta.com/lines?page[limit]=20&page[offset]=0",
+        "last": "https://api-v3.mbta.com/lines?page[limit]=20&page[offset]=120",
+        "next": "https://api-v3.mbta.com/lines?page[limit]=20&page[offset]=20"
+    }
+}
