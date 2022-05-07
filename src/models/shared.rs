@@ -18,10 +18,7 @@ pub mod mbta_date_format {
     ///
     /// * `date` - the datetime
     /// * `serializer` - the serializer
-    pub fn serialize<S: Serializer>(
-        datetime: &DateTime<FixedOffset>,
-        serializer: S,
-    ) -> Result<S::Ok, S::Error> {
+    pub fn serialize<S: Serializer>(datetime: &DateTime<FixedOffset>, serializer: S) -> Result<S::Ok, S::Error> {
         serializer.serialize_str(&format!("{}", datetime.format(FORMAT)))
     }
 
@@ -30,9 +27,7 @@ pub mod mbta_date_format {
     /// # Arguments
     ///
     /// * `deserializer` - the deserializer
-    pub fn deserialize<'de, D: Deserializer<'de>>(
-        deserializer: D,
-    ) -> Result<DateTime<FixedOffset>, D::Error> {
+    pub fn deserialize<'de, D: Deserializer<'de>>(deserializer: D) -> Result<DateTime<FixedOffset>, D::Error> {
         let s = String::deserialize(deserializer)?;
         DateTime::parse_from_str(&s, FORMAT).map_err(serde::de::Error::custom)
     }
@@ -51,10 +46,7 @@ pub mod optional_mbta_date_format {
     ///
     /// * `datetime` - the optional datetime
     /// * `serializer` - the serializer
-    pub fn serialize<S>(
-        datetime: &Option<DateTime<FixedOffset>>,
-        serializer: S,
-    ) -> Result<S::Ok, S::Error>
+    pub fn serialize<S>(datetime: &Option<DateTime<FixedOffset>>, serializer: S) -> Result<S::Ok, S::Error>
     where
         S: Serializer,
     {
@@ -76,8 +68,7 @@ pub mod optional_mbta_date_format {
         let s = Option::<String>::deserialize(deserializer)?;
         match s {
             Some(s) => {
-                let date =
-                    DateTime::parse_from_str(&s, FORMAT).map_err(serde::de::Error::custom)?;
+                let date = DateTime::parse_from_str(&s, FORMAT).map_err(serde::de::Error::custom)?;
                 Ok(Some(date))
             }
             None => Ok(None),

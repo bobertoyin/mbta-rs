@@ -17,17 +17,17 @@ macro_rules! mbta_endpoint_multiple {
             #[doc = "Returns a [Vec] of"]
             #[doc = stringify!($endpoint_fn)]
             #[doc = "in the MBTA system."]
-            /// 
+            ///
             /// Consult the [API swagger docs](https://api-v3.mbta.com/docs/swagger/index.html) for each parameter's meaning and which are required,
-            /// but the request will fail if you include any that are *not* the ones specified below 
+            /// but the request will fail if you include any that are *not* the ones specified below
             /// (we limit them to avoid any return type behaviors that we currently can't support).
-            /// 
+            ///
             /// # Allowed Query Parameters
             ///
             #[doc = concat!("`", stringify!($allowed_query_params), "`")]
             ///
             /// # Arguments
-            /// 
+            ///
             /// * `query_params` - a [HashMap] of query parameter names to values
             pub fn $endpoint_fn(
                 &self,
@@ -36,7 +36,7 @@ macro_rules! mbta_endpoint_multiple {
                 let allowed_query_params: HashSet<String> = $allowed_query_params.into_iter().map(|s| s.to_string()).collect();
                 for (k, v) in &query_params {
                     if !allowed_query_params.contains(&k.to_string()) {
-                        return Err(ClientError::InvalidQueryParam(k.to_string(), v.to_string()))
+                        return Err(ClientError::InvalidQueryParam(k.to_string(), v.to_string()));
                     }
                 }
                 self.get(stringify!($endpoint_fn), query_params)
@@ -55,9 +55,9 @@ macro_rules! mbta_endpoint_single {
             #[doc = "in the MBTA system given its id."]
             ///
             /// Consult the [API swagger docs](https://api-v3.mbta.com/docs/swagger/index.html) for each parameter's meaning and which are required,
-            /// but the request will fail if you include any that are *not* the ones specified below 
+            /// but the request will fail if you include any that are *not* the ones specified below
             /// (we limit them to avoid any return type behaviors that we currently can't support).
-            /// 
+            ///
             /// # Allowed Query Parameters
             ///
             #[doc = concat!("`", stringify!($allowed_query_params), "`")]
@@ -70,12 +70,12 @@ macro_rules! mbta_endpoint_single {
             pub fn $endpoint_fn(
                 &self,
                 id: &str,
-                query_params: HashMap<String, String>
+                query_params: HashMap<String, String>,
             ) -> Result<Response<Resource<$return_type>>, ClientError> {
                 let allowed_query_params: HashSet<String> = $allowed_query_params.into_iter().map(|s| s.to_string()).collect();
                 for (k, v) in &query_params {
                     if !allowed_query_params.contains(&k.to_string()) {
-                        return Err(ClientError::InvalidQueryParam(k.to_string(), v.to_string()))
+                        return Err(ClientError::InvalidQueryParam(k.to_string(), v.to_string()));
                     }
                 }
                 self.get(&format!("{}/{}", $endpoint, id), query_params)
@@ -85,15 +85,15 @@ macro_rules! mbta_endpoint_single {
 }
 
 mbta_endpoint_multiple!(
-    model = AlertAttributes, 
-    func = alerts, 
+    model = AlertAttributes,
+    func = alerts,
     allowed_query_params = [
-        "page[offset]", 
-        "page[limit]", 
-        "sort", 
+        "page[offset]",
+        "page[limit]",
+        "sort",
         "include",
-        "filter[activity]", 
-        "filter[route_type]", 
+        "filter[activity]",
+        "filter[route_type]",
         "filter[direction_id]",
         "filter[route]",
         "filter[stop]",
@@ -107,31 +107,18 @@ mbta_endpoint_multiple!(
     ]
 );
 mbta_endpoint_multiple!(
-    model = FacilityAttributes, 
-    func = facilities, 
-    allowed_query_params = [
-        "page[offset]",
-        "page[limit]",
-        "sort",
-        "include",
-        "filter[stop]",
-        "filter[type]",
-        ]
+    model = FacilityAttributes,
+    func = facilities,
+    allowed_query_params = ["page[offset]", "page[limit]", "sort", "include", "filter[stop]", "filter[type]",]
 );
 mbta_endpoint_multiple!(
-    model = LineAttributes, 
-    func = lines, 
-    allowed_query_params = [
-        "page[offset]",
-        "page[limit]",
-        "sort",
-        "include",
-        "filter[id]",
-    ]
+    model = LineAttributes,
+    func = lines,
+    allowed_query_params = ["page[offset]", "page[limit]", "sort", "include", "filter[id]",]
 );
 mbta_endpoint_multiple!(
-    model = RouteAttributes, 
-    func = routes, 
+    model = RouteAttributes,
+    func = routes,
     allowed_query_params = [
         "page[offset]",
         "page[limit]",
@@ -145,8 +132,8 @@ mbta_endpoint_multiple!(
     ]
 );
 mbta_endpoint_multiple!(
-    model = RoutePatternAttributes, 
-    func = route_patterns, 
+    model = RoutePatternAttributes,
+    func = route_patterns,
     allowed_query_params = [
         "page[offset]",
         "page[limit]",
@@ -159,45 +146,20 @@ mbta_endpoint_multiple!(
     ]
 );
 
-mbta_endpoint_single!(
-    model = AlertAttributes, 
-    func = alert, 
-    endpoint = "alerts",
-    allowed_query_params = [
-        "include"
-    ]
-);
+mbta_endpoint_single!(model = AlertAttributes, func = alert, endpoint = "alerts", allowed_query_params = ["include"]);
 mbta_endpoint_single!(
     model = FacilityAttributes,
     func = facility,
     endpoint = "facilities",
-    allowed_query_params = [
-        "include"
-    ]
+    allowed_query_params = ["include"]
 );
-mbta_endpoint_single!(
-    model = LineAttributes, 
-    func = line, 
-    endpoint = "lines",
-    allowed_query_params = [
-        "include"
-    ]
-);
-mbta_endpoint_single!(
-    model = RouteAttributes, 
-    func = route, 
-    endpoint = "routes",
-    allowed_query_params = [
-        "include"
-    ]
-);
+mbta_endpoint_single!(model = LineAttributes, func = line, endpoint = "lines", allowed_query_params = ["include"]);
+mbta_endpoint_single!(model = RouteAttributes, func = route, endpoint = "routes", allowed_query_params = ["include"]);
 mbta_endpoint_single!(
     model = RoutePatternAttributes,
     func = route_pattern,
     endpoint = "route_patterns",
-    allowed_query_params = [
-        "include"
-    ]
+    allowed_query_params = ["include"]
 );
 
 /// Synchronous client for interacting with the MBTA V3 API.
@@ -251,11 +213,7 @@ impl Client {
     /// # Arguments
     ///
     /// * query_params - a [HashMap] of query parameter names to values
-    fn get<T: DeserializeOwned>(
-        &self,
-        endpoint: &str,
-        query_params: HashMap<String, String>,
-    ) -> Result<T, ClientError> {
+    fn get<T: DeserializeOwned>(&self, endpoint: &str, query_params: HashMap<String, String>) -> Result<T, ClientError> {
         let path = format!("{}/{}", self.base_url, endpoint);
         let request = ureq::get(&path);
         let request = match &self.api_key {
@@ -281,8 +239,7 @@ mod tests_client {
         path.push(format!("resources/test/{}", relative_file_name));
         let mut file = File::open(path).expect(relative_file_name);
         let mut contents = String::new();
-        file.read_to_string(&mut contents)
-            .expect(relative_file_name);
+        file.read_to_string(&mut contents).expect(relative_file_name);
         contents
     }
 
@@ -302,8 +259,7 @@ mod tests_client {
                     then.status(200).body(&response_body);
                 });
                 let client = Client::with_url(mock_server.base_url());
-                let expected: Response<Vec<Resource<$return_type>>> =
-                    from_str(&response_body).expect("failed to parse");
+                let expected: Response<Vec<Resource<$return_type>>> = from_str(&response_body).expect("failed to parse");
 
                 // Act
                 let actual = client.$method(HashMap::new()).unwrap();
@@ -331,8 +287,7 @@ mod tests_client {
                     then.status(200).body(&response_body);
                 });
                 let client = Client::with_url(mock_server.base_url());
-                let expected: Response<Resource<$return_type>> =
-                    from_str(&response_body).expect("failed to parse");
+                let expected: Response<Resource<$return_type>> = from_str(&response_body).expect("failed to parse");
 
                 // Act
                 let actual = client.$method("foobar", HashMap::new()).unwrap();
@@ -344,56 +299,21 @@ mod tests_client {
         };
     }
 
-    test_from_json_multiple!(
-        model = AlertAttributes,
-        test_name = test_client_alerts,
-        method = alerts
-    );
-    test_from_json_multiple!(
-        model = FacilityAttributes,
-        test_name = test_client_facilities,
-        method = facilities
-    );
-    test_from_json_multiple!(
-        model = LineAttributes,
-        test_name = test_client_lines,
-        method = lines
-    );
-    test_from_json_multiple!(
-        model = RouteAttributes,
-        test_name = test_client_routes,
-        method = routes
-    );
-    test_from_json_multiple!(
-        model = RoutePatternAttributes,
-        test_name = test_client_route_patterns,
-        method = route_patterns
-    );
+    test_from_json_multiple!(model = AlertAttributes, test_name = test_client_alerts, method = alerts);
+    test_from_json_multiple!(model = FacilityAttributes, test_name = test_client_facilities, method = facilities);
+    test_from_json_multiple!(model = LineAttributes, test_name = test_client_lines, method = lines);
+    test_from_json_multiple!(model = RouteAttributes, test_name = test_client_routes, method = routes);
+    test_from_json_multiple!(model = RoutePatternAttributes, test_name = test_client_route_patterns, method = route_patterns);
 
-    test_from_json_single!(
-        model = AlertAttributes,
-        test_name = test_client_alert,
-        method = alert,
-        endpoint = "alerts"
-    );
+    test_from_json_single!(model = AlertAttributes, test_name = test_client_alert, method = alert, endpoint = "alerts");
     test_from_json_single!(
         model = FacilityAttributes,
         test_name = test_client_facility,
         method = facility,
         endpoint = "facilities"
     );
-    test_from_json_single!(
-        model = LineAttributes,
-        test_name = test_client_line,
-        method = line,
-        endpoint = "lines"
-    );
-    test_from_json_single!(
-        model = RouteAttributes,
-        test_name = test_client_route,
-        method = route,
-        endpoint = "routes"
-    );
+    test_from_json_single!(model = LineAttributes, test_name = test_client_line, method = line, endpoint = "lines");
+    test_from_json_single!(model = RouteAttributes, test_name = test_client_route, method = route, endpoint = "routes");
     test_from_json_single!(
         model = RoutePatternAttributes,
         test_name = test_client_route_pattern,

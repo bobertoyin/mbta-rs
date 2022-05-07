@@ -27,7 +27,7 @@ impl Display for ClientError {
                 write!(f, "request error: ")?;
                 r.fmt(f)
             }
-            ClientError::InvalidQueryParam(k,v) => {
+            ClientError::InvalidQueryParam(k, v) => {
                 write!(f, "query parameter error: {}={}", k, v)
             }
         }
@@ -73,8 +73,7 @@ mod tests_client_error {
     #[rstest]
     fn test_client_error_display_request_error() {
         // Arrange
-        let input =
-            RequestError::Status(404, Response::new(404, "Page not found", "foobar").unwrap());
+        let input = RequestError::Status(404, Response::new(404, "Page not found", "foobar").unwrap());
         let expected = format!("MBTA Client Error, request error: {}", input);
 
         // Act
