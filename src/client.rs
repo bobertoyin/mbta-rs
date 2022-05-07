@@ -159,12 +159,7 @@ mbta_endpoint_multiple!(
 );
 
 mbta_endpoint_single!(model = AlertAttributes, func = alert, endpoint = "alerts", allowed_query_params = []);
-mbta_endpoint_single!(
-    model = FacilityAttributes,
-    func = facility,
-    endpoint = "facilities",
-    allowed_query_params = []
-);
+mbta_endpoint_single!(model = FacilityAttributes, func = facility, endpoint = "facilities", allowed_query_params = []);
 mbta_endpoint_single!(model = LineAttributes, func = line, endpoint = "lines", allowed_query_params = []);
 mbta_endpoint_single!(model = RouteAttributes, func = route, endpoint = "routes", allowed_query_params = []);
 mbta_endpoint_single!(
