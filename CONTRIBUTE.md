@@ -11,6 +11,9 @@
 
 ### Getting Started
 
+1. Install [Rust](https://www.rust-lang.org/tools/install) and [cargo](https://github.com/rust-lang/cargo) (included with Rust)
+2. Install [rustfmt](https://github.com/rust-lang/rustfmt) and [clippy](https://github.com/rust-lang/rust-clippy)
+
 ### Branch Policy
 
 ### Continuous Integration

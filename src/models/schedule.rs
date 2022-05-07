@@ -13,7 +13,7 @@ pub struct ScheduleAttributes {
     pub timepoint: ScheduleTimepoint,
     /// The sequence the stop is arrived at during the trip.
     /// The stop sequence is monotonically increasing along the trip, but the stop_sequence along the trip are not necessarily consecutive.
-    pub stop_sequence: u64,
+    pub stop_sequence: Option<u64>,
     /// Text identifying destination of the trip, overriding trip-level headsign if present.
     pub stop_headsign: Option<String>,
     /// How the vehicle departs from the stop.
@@ -26,8 +26,8 @@ pub struct ScheduleAttributes {
     #[serde(with = "mbta_date_format")]
     pub departure_time: DateTime<FixedOffset>,
     /// Time when the trip arrives at the given stop.
-    #[serde(with = "mbta_date_format")]
-    pub arrival_time: DateTime<FixedOffset>,
+    #[serde(with = "optional_mbta_date_format")]
+    pub arrival_time: Option<DateTime<FixedOffset>>,
 }
 
 /// Whether time points are exact or estimates.

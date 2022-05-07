@@ -4,6 +4,8 @@ use std::collections::{HashMap, HashSet};
 
 use serde::de::DeserializeOwned;
 
+use serde_json::{from_value, Error as JSONError, Value};
+
 use super::*;
 
 /// Base url for client request endpoints.
@@ -12,7 +14,7 @@ pub const BASE_URL: &str = "https://api-v3.mbta.com";
 /// Attribute macro for quickly implementing MBTA client endpoints with multiple return objects.
 #[macro_export]
 macro_rules! mbta_endpoint_multiple {
-    (model=$return_type:ident, func=$endpoint_fn:ident, allowed_query_params=$allowed_query_params:expr) => {
+    (model=$model:ident, func=$endpoint_fn:ident, allowed_query_params=$allowed_query_params:expr) => {
         impl Client {
             #[doc = "Returns a [Vec] of"]
             #[doc = stringify!($endpoint_fn)]
@@ -29,11 +31,8 @@ macro_rules! mbta_endpoint_multiple {
             /// # Arguments
             ///
             /// * `query_params` - a [HashMap] of query parameter names to values
-            pub fn $endpoint_fn(
-                &self,
-                query_params: HashMap<String, String>,
-            ) -> Result<Response<Vec<Resource<$return_type>>>, ClientError> {
-                let allowed_query_params: HashSet<String> = $allowed_query_params.into_iter().map(|s| s.to_string()).collect();
+            pub fn $endpoint_fn(&self, query_params: HashMap<String, String>) -> Result<Response<Vec<Resource<$model>>>, ClientError> {
+                let allowed_query_params: HashSet<String> = $allowed_query_params.into_iter().map(|s: &str| s.to_string()).collect();
                 for (k, v) in &query_params {
                     if !allowed_query_params.contains(&k.to_string()) {
                         return Err(ClientError::InvalidQueryParam(k.to_string(), v.to_string()));
@@ -48,7 +47,7 @@ macro_rules! mbta_endpoint_multiple {
 /// Attribute macro for quickly implementing MBTA client endpoints with single return objects.
 #[macro_export]
 macro_rules! mbta_endpoint_single {
-    (model=$return_type:ident, func=$endpoint_fn:ident, endpoint=$endpoint:expr, allowed_query_params=$allowed_query_params:expr) => {
+    (model=$model:ident, func=$endpoint_fn:ident, endpoint=$endpoint:expr, allowed_query_params=$allowed_query_params:expr) => {
         impl Client {
             #[doc = "Returns a"]
             #[doc = stringify!($endpoint_fn)]
@@ -67,12 +66,8 @@ macro_rules! mbta_endpoint_single {
             #[doc = stringify!($endpoint_fn)]
             #[doc = "to return"]
             /// * `query_params` - a [HashMap] of query parameter names to values
-            pub fn $endpoint_fn(
-                &self,
-                id: &str,
-                query_params: HashMap<String, String>,
-            ) -> Result<Response<Resource<$return_type>>, ClientError> {
-                let allowed_query_params: HashSet<String> = $allowed_query_params.into_iter().map(|s| s.to_string()).collect();
+            pub fn $endpoint_fn(&self, id: &str, query_params: HashMap<String, String>) -> Result<Response<Resource<$model>>, ClientError> {
+                let allowed_query_params: HashSet<String> = $allowed_query_params.into_iter().map(|s: &str| s.to_string()).collect();
                 for (k, v) in &query_params {
                     if !allowed_query_params.contains(&k.to_string()) {
                         return Err(ClientError::InvalidQueryParam(k.to_string(), v.to_string()));
@@ -91,7 +86,6 @@ mbta_endpoint_multiple!(
         "page[offset]",
         "page[limit]",
         "sort",
-        "include",
         "filter[activity]",
         "filter[route_type]",
         "filter[direction_id]",
@@ -109,12 +103,12 @@ mbta_endpoint_multiple!(
 mbta_endpoint_multiple!(
     model = FacilityAttributes,
     func = facilities,
-    allowed_query_params = ["page[offset]", "page[limit]", "sort", "include", "filter[stop]", "filter[type]",]
+    allowed_query_params = ["page[offset]", "page[limit]", "sort", "filter[stop]", "filter[type]",]
 );
 mbta_endpoint_multiple!(
     model = LineAttributes,
     func = lines,
-    allowed_query_params = ["page[offset]", "page[limit]", "sort", "include", "filter[id]",]
+    allowed_query_params = ["page[offset]", "page[limit]", "sort", "filter[id]",]
 );
 mbta_endpoint_multiple!(
     model = RouteAttributes,
@@ -145,21 +139,39 @@ mbta_endpoint_multiple!(
         "filter[stop]",
     ]
 );
+mbta_endpoint_multiple!(
+    model = ScheduleAttributes,
+    func = schedules,
+    allowed_query_params = [
+        "page[offset]",
+        "page[limit]",
+        "sort",
+        "filter[date]",
+        "filter[direction_id]",
+        "filter[route_type]",
+        "filter[min_time]",
+        "filter[max_time]",
+        "filter[route]",
+        "filter[stop]",
+        "filter[trip]",
+        "filter[stop_sequence]",
+    ]
+);
 
-mbta_endpoint_single!(model = AlertAttributes, func = alert, endpoint = "alerts", allowed_query_params = ["include"]);
+mbta_endpoint_single!(model = AlertAttributes, func = alert, endpoint = "alerts", allowed_query_params = []);
 mbta_endpoint_single!(
     model = FacilityAttributes,
     func = facility,
     endpoint = "facilities",
-    allowed_query_params = ["include"]
+    allowed_query_params = []
 );
-mbta_endpoint_single!(model = LineAttributes, func = line, endpoint = "lines", allowed_query_params = ["include"]);
-mbta_endpoint_single!(model = RouteAttributes, func = route, endpoint = "routes", allowed_query_params = ["include"]);
+mbta_endpoint_single!(model = LineAttributes, func = line, endpoint = "lines", allowed_query_params = []);
+mbta_endpoint_single!(model = RouteAttributes, func = route, endpoint = "routes", allowed_query_params = []);
 mbta_endpoint_single!(
     model = RoutePatternAttributes,
     func = route_pattern,
     endpoint = "route_patterns",
-    allowed_query_params = ["include"]
+    allowed_query_params = []
 );
 
 /// Synchronous client for interacting with the MBTA V3 API.
@@ -213,7 +225,7 @@ impl Client {
     /// # Arguments
     ///
     /// * query_params - a [HashMap] of query parameter names to values
-    fn get<T: DeserializeOwned>(&self, endpoint: &str, query_params: HashMap<String, String>) -> Result<T, ClientError> {
+    fn get<T: DeserializeOwned>(&self, endpoint: &str, query_params: HashMap<String, String>) -> Result<Response<T>, ClientError> {
         let path = format!("{}/{}", self.base_url, endpoint);
         let request = ureq::get(&path);
         let request = match &self.api_key {
@@ -221,7 +233,16 @@ impl Client {
             None => request,
         };
         let request = query_params.iter().fold(request, |r, (k, v)| r.query(k, v));
-        request.call()?.into_json().map_err(|e| e.into())
+        let json: Value = request.call()?.into_json()?;
+        let try_success: Result<ResponseSuccess<T>, JSONError> = from_value(json.clone());
+        match try_success {
+            Ok(result) => Ok(result.into()),
+            Err(e) => {
+                println!("{:?}", e);
+                let try_error: Result<ResponseError, JSONError> = from_value(json);
+                try_error.map(|r| r.into()).map_err(|e| e.into())
+            }
+        }
     }
 }
 
@@ -245,24 +266,29 @@ mod tests_client {
 
     #[macro_export]
     macro_rules! test_from_json_multiple {
-        (model=$return_type:ty, test_name=$test_name:ident, method=$method:ident) => {
+        (model=$model:ty, test_name=$test_name:ident, method=$method:ident) => {
             #[rstest]
-            #[case::valid_response(concat!(stringify!($method), ".json"))]
+            #[case::success_response(concat!(stringify!($method), ".json"), &[("page[limit]", "barfoo")])]
             #[should_panic]
-            #[case::invalid_response("bad_request.json")]
-            fn $test_name(#[case] file_path: &str) {
+            #[case::invalid_query(concat!(stringify!($method), ".json"), &[("bad", "barfoo")])]
+            #[case::error_response("bad_request.json", &[("page[limit]", "barfoo")])]
+            fn $test_name(#[case] file_path: &str, #[case] test_queries: &[(&str, &str)]) {
                 // Arrange
                 let response_body = load_json_test_file_contents(file_path);
                 let mock_server = MockServer::start();
                 let mock_endpoint = mock_server.mock(|when, then| {
-                    when.method(GET).path(concat!("/", stringify!($method)));
+                    when.method(GET).path(concat!("/", stringify!($method))).query_param("page[limit]", "barfoo");
                     then.status(200).body(&response_body);
                 });
                 let client = Client::with_url(mock_server.base_url());
-                let expected: Response<Vec<Resource<$return_type>>> = from_str(&response_body).expect("failed to parse");
+                let expected: Response<Vec<Resource<$model>>> = from_str(&response_body).expect("failed to parse");
+                let mut queries = HashMap::new();
+                for (k, v) in test_queries {
+                    queries.insert(k.to_string(), v.to_string());
+                }
 
                 // Act
-                let actual = client.$method(HashMap::new()).unwrap();
+                let actual = client.$method(queries).unwrap();
 
                 // Assert
                 mock_endpoint.assert();
@@ -273,12 +299,13 @@ mod tests_client {
 
     #[macro_export]
     macro_rules! test_from_json_single {
-        (model=$return_type:ty, test_name=$test_name:ident, method=$method:ident, endpoint=$endpoint:expr) => {
+        (model=$model:ty, test_name=$test_name:ident, method=$method:ident, endpoint=$endpoint:expr) => {
             #[rstest]
-            #[case::valid_response(concat!(stringify!($method), ".json"))]
+            #[case::success_response(concat!(stringify!($method), ".json"), &[])]
             #[should_panic]
-            #[case::invalid_response("bad_request.json")]
-            fn $test_name(#[case] file_path: &str) {
+            #[case::invalid_query(concat!(stringify!($method), ".json"), &[("bad", "barfoo")])]
+            #[case::error_response("bad_request.json", &[])]
+            fn $test_name(#[case] file_path: &str, #[case] test_queries: &[(&str, &str)]) {
                 // Arrange
                 let response_body = load_json_test_file_contents(file_path);
                 let mock_server = MockServer::start();
@@ -287,10 +314,14 @@ mod tests_client {
                     then.status(200).body(&response_body);
                 });
                 let client = Client::with_url(mock_server.base_url());
-                let expected: Response<Resource<$return_type>> = from_str(&response_body).expect("failed to parse");
+                let expected: Response<Resource<$model>> = from_str(&response_body).expect("failed to parse");
+                let mut queries = HashMap::new();
+                for (k, v) in test_queries {
+                    queries.insert(k.to_string(), v.to_string());
+                }
 
                 // Act
-                let actual = client.$method("foobar", HashMap::new()).unwrap();
+                let actual = client.$method("foobar", queries).unwrap();
 
                 // Assert
                 mock_endpoint.assert();
@@ -304,6 +335,7 @@ mod tests_client {
     test_from_json_multiple!(model = LineAttributes, test_name = test_client_lines, method = lines);
     test_from_json_multiple!(model = RouteAttributes, test_name = test_client_routes, method = routes);
     test_from_json_multiple!(model = RoutePatternAttributes, test_name = test_client_route_patterns, method = route_patterns);
+    test_from_json_multiple!(model = ScheduleAttributes, test_name = test_client_schedules, method = schedules);
 
     test_from_json_single!(model = AlertAttributes, test_name = test_client_alert, method = alert, endpoint = "alerts");
     test_from_json_single!(

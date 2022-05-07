@@ -1,0 +1,692 @@
+{
+    "data": [
+        {
+            "attributes": {
+                "arrival_time": null,
+                "departure_time": "2022-05-07T05:16:00-04:00",
+                "direction_id": 1,
+                "drop_off_type": 1,
+                "pickup_type": 0,
+                "stop_headsign": null,
+                "stop_sequence": 50,
+                "timepoint": false
+            },
+            "id": "schedule-50891327-70094-50",
+            "relationships": {
+                "route": {
+                    "data": {
+                        "id": "Red",
+                        "type": "route"
+                    }
+                },
+                "stop": {
+                    "data": {
+                        "id": "70094",
+                        "type": "stop"
+                    }
+                },
+                "trip": {
+                    "data": {
+                        "id": "50891327",
+                        "type": "trip"
+                    }
+                }
+            },
+            "type": "schedule"
+        },
+        {
+            "attributes": {
+                "arrival_time": "2022-05-07T05:17:00-04:00",
+                "departure_time": "2022-05-07T05:17:00-04:00",
+                "direction_id": 1,
+                "drop_off_type": 0,
+                "pickup_type": 0,
+                "stop_headsign": null,
+                "stop_sequence": 60,
+                "timepoint": false
+            },
+            "id": "schedule-50891327-70092-60",
+            "relationships": {
+                "route": {
+                    "data": {
+                        "id": "Red",
+                        "type": "route"
+                    }
+                },
+                "stop": {
+                    "data": {
+                        "id": "70092",
+                        "type": "stop"
+                    }
+                },
+                "trip": {
+                    "data": {
+                        "id": "50891327",
+                        "type": "trip"
+                    }
+                }
+            },
+            "type": "schedule"
+        },
+        {
+            "attributes": {
+                "arrival_time": "2022-05-07T05:19:00-04:00",
+                "departure_time": "2022-05-07T05:19:00-04:00",
+                "direction_id": 1,
+                "drop_off_type": 0,
+                "pickup_type": 0,
+                "stop_headsign": null,
+                "stop_sequence": 70,
+                "timepoint": false
+            },
+            "id": "schedule-50891327-70090-70",
+            "relationships": {
+                "route": {
+                    "data": {
+                        "id": "Red",
+                        "type": "route"
+                    }
+                },
+                "stop": {
+                    "data": {
+                        "id": "70090",
+                        "type": "stop"
+                    }
+                },
+                "trip": {
+                    "data": {
+                        "id": "50891327",
+                        "type": "trip"
+                    }
+                }
+            },
+            "type": "schedule"
+        },
+        {
+            "attributes": {
+                "arrival_time": "2022-05-07T05:22:00-04:00",
+                "departure_time": "2022-05-07T05:22:00-04:00",
+                "direction_id": 1,
+                "drop_off_type": 0,
+                "pickup_type": 0,
+                "stop_headsign": null,
+                "stop_sequence": 80,
+                "timepoint": false
+            },
+            "id": "schedule-50891327-70088-80",
+            "relationships": {
+                "route": {
+                    "data": {
+                        "id": "Red",
+                        "type": "route"
+                    }
+                },
+                "stop": {
+                    "data": {
+                        "id": "70088",
+                        "type": "stop"
+                    }
+                },
+                "trip": {
+                    "data": {
+                        "id": "50891327",
+                        "type": "trip"
+                    }
+                }
+            },
+            "type": "schedule"
+        },
+        {
+            "attributes": {
+                "arrival_time": "2022-05-07T05:24:00-04:00",
+                "departure_time": "2022-05-07T05:24:00-04:00",
+                "direction_id": 1,
+                "drop_off_type": 0,
+                "pickup_type": 0,
+                "stop_headsign": null,
+                "stop_sequence": 90,
+                "timepoint": false
+            },
+            "id": "schedule-50891327-70086-90",
+            "relationships": {
+                "route": {
+                    "data": {
+                        "id": "Red",
+                        "type": "route"
+                    }
+                },
+                "stop": {
+                    "data": {
+                        "id": "70086",
+                        "type": "stop"
+                    }
+                },
+                "trip": {
+                    "data": {
+                        "id": "50891327",
+                        "type": "trip"
+                    }
+                }
+            },
+            "type": "schedule"
+        },
+        {
+            "attributes": {
+                "arrival_time": "2022-05-07T05:27:00-04:00",
+                "departure_time": "2022-05-07T05:27:00-04:00",
+                "direction_id": 1,
+                "drop_off_type": 0,
+                "pickup_type": 0,
+                "stop_headsign": null,
+                "stop_sequence": 110,
+                "timepoint": false
+            },
+            "id": "schedule-50891327-70084-110",
+            "relationships": {
+                "route": {
+                    "data": {
+                        "id": "Red",
+                        "type": "route"
+                    }
+                },
+                "stop": {
+                    "data": {
+                        "id": "70084",
+                        "type": "stop"
+                    }
+                },
+                "trip": {
+                    "data": {
+                        "id": "50891327",
+                        "type": "trip"
+                    }
+                }
+            },
+            "type": "schedule"
+        },
+        {
+            "attributes": {
+                "arrival_time": "2022-05-07T05:29:00-04:00",
+                "departure_time": "2022-05-07T05:29:00-04:00",
+                "direction_id": 1,
+                "drop_off_type": 0,
+                "pickup_type": 0,
+                "stop_headsign": null,
+                "stop_sequence": 120,
+                "timepoint": false
+            },
+            "id": "schedule-50891327-70082-120",
+            "relationships": {
+                "route": {
+                    "data": {
+                        "id": "Red",
+                        "type": "route"
+                    }
+                },
+                "stop": {
+                    "data": {
+                        "id": "70082",
+                        "type": "stop"
+                    }
+                },
+                "trip": {
+                    "data": {
+                        "id": "50891327",
+                        "type": "trip"
+                    }
+                }
+            },
+            "type": "schedule"
+        },
+        {
+            "attributes": {
+                "arrival_time": "2022-05-07T05:32:00-04:00",
+                "departure_time": "2022-05-07T05:32:00-04:00",
+                "direction_id": 1,
+                "drop_off_type": 0,
+                "pickup_type": 0,
+                "stop_headsign": null,
+                "stop_sequence": 130,
+                "timepoint": false
+            },
+            "id": "schedule-50891327-70080-130",
+            "relationships": {
+                "route": {
+                    "data": {
+                        "id": "Red",
+                        "type": "route"
+                    }
+                },
+                "stop": {
+                    "data": {
+                        "id": "70080",
+                        "type": "stop"
+                    }
+                },
+                "trip": {
+                    "data": {
+                        "id": "50891327",
+                        "type": "trip"
+                    }
+                }
+            },
+            "type": "schedule"
+        },
+        {
+            "attributes": {
+                "arrival_time": "2022-05-07T05:33:00-04:00",
+                "departure_time": "2022-05-07T05:33:00-04:00",
+                "direction_id": 1,
+                "drop_off_type": 0,
+                "pickup_type": 0,
+                "stop_headsign": null,
+                "stop_sequence": 140,
+                "timepoint": false
+            },
+            "id": "schedule-50891327-70078-140",
+            "relationships": {
+                "route": {
+                    "data": {
+                        "id": "Red",
+                        "type": "route"
+                    }
+                },
+                "stop": {
+                    "data": {
+                        "id": "70078",
+                        "type": "stop"
+                    }
+                },
+                "trip": {
+                    "data": {
+                        "id": "50891327",
+                        "type": "trip"
+                    }
+                }
+            },
+            "type": "schedule"
+        },
+        {
+            "attributes": {
+                "arrival_time": "2022-05-07T05:35:00-04:00",
+                "departure_time": "2022-05-07T05:35:00-04:00",
+                "direction_id": 1,
+                "drop_off_type": 0,
+                "pickup_type": 0,
+                "stop_headsign": null,
+                "stop_sequence": 150,
+                "timepoint": false
+            },
+            "id": "schedule-50891327-70076-150",
+            "relationships": {
+                "route": {
+                    "data": {
+                        "id": "Red",
+                        "type": "route"
+                    }
+                },
+                "stop": {
+                    "data": {
+                        "id": "70076",
+                        "type": "stop"
+                    }
+                },
+                "trip": {
+                    "data": {
+                        "id": "50891327",
+                        "type": "trip"
+                    }
+                }
+            },
+            "type": "schedule"
+        },
+        {
+            "attributes": {
+                "arrival_time": "2022-05-07T05:37:00-04:00",
+                "departure_time": "2022-05-07T05:37:00-04:00",
+                "direction_id": 1,
+                "drop_off_type": 0,
+                "pickup_type": 0,
+                "stop_headsign": null,
+                "stop_sequence": 160,
+                "timepoint": false
+            },
+            "id": "schedule-50891327-70074-160",
+            "relationships": {
+                "route": {
+                    "data": {
+                        "id": "Red",
+                        "type": "route"
+                    }
+                },
+                "stop": {
+                    "data": {
+                        "id": "70074",
+                        "type": "stop"
+                    }
+                },
+                "trip": {
+                    "data": {
+                        "id": "50891327",
+                        "type": "trip"
+                    }
+                }
+            },
+            "type": "schedule"
+        },
+        {
+            "attributes": {
+                "arrival_time": "2022-05-07T05:40:00-04:00",
+                "departure_time": "2022-05-07T05:40:00-04:00",
+                "direction_id": 1,
+                "drop_off_type": 0,
+                "pickup_type": 0,
+                "stop_headsign": null,
+                "stop_sequence": 170,
+                "timepoint": false
+            },
+            "id": "schedule-50891327-70072-170",
+            "relationships": {
+                "route": {
+                    "data": {
+                        "id": "Red",
+                        "type": "route"
+                    }
+                },
+                "stop": {
+                    "data": {
+                        "id": "70072",
+                        "type": "stop"
+                    }
+                },
+                "trip": {
+                    "data": {
+                        "id": "50891327",
+                        "type": "trip"
+                    }
+                }
+            },
+            "type": "schedule"
+        },
+        {
+            "attributes": {
+                "arrival_time": "2022-05-07T05:43:00-04:00",
+                "departure_time": "2022-05-07T05:43:00-04:00",
+                "direction_id": 1,
+                "drop_off_type": 0,
+                "pickup_type": 0,
+                "stop_headsign": null,
+                "stop_sequence": 180,
+                "timepoint": false
+            },
+            "id": "schedule-50891327-70070-180",
+            "relationships": {
+                "route": {
+                    "data": {
+                        "id": "Red",
+                        "type": "route"
+                    }
+                },
+                "stop": {
+                    "data": {
+                        "id": "70070",
+                        "type": "stop"
+                    }
+                },
+                "trip": {
+                    "data": {
+                        "id": "50891327",
+                        "type": "trip"
+                    }
+                }
+            },
+            "type": "schedule"
+        },
+        {
+            "attributes": {
+                "arrival_time": "2022-05-07T05:47:00-04:00",
+                "departure_time": "2022-05-07T05:47:00-04:00",
+                "direction_id": 1,
+                "drop_off_type": 0,
+                "pickup_type": 0,
+                "stop_headsign": null,
+                "stop_sequence": 190,
+                "timepoint": false
+            },
+            "id": "schedule-50891327-70068-190",
+            "relationships": {
+                "route": {
+                    "data": {
+                        "id": "Red",
+                        "type": "route"
+                    }
+                },
+                "stop": {
+                    "data": {
+                        "id": "70068",
+                        "type": "stop"
+                    }
+                },
+                "trip": {
+                    "data": {
+                        "id": "50891327",
+                        "type": "trip"
+                    }
+                }
+            },
+            "type": "schedule"
+        },
+        {
+            "attributes": {
+                "arrival_time": "2022-05-07T05:51:00-04:00",
+                "departure_time": "2022-05-07T05:51:00-04:00",
+                "direction_id": 1,
+                "drop_off_type": 0,
+                "pickup_type": 0,
+                "stop_headsign": null,
+                "stop_sequence": 200,
+                "timepoint": false
+            },
+            "id": "schedule-50891327-70066-200",
+            "relationships": {
+                "route": {
+                    "data": {
+                        "id": "Red",
+                        "type": "route"
+                    }
+                },
+                "stop": {
+                    "data": {
+                        "id": "70066",
+                        "type": "stop"
+                    }
+                },
+                "trip": {
+                    "data": {
+                        "id": "50891327",
+                        "type": "trip"
+                    }
+                }
+            },
+            "type": "schedule"
+        },
+        {
+            "attributes": {
+                "arrival_time": "2022-05-07T05:53:00-04:00",
+                "departure_time": "2022-05-07T05:53:00-04:00",
+                "direction_id": 1,
+                "drop_off_type": 0,
+                "pickup_type": 0,
+                "stop_headsign": null,
+                "stop_sequence": 210,
+                "timepoint": false
+            },
+            "id": "schedule-50891327-70064-210",
+            "relationships": {
+                "route": {
+                    "data": {
+                        "id": "Red",
+                        "type": "route"
+                    }
+                },
+                "stop": {
+                    "data": {
+                        "id": "70064",
+                        "type": "stop"
+                    }
+                },
+                "trip": {
+                    "data": {
+                        "id": "50891327",
+                        "type": "trip"
+                    }
+                }
+            },
+            "type": "schedule"
+        },
+        {
+            "attributes": {
+                "arrival_time": "2022-05-07T05:56:00-04:00",
+                "departure_time": null,
+                "direction_id": 1,
+                "drop_off_type": 0,
+                "pickup_type": 1,
+                "stop_headsign": null,
+                "stop_sequence": 220,
+                "timepoint": false
+            },
+            "id": "schedule-50891327-70061-220",
+            "relationships": {
+                "route": {
+                    "data": {
+                        "id": "Red",
+                        "type": "route"
+                    }
+                },
+                "stop": {
+                    "data": {
+                        "id": "70061",
+                        "type": "stop"
+                    }
+                },
+                "trip": {
+                    "data": {
+                        "id": "50891327",
+                        "type": "trip"
+                    }
+                }
+            },
+            "type": "schedule"
+        },
+        {
+            "attributes": {
+                "arrival_time": null,
+                "departure_time": "2022-05-07T05:28:00-04:00",
+                "direction_id": 1,
+                "drop_off_type": 1,
+                "pickup_type": 0,
+                "stop_headsign": null,
+                "stop_sequence": 50,
+                "timepoint": false
+            },
+            "id": "schedule-50891328-70094-50",
+            "relationships": {
+                "route": {
+                    "data": {
+                        "id": "Red",
+                        "type": "route"
+                    }
+                },
+                "stop": {
+                    "data": {
+                        "id": "70094",
+                        "type": "stop"
+                    }
+                },
+                "trip": {
+                    "data": {
+                        "id": "50891328",
+                        "type": "trip"
+                    }
+                }
+            },
+            "type": "schedule"
+        },
+        {
+            "attributes": {
+                "arrival_time": "2022-05-07T05:29:00-04:00",
+                "departure_time": "2022-05-07T05:29:00-04:00",
+                "direction_id": 1,
+                "drop_off_type": 0,
+                "pickup_type": 0,
+                "stop_headsign": null,
+                "stop_sequence": 60,
+                "timepoint": false
+            },
+            "id": "schedule-50891328-70092-60",
+            "relationships": {
+                "route": {
+                    "data": {
+                        "id": "Red",
+                        "type": "route"
+                    }
+                },
+                "stop": {
+                    "data": {
+                        "id": "70092",
+                        "type": "stop"
+                    }
+                },
+                "trip": {
+                    "data": {
+                        "id": "50891328",
+                        "type": "trip"
+                    }
+                }
+            },
+            "type": "schedule"
+        },
+        {
+            "attributes": {
+                "arrival_time": "2022-05-07T05:31:00-04:00",
+                "departure_time": "2022-05-07T05:31:00-04:00",
+                "direction_id": 1,
+                "drop_off_type": 0,
+                "pickup_type": 0,
+                "stop_headsign": null,
+                "stop_sequence": 70,
+                "timepoint": false
+            },
+            "id": "schedule-50891328-70090-70",
+            "relationships": {
+                "route": {
+                    "data": {
+                        "id": "Red",
+                        "type": "route"
+                    }
+                },
+                "stop": {
+                    "data": {
+                        "id": "70090",
+                        "type": "stop"
+                    }
+                },
+                "trip": {
+                    "data": {
+                        "id": "50891328",
+                        "type": "trip"
+                    }
+                }
+            },
+            "type": "schedule"
+        }
+    ],
+    "jsonapi": {
+        "version": "1.0"
+    },
+    "links": {
+        "first": "https://api-v3.mbta.com/schedules?filter[route]=Red&page[limit]=20&page[offset]=0",
+        "last": "https://api-v3.mbta.com/schedules?filter[route]=Red&page[limit]=20&page[offset]=5980",
+        "next": "https://api-v3.mbta.com/schedules?filter[route]=Red&page[limit]=20&page[offset]=20"
+    }
+}

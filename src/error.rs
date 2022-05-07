@@ -1,18 +1,21 @@
-//! Possible errors that can occur when interacting with the API.
+//! Possible client errors that can occur when interacting with the API. Note that this is different from an error response.
 
 use std::{error::Error, fmt::Display, io::Error as IOError};
 
+use serde_json::Error as JSONError;
 use ureq::Error as RequestError;
 
 /// All possible errors that can occur when using the client.
 #[derive(Debug)]
 pub enum ClientError {
-    /// I/O Errors.
+    /// I/O Error.
     IOError(Box<IOError>),
-    /// HTTP request errors.
+    /// HTTP request error.
     RequestError(Box<RequestError>),
     /// Invalid query parameter error.
     InvalidQueryParam(String, String),
+    /// JSON parsing error.
+    JSONError(Box<JSONError>),
 }
 
 impl Display for ClientError {
@@ -30,6 +33,10 @@ impl Display for ClientError {
             ClientError::InvalidQueryParam(k, v) => {
                 write!(f, "query parameter error: {}={}", k, v)
             }
+            ClientError::JSONError(j) => {
+                write!(f, "JSON error: ")?;
+                j.fmt(f)
+            }
         }
     }
 }
@@ -45,6 +52,12 @@ impl From<IOError> for ClientError {
 impl From<RequestError> for ClientError {
     fn from(error: RequestError) -> Self {
         ClientError::RequestError(Box::new(error))
+    }
+}
+
+impl From<JSONError> for ClientError {
+    fn from(error: JSONError) -> Self {
+        ClientError::JSONError(Box::new(error))
     }
 }
 

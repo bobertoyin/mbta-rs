@@ -7,7 +7,7 @@
 |    Predictions   |                |          |            |                     |
 |     Route(s)     |        X       |    X     |     X      |          X          |
 | Route Pattern(s) |        X       |    X     |     X      |          X          |
-|     Schedules    |        X       |          |            |          X          |
+|     Schedules    |        X       |    X     |            |          X          |
 |    Service(s)    |                |          |            |                     |
 |     Shape(s)     |                |          |            |                     |
 |      Stop(s)     |                |          |            |                     |

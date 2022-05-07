@@ -3,6 +3,7 @@
 use std::collections::HashMap;
 
 use serde::{Deserialize, Serialize};
+use serde_json::Value;
 
 /// Serialization and deserialization for the MBTA datetime format.
 pub mod mbta_date_format {
@@ -76,9 +77,31 @@ pub mod optional_mbta_date_format {
     }
 }
 
-/// MBTA V3 API response object.
+/// MBTA V3 API response objects.
 #[derive(Deserialize, Serialize, Debug, PartialEq, Clone)]
-pub struct Response<D> {
+#[serde(untagged)]
+pub enum Response<D> {
+    /// A successful response object.
+    Success(ResponseSuccess<D>),
+    /// An error response.
+    Error(ResponseError),
+}
+
+impl<D> From<ResponseSuccess<D>> for Response<D> {
+    fn from(value: ResponseSuccess<D>) -> Self {
+        Response::Success(value)
+    }
+}
+
+impl<D> From<ResponseError> for Response<D> {
+    fn from(value: ResponseError) -> Self {
+        Response::Error(value)
+    }
+}
+
+/// MBTA V3 API successful response object.
+#[derive(Deserialize, Serialize, Debug, PartialEq, Clone)]
+pub struct ResponseSuccess<D> {
     /// Data payload of the response.
     pub data: D,
     /// JSON API version.
@@ -86,9 +109,15 @@ pub struct Response<D> {
     /// Links to different pages of the endpoint.
     #[serde(default)]
     pub links: Option<Links>,
-    /// Relationships to other data models.
-    #[serde(default)]
-    pub relationships: Option<HashMap<String, Relationships>>,
+}
+
+/// MBTA V3 API error response object.
+#[derive(Deserialize, Serialize, Debug, PartialEq, Clone)]
+pub struct ResponseError {
+    /// Errors.
+    pub errors: Vec<HashMap<String, Value>>,
+    /// JSON API version.
+    pub jsonapi: APIVersion,
 }
 
 /// Version of the JSON API.
@@ -119,9 +148,12 @@ pub struct Resource<Attribute> {
     pub id: String,
     /// Related endpoint links. *This field could use some more documentation.*
     #[serde(default)]
-    pub links: HashMap<String, String>,
+    pub links: Option<HashMap<String, String>>,
     /// Model attributes.
     pub attributes: Attribute,
+    /// Relationships to other data models.
+    #[serde(default)]
+    pub relationships: Option<HashMap<String, Relationships>>,
 }
 
 /// A model's relationships to other data models.
