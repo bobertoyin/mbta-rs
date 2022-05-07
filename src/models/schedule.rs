@@ -50,11 +50,11 @@ impl From<bool> for ScheduleTimepoint {
     }
 }
 
-impl Into<bool> for ScheduleTimepoint {
-    fn into(self) -> bool {
-        match self {
-            Self::Exact => true,
-            Self::Estimates => false,
+impl From<ScheduleTimepoint> for bool {
+    fn from(value: ScheduleTimepoint) -> Self {
+        match value {
+            ScheduleTimepoint::Exact => true,
+            ScheduleTimepoint::Estimates => false,
         }
     }
 }
@@ -88,13 +88,13 @@ impl TryFrom<u64> for VehiclePresence {
     }
 }
 
-impl Into<u64> for VehiclePresence {
-    fn into(self) -> u64 {
-        match self {
-            Self::RegularlyScheduled => 0,
-            Self::NotAvailable => 1,
-            Self::MustPhoneAgency => 2,
-            Self::MustCoordinateWithDriver => 3,
+impl From<VehiclePresence> for u64 {
+    fn from(value: VehiclePresence) -> Self {
+        match value {
+            VehiclePresence::RegularlyScheduled => 0,
+            VehiclePresence::NotAvailable => 1,
+            VehiclePresence::MustPhoneAgency => 2,
+            VehiclePresence::MustCoordinateWithDriver => 3,
         }
     }
 }

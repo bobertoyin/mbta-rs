@@ -10,7 +10,7 @@ pub mod mbta_date_format {
     use serde::{Deserialize, Deserializer, Serializer};
 
     /// Datetime string format.
-    pub const FORMAT: &'static str = "%FT%T%:z";
+    pub const FORMAT: &str = "%FT%T%:z";
 
     /// Serialize an MBTA datetime.
     ///
@@ -182,14 +182,14 @@ impl TryFrom<u64> for RouteType {
     }
 }
 
-impl Into<u64> for RouteType {
-    fn into(self) -> u64 {
-        match self {
-            Self::LightRail => 0,
-            Self::HeavyRail => 1,
-            Self::CommuterRail => 2,
-            Self::Bus => 3,
-            Self::Ferry => 4,
+impl From<RouteType> for u64 {
+    fn from(value: RouteType) -> u64 {
+        match value {
+            RouteType::LightRail => 0,
+            RouteType::HeavyRail => 1,
+            RouteType::CommuterRail => 2,
+            RouteType::Bus => 3,
+            RouteType::Ferry => 4,
         }
     }
 }

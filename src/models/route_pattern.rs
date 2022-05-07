@@ -52,14 +52,14 @@ impl TryFrom<u64> for RoutePatternTypicality {
     }
 }
 
-impl Into<u64> for RoutePatternTypicality {
-    fn into(self) -> u64 {
-        match self {
-            Self::Undefined => 0,
-            Self::Typical => 1,
-            Self::Deviation => 2,
-            Self::HighlyAtypical => 3,
-            Self::NormalServiceDiversion => 4,
+impl From<RoutePatternTypicality> for u64 {
+    fn from(value: RoutePatternTypicality) -> Self {
+        match value {
+            RoutePatternTypicality::Undefined => 0,
+            RoutePatternTypicality::Typical => 1,
+            RoutePatternTypicality::Deviation => 2,
+            RoutePatternTypicality::HighlyAtypical => 3,
+            RoutePatternTypicality::NormalServiceDiversion => 4,
         }
     }
 }

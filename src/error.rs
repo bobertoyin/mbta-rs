@@ -8,9 +8,9 @@ use ureq::Error as RequestError;
 #[derive(Debug)]
 pub enum ClientError {
     /// I/O Errors.
-    IOError(IOError),
+    IOError(Box<IOError>),
     /// HTTP request errors.
-    RequestError(RequestError),
+    RequestError(Box<RequestError>),
 }
 
 impl Display for ClientError {
@@ -33,13 +33,13 @@ impl Error for ClientError {}
 
 impl From<IOError> for ClientError {
     fn from(error: IOError) -> Self {
-        ClientError::IOError(error)
+        ClientError::IOError(Box::new(error))
     }
 }
 
 impl From<RequestError> for ClientError {
     fn from(error: RequestError) -> Self {
-        ClientError::RequestError(error)
+        ClientError::RequestError(Box::new(error))
     }
 }
 

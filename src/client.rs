@@ -51,47 +51,20 @@ macro_rules! mbta_endpoint_single {
     };
 }
 
-mbta_endpoint_multiple!(
-    model = AlertAttributes,
-    func = alerts
-);
-mbta_endpoint_multiple!(
-    model = FacilityAttributes,
-    func = facilities
-);
-mbta_endpoint_multiple!(
-    model = LineAttributes,
-    func = lines
-);
-mbta_endpoint_multiple!(
-    model = RouteAttributes,
-    func = routes
-);
-mbta_endpoint_multiple!(
-    model = RoutePatternAttributes,
-    func = route_patterns
-);
+mbta_endpoint_multiple!(model = AlertAttributes, func = alerts);
+mbta_endpoint_multiple!(model = FacilityAttributes, func = facilities);
+mbta_endpoint_multiple!(model = LineAttributes, func = lines);
+mbta_endpoint_multiple!(model = RouteAttributes, func = routes);
+mbta_endpoint_multiple!(model = RoutePatternAttributes, func = route_patterns);
 
-mbta_endpoint_single!(
-    model = AlertAttributes, 
-    func = alert, 
-    endpoint = "alerts"
-);
+mbta_endpoint_single!(model = AlertAttributes, func = alert, endpoint = "alerts");
 mbta_endpoint_single!(
     model = FacilityAttributes,
     func = facility,
     endpoint = "facilities"
 );
-mbta_endpoint_single!(
-    model = LineAttributes,
-    func = line, 
-    endpoint = "lines"
-);
-mbta_endpoint_single!(
-    model = RouteAttributes, 
-    func = route, 
-    endpoint = "routes"
-);
+mbta_endpoint_single!(model = LineAttributes, func = line, endpoint = "lines");
+mbta_endpoint_single!(model = RouteAttributes, func = route, endpoint = "routes");
 mbta_endpoint_single!(
     model = RoutePatternAttributes,
     func = route_pattern,
@@ -252,60 +225,60 @@ mod tests_client {
     }
 
     test_from_json_multiple!(
-        model=AlertAttributes, 
-        test_name=test_client_alerts,
-        method=alerts
+        model = AlertAttributes,
+        test_name = test_client_alerts,
+        method = alerts
     );
     test_from_json_multiple!(
-        model=FacilityAttributes, 
-        test_name=test_client_facilities,
-        method=facilities
+        model = FacilityAttributes,
+        test_name = test_client_facilities,
+        method = facilities
     );
     test_from_json_multiple!(
-        model=LineAttributes, 
-        test_name=test_client_lines,
-        method=lines
+        model = LineAttributes,
+        test_name = test_client_lines,
+        method = lines
     );
     test_from_json_multiple!(
-        model=RouteAttributes, 
-        test_name=test_client_routes,
-        method=routes
+        model = RouteAttributes,
+        test_name = test_client_routes,
+        method = routes
     );
     test_from_json_multiple!(
-        model=RoutePatternAttributes, 
-        test_name=test_client_route_patterns,
-        method=route_patterns
+        model = RoutePatternAttributes,
+        test_name = test_client_route_patterns,
+        method = route_patterns
     );
 
     test_from_json_single!(
-        model=AlertAttributes, 
-        test_name=test_client_alert,
-        method=alert, 
-        endpoint="alerts"
+        model = AlertAttributes,
+        test_name = test_client_alert,
+        method = alert,
+        endpoint = "alerts"
     );
     test_from_json_single!(
-        model=FacilityAttributes, 
-        test_name=test_client_facility,
-        method=facility, 
-        endpoint="facilities"
+        model = FacilityAttributes,
+        test_name = test_client_facility,
+        method = facility,
+        endpoint = "facilities"
     );
     test_from_json_single!(
-        model=LineAttributes, 
-        test_name=test_client_line,
-        method=line, 
-        endpoint="lines"
+        model = LineAttributes,
+        test_name = test_client_line,
+        method = line,
+        endpoint = "lines"
     );
     test_from_json_single!(
-        model=RouteAttributes, 
-        test_name=test_client_route,
-        method=route, 
-        endpoint="routes"
+        model = RouteAttributes,
+        test_name = test_client_route,
+        method = route,
+        endpoint = "routes"
     );
     test_from_json_single!(
-        model=RoutePatternAttributes, 
-        test_name=test_client_route_pattern,
-        method=route_pattern, 
-        endpoint="route_patterns"
+        model = RoutePatternAttributes,
+        test_name = test_client_route_pattern,
+        method = route_pattern,
+        endpoint = "route_patterns"
     );
 
     #[rstest]
