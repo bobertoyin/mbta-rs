@@ -95,6 +95,9 @@ pub struct Response<D> {
     /// Links to different pages of the endpoint.
     #[serde(default)]
     pub links: Option<Links>,
+    /// Relationships to other data models.
+    #[serde(default)]
+    pub relationships: Option<HashMap<String, Relationships>>,
 }
 
 /// Version of the JSON API.
@@ -130,10 +133,27 @@ pub struct Resource<Attribute> {
     pub attributes: Attribute,
 }
 
+/// A model's relationships to other data models.
+#[derive(Deserialize, Serialize, Debug, PartialEq, Clone)]
+pub struct Relationships {
+    /// Another model that is related to this data model.
+    pub data: Option<RelationshipAtom>,
+}
+
+/// Atomic data for relationships between data models.
+#[derive(Deserialize, Serialize, Debug, PartialEq, Clone)]
+pub struct RelationshipAtom {
+    /// The type of the related model.
+    #[serde(rename = "type")]
+    pub relationship_type: String,
+    /// The ID of the related model.
+    pub id: String,
+}
+
 /// The type of transportation a route supports.
 #[derive(Deserialize, Serialize, Debug, PartialEq, Clone)]
-#[serde(try_from = "i64")]
-#[serde(into = "i64")]
+#[serde(try_from = "u64")]
+#[serde(into = "u64")]
 pub enum RouteType {
     /// Light rail transportation.
     LightRail,
@@ -147,10 +167,10 @@ pub enum RouteType {
     Ferry,
 }
 
-impl TryFrom<i64> for RouteType {
+impl TryFrom<u64> for RouteType {
     type Error = String;
 
-    fn try_from(value: i64) -> Result<Self, Self::Error> {
+    fn try_from(value: u64) -> Result<Self, Self::Error> {
         match value {
             0 => Ok(Self::LightRail),
             1 => Ok(Self::HeavyRail),
@@ -162,8 +182,8 @@ impl TryFrom<i64> for RouteType {
     }
 }
 
-impl Into<i64> for RouteType {
-    fn into(self) -> i64 {
+impl Into<u64> for RouteType {
+    fn into(self) -> u64 {
         match self {
             Self::LightRail => 0,
             Self::HeavyRail => 1,
@@ -188,7 +208,7 @@ mod tests_route_type {
     #[case::ferry(4, Ok(RouteType::Ferry))]
     #[case::invalid_route_type(5, Err(format!("invalid route type: {}", 5)))]
     fn test_route_type_try_from_ref_str(
-        #[case] input: i64,
+        #[case] input: u64,
         #[case] expected: Result<RouteType, String>,
     ) {
         // Arrange
@@ -206,11 +226,11 @@ mod tests_route_type {
     #[case::commuter_rail(RouteType::CommuterRail, 2)]
     #[case::bus(RouteType::Bus, 3)]
     #[case::ferry(RouteType::Ferry, 4)]
-    fn test_route_type_into_ref_str(#[case] input: RouteType, #[case] expected: i64) {
+    fn test_route_type_into_ref_str(#[case] input: RouteType, #[case] expected: u64) {
         // Arrange
 
         // Act
-        let actual: i64 = input.into();
+        let actual: u64 = input.into();
 
         // Assert
         assert_eq!(actual, expected);

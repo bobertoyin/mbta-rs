@@ -20,10 +20,16 @@
 
 This section is here to document the planning of potential features and current maintenance. Any of these categories would be a good start for contribution.
 
-### **MAINTENANCE** - Improving Unit Testing
+### **MAINTENANCE** - Improving Unit/Integration Testing
 
 ### **MAINTENANCE** - API Scouting/Documentation Improvment
+
+### **MAINTENANCE** - Establishing Standardized Contribution/Git/Github Guidelines and Best Practices
+
+## **MAINTENANCE** - All the CI/CD Things
 
 ### **FEATURE** - Optional Visualization Module
 
 ### **FEATURE** - Support for Event Streaming
+
+### **FEATURE** - Beefing Up Endpoint Macros

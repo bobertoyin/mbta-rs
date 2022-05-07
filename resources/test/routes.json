@@ -1,0 +1,672 @@
+{
+    "data": [
+        {
+            "attributes": {
+                "color": "DA291C",
+                "description": "Rapid Transit",
+                "direction_destinations": [
+                    "Ashmont/Braintree",
+                    "Alewife"
+                ],
+                "direction_names": [
+                    "South",
+                    "North"
+                ],
+                "fare_class": "Rapid Transit",
+                "long_name": "Red Line",
+                "short_name": "",
+                "sort_order": 10010,
+                "text_color": "FFFFFF",
+                "type": 1
+            },
+            "id": "Red",
+            "links": {
+                "self": "/routes/Red"
+            },
+            "relationships": {
+                "line": {
+                    "data": {
+                        "id": "line-Red",
+                        "type": "line"
+                    }
+                }
+            },
+            "type": "route"
+        },
+        {
+            "attributes": {
+                "color": "DA291C",
+                "description": "Rapid Transit",
+                "direction_destinations": [
+                    "Mattapan",
+                    "Ashmont"
+                ],
+                "direction_names": [
+                    "Outbound",
+                    "Inbound"
+                ],
+                "fare_class": "Rapid Transit",
+                "long_name": "Mattapan Trolley",
+                "short_name": "",
+                "sort_order": 10011,
+                "text_color": "FFFFFF",
+                "type": 0
+            },
+            "id": "Mattapan",
+            "links": {
+                "self": "/routes/Mattapan"
+            },
+            "relationships": {
+                "line": {
+                    "data": {
+                        "id": "line-Mattapan",
+                        "type": "line"
+                    }
+                }
+            },
+            "type": "route"
+        },
+        {
+            "attributes": {
+                "color": "ED8B00",
+                "description": "Rapid Transit",
+                "direction_destinations": [
+                    "Forest Hills",
+                    "Oak Grove"
+                ],
+                "direction_names": [
+                    "South",
+                    "North"
+                ],
+                "fare_class": "Rapid Transit",
+                "long_name": "Orange Line",
+                "short_name": "",
+                "sort_order": 10020,
+                "text_color": "FFFFFF",
+                "type": 1
+            },
+            "id": "Orange",
+            "links": {
+                "self": "/routes/Orange"
+            },
+            "relationships": {
+                "line": {
+                    "data": {
+                        "id": "line-Orange",
+                        "type": "line"
+                    }
+                }
+            },
+            "type": "route"
+        },
+        {
+            "attributes": {
+                "color": "00843D",
+                "description": "Rapid Transit",
+                "direction_destinations": [
+                    "Boston College",
+                    "Government Center"
+                ],
+                "direction_names": [
+                    "West",
+                    "East"
+                ],
+                "fare_class": "Rapid Transit",
+                "long_name": "Green Line B",
+                "short_name": "B",
+                "sort_order": 10032,
+                "text_color": "FFFFFF",
+                "type": 0
+            },
+            "id": "Green-B",
+            "links": {
+                "self": "/routes/Green-B"
+            },
+            "relationships": {
+                "line": {
+                    "data": {
+                        "id": "line-Green",
+                        "type": "line"
+                    }
+                }
+            },
+            "type": "route"
+        },
+        {
+            "attributes": {
+                "color": "00843D",
+                "description": "Rapid Transit",
+                "direction_destinations": [
+                    "Cleveland Circle",
+                    "Government Center"
+                ],
+                "direction_names": [
+                    "West",
+                    "East"
+                ],
+                "fare_class": "Rapid Transit",
+                "long_name": "Green Line C",
+                "short_name": "C",
+                "sort_order": 10033,
+                "text_color": "FFFFFF",
+                "type": 0
+            },
+            "id": "Green-C",
+            "links": {
+                "self": "/routes/Green-C"
+            },
+            "relationships": {
+                "line": {
+                    "data": {
+                        "id": "line-Green",
+                        "type": "line"
+                    }
+                }
+            },
+            "type": "route"
+        },
+        {
+            "attributes": {
+                "color": "00843D",
+                "description": "Rapid Transit",
+                "direction_destinations": [
+                    "Riverside",
+                    "North Station"
+                ],
+                "direction_names": [
+                    "West",
+                    "East"
+                ],
+                "fare_class": "Rapid Transit",
+                "long_name": "Green Line D",
+                "short_name": "D",
+                "sort_order": 10034,
+                "text_color": "FFFFFF",
+                "type": 0
+            },
+            "id": "Green-D",
+            "links": {
+                "self": "/routes/Green-D"
+            },
+            "relationships": {
+                "line": {
+                    "data": {
+                        "id": "line-Green",
+                        "type": "line"
+                    }
+                }
+            },
+            "type": "route"
+        },
+        {
+            "attributes": {
+                "color": "00843D",
+                "description": "Rapid Transit",
+                "direction_destinations": [
+                    "Heath Street",
+                    "Union Square"
+                ],
+                "direction_names": [
+                    "West",
+                    "East"
+                ],
+                "fare_class": "Rapid Transit",
+                "long_name": "Green Line E",
+                "short_name": "E",
+                "sort_order": 10035,
+                "text_color": "FFFFFF",
+                "type": 0
+            },
+            "id": "Green-E",
+            "links": {
+                "self": "/routes/Green-E"
+            },
+            "relationships": {
+                "line": {
+                    "data": {
+                        "id": "line-Green",
+                        "type": "line"
+                    }
+                }
+            },
+            "type": "route"
+        },
+        {
+            "attributes": {
+                "color": "003DA5",
+                "description": "Rapid Transit",
+                "direction_destinations": [
+                    "Bowdoin",
+                    "Wonderland"
+                ],
+                "direction_names": [
+                    "West",
+                    "East"
+                ],
+                "fare_class": "Rapid Transit",
+                "long_name": "Blue Line",
+                "short_name": "",
+                "sort_order": 10040,
+                "text_color": "FFFFFF",
+                "type": 1
+            },
+            "id": "Blue",
+            "links": {
+                "self": "/routes/Blue"
+            },
+            "relationships": {
+                "line": {
+                    "data": {
+                        "id": "line-Blue",
+                        "type": "line"
+                    }
+                }
+            },
+            "type": "route"
+        },
+        {
+            "attributes": {
+                "color": "7C878E",
+                "description": "Key Bus",
+                "direction_destinations": [
+                    "Logan Airport Terminals",
+                    "South Station"
+                ],
+                "direction_names": [
+                    "Outbound",
+                    "Inbound"
+                ],
+                "fare_class": "Rapid Transit",
+                "long_name": "Logan Airport Terminals - South Station",
+                "short_name": "SL1",
+                "sort_order": 10051,
+                "text_color": "FFFFFF",
+                "type": 3
+            },
+            "id": "741",
+            "links": {
+                "self": "/routes/741"
+            },
+            "relationships": {
+                "line": {
+                    "data": {
+                        "id": "line-SLWaterfront",
+                        "type": "line"
+                    }
+                }
+            },
+            "type": "route"
+        },
+        {
+            "attributes": {
+                "color": "7C878E",
+                "description": "Key Bus",
+                "direction_destinations": [
+                    "Drydock Avenue",
+                    "South Station"
+                ],
+                "direction_names": [
+                    "Outbound",
+                    "Inbound"
+                ],
+                "fare_class": "Rapid Transit",
+                "long_name": "Drydock Avenue - South Station",
+                "short_name": "SL2",
+                "sort_order": 10052,
+                "text_color": "FFFFFF",
+                "type": 3
+            },
+            "id": "742",
+            "links": {
+                "self": "/routes/742"
+            },
+            "relationships": {
+                "line": {
+                    "data": {
+                        "id": "line-SLWaterfront",
+                        "type": "line"
+                    }
+                }
+            },
+            "type": "route"
+        },
+        {
+            "attributes": {
+                "color": "7C878E",
+                "description": "Key Bus",
+                "direction_destinations": [
+                    "Chelsea Station",
+                    "South Station"
+                ],
+                "direction_names": [
+                    "Outbound",
+                    "Inbound"
+                ],
+                "fare_class": "Rapid Transit",
+                "long_name": "Chelsea Station - South Station",
+                "short_name": "SL3",
+                "sort_order": 10053,
+                "text_color": "FFFFFF",
+                "type": 3
+            },
+            "id": "743",
+            "links": {
+                "self": "/routes/743"
+            },
+            "relationships": {
+                "line": {
+                    "data": {
+                        "id": "line-SLWaterfront",
+                        "type": "line"
+                    }
+                }
+            },
+            "type": "route"
+        },
+        {
+            "attributes": {
+                "color": "7C878E",
+                "description": "Key Bus",
+                "direction_destinations": [
+                    "Nubian Station",
+                    "South Station"
+                ],
+                "direction_names": [
+                    "Outbound",
+                    "Inbound"
+                ],
+                "fare_class": "Local Bus",
+                "long_name": "Nubian Station - South Station",
+                "short_name": "SL4",
+                "sort_order": 10055,
+                "text_color": "FFFFFF",
+                "type": 3
+            },
+            "id": "751",
+            "links": {
+                "self": "/routes/751"
+            },
+            "relationships": {
+                "line": {
+                    "data": {
+                        "id": "line-SLWashington",
+                        "type": "line"
+                    }
+                }
+            },
+            "type": "route"
+        },
+        {
+            "attributes": {
+                "color": "7C878E",
+                "description": "Key Bus",
+                "direction_destinations": [
+                    "Nubian Station",
+                    "Temple Place"
+                ],
+                "direction_names": [
+                    "Outbound",
+                    "Inbound"
+                ],
+                "fare_class": "Local Bus",
+                "long_name": "Nubian Station - Temple Place",
+                "short_name": "SL5",
+                "sort_order": 10056,
+                "text_color": "FFFFFF",
+                "type": 3
+            },
+            "id": "749",
+            "links": {
+                "self": "/routes/749"
+            },
+            "relationships": {
+                "line": {
+                    "data": {
+                        "id": "line-SLWashington",
+                        "type": "line"
+                    }
+                }
+            },
+            "type": "route"
+        },
+        {
+            "attributes": {
+                "color": "80276C",
+                "description": "Commuter Rail",
+                "direction_destinations": [
+                    "Fairmount",
+                    "South Station"
+                ],
+                "direction_names": [
+                    "Outbound",
+                    "Inbound"
+                ],
+                "fare_class": "Commuter Rail",
+                "long_name": "Fairmount Line",
+                "short_name": "",
+                "sort_order": 20001,
+                "text_color": "FFFFFF",
+                "type": 2
+            },
+            "id": "CR-Fairmount",
+            "links": {
+                "self": "/routes/CR-Fairmount"
+            },
+            "relationships": {
+                "line": {
+                    "data": {
+                        "id": "line-Fairmount",
+                        "type": "line"
+                    }
+                }
+            },
+            "type": "route"
+        },
+        {
+            "attributes": {
+                "color": "80276C",
+                "description": "Commuter Rail",
+                "direction_destinations": [
+                    "Wachusett",
+                    "North Station"
+                ],
+                "direction_names": [
+                    "Outbound",
+                    "Inbound"
+                ],
+                "fare_class": "Commuter Rail",
+                "long_name": "Fitchburg Line",
+                "short_name": "",
+                "sort_order": 20002,
+                "text_color": "FFFFFF",
+                "type": 2
+            },
+            "id": "CR-Fitchburg",
+            "links": {
+                "self": "/routes/CR-Fitchburg"
+            },
+            "relationships": {
+                "line": {
+                    "data": {
+                        "id": "line-Fitchburg",
+                        "type": "line"
+                    }
+                }
+            },
+            "type": "route"
+        },
+        {
+            "attributes": {
+                "color": "80276C",
+                "description": "Commuter Rail",
+                "direction_destinations": [
+                    "Worcester",
+                    "South Station"
+                ],
+                "direction_names": [
+                    "Outbound",
+                    "Inbound"
+                ],
+                "fare_class": "Commuter Rail",
+                "long_name": "Framingham/Worcester Line",
+                "short_name": "",
+                "sort_order": 20003,
+                "text_color": "FFFFFF",
+                "type": 2
+            },
+            "id": "CR-Worcester",
+            "links": {
+                "self": "/routes/CR-Worcester"
+            },
+            "relationships": {
+                "line": {
+                    "data": {
+                        "id": "line-Worcester",
+                        "type": "line"
+                    }
+                }
+            },
+            "type": "route"
+        },
+        {
+            "attributes": {
+                "color": "80276C",
+                "description": "Commuter Rail",
+                "direction_destinations": [
+                    "Forge Park/495",
+                    "South Station"
+                ],
+                "direction_names": [
+                    "Outbound",
+                    "Inbound"
+                ],
+                "fare_class": "Commuter Rail",
+                "long_name": "Franklin Line",
+                "short_name": "",
+                "sort_order": 20004,
+                "text_color": "FFFFFF",
+                "type": 2
+            },
+            "id": "CR-Franklin",
+            "links": {
+                "self": "/routes/CR-Franklin"
+            },
+            "relationships": {
+                "line": {
+                    "data": {
+                        "id": "line-Franklin",
+                        "type": "line"
+                    }
+                }
+            },
+            "type": "route"
+        },
+        {
+            "attributes": {
+                "color": "80276C",
+                "description": "Commuter Rail",
+                "direction_destinations": [
+                    "Greenbush",
+                    "South Station"
+                ],
+                "direction_names": [
+                    "Outbound",
+                    "Inbound"
+                ],
+                "fare_class": "Commuter Rail",
+                "long_name": "Greenbush Line",
+                "short_name": "",
+                "sort_order": 20005,
+                "text_color": "FFFFFF",
+                "type": 2
+            },
+            "id": "CR-Greenbush",
+            "links": {
+                "self": "/routes/CR-Greenbush"
+            },
+            "relationships": {
+                "line": {
+                    "data": {
+                        "id": "line-Greenbush",
+                        "type": "line"
+                    }
+                }
+            },
+            "type": "route"
+        },
+        {
+            "attributes": {
+                "color": "80276C",
+                "description": "Commuter Rail",
+                "direction_destinations": [
+                    "Haverhill",
+                    "North Station"
+                ],
+                "direction_names": [
+                    "Outbound",
+                    "Inbound"
+                ],
+                "fare_class": "Commuter Rail",
+                "long_name": "Haverhill Line",
+                "short_name": "",
+                "sort_order": 20006,
+                "text_color": "FFFFFF",
+                "type": 2
+            },
+            "id": "CR-Haverhill",
+            "links": {
+                "self": "/routes/CR-Haverhill"
+            },
+            "relationships": {
+                "line": {
+                    "data": {
+                        "id": "line-Haverhill",
+                        "type": "line"
+                    }
+                }
+            },
+            "type": "route"
+        },
+        {
+            "attributes": {
+                "color": "80276C",
+                "description": "Commuter Rail",
+                "direction_destinations": [
+                    "Kingston",
+                    "South Station"
+                ],
+                "direction_names": [
+                    "Outbound",
+                    "Inbound"
+                ],
+                "fare_class": "Commuter Rail",
+                "long_name": "Kingston Line",
+                "short_name": "",
+                "sort_order": 20007,
+                "text_color": "FFFFFF",
+                "type": 2
+            },
+            "id": "CR-Kingston",
+            "links": {
+                "self": "/routes/CR-Kingston"
+            },
+            "relationships": {
+                "line": {
+                    "data": {
+                        "id": "line-Kingston",
+                        "type": "line"
+                    }
+                }
+            },
+            "type": "route"
+        }
+    ],
+    "jsonapi": {
+        "version": "1.0"
+    },
+    "links": {
+        "first": "https://api-v3.mbta.com/routes?page[limit]=20&page[offset]=0",
+        "last": "https://api-v3.mbta.com/routes?page[limit]=20&page[offset]=180",
+        "next": "https://api-v3.mbta.com/routes?page[limit]=20&page[offset]=20"
+    }
+}

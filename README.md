@@ -17,7 +17,7 @@ This project provides a simple synchronous client and "opinionated" data models 
 
 > Opinionated? In what way is this crate "opinionated"?
 
-The models that are returned from the client are "opinionated" due to the highly dynamic nature of the MBTA's V3 API: there are a plethora of query parameters that can change the number of fields per JSON object and even mix-and-match different model schemas! This crate opts to lock down any interface to these query params in favor of keeping a few that don't affect the return schema (currently page limits and page offsets) and decides what information is relevant to return. It is then up to the user to implement the remaining query parameter features, e.g. filtering the results or building the relationships between models yourself.
+The models that are returned from the client are "opinionated" due to the highly dynamic nature of the MBTA's V3 API: there are a plethora of query parameters that can change the number of fields per JSON object and even mix-and-match different model schemas! This crate opts to lock down any interface to these query params in favor of keeping a few that don't affect the return schema (currently page limits and page offsets) and decides what information is relevant to return. It is then up to the user to implement the remaining query parameter features, e.g. filtering the results or building the relationships between models yourself. TLDR; this crate defines all of the relevant data model fields, no more and no less.
 
 ### Built With
 
@@ -40,7 +40,7 @@ The models that are returned from the client are "opinionated" due to the highly
 <!-- USAGE -->
 ## Usage
 
-> It is highly recommended to have the [API Swagger docs](https://api-v3.mbta.com/docs/swagger/index.html) handy, as it is *the* authoritative reference for what the API provides. The documentation from the Swagger docs supercedes any documentation that is in this crate.
+> It is highly recommended to have the [API Swagger docs](https://api-v3.mbta.com/docs/swagger/index.html) handy, as it generally contains more detailed and thorough documentaiton for model fields than this crate's API.
 
 In your `Cargo.toml` file:
 ```toml
@@ -49,7 +49,6 @@ mbta-rs = "*"
 ```
 
 <!-- CONTRIBUTE -->
-
 ## Contribute
 
 See `CONTRIBUTE.md` to get started!

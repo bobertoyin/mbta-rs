@@ -1,0 +1,572 @@
+{
+    "data": [
+        {
+            "attributes": {
+                "direction_id": 0,
+                "name": "Alewife - Ashmont",
+                "sort_order": 10010004,
+                "time_desc": null,
+                "typicality": 1
+            },
+            "id": "Red-1-0",
+            "links": {
+                "self": "/route_patterns/Red-1-0"
+            },
+            "relationships": {
+                "representative_trip": {
+                    "data": {
+                        "id": "50890602",
+                        "type": "trip"
+                    }
+                },
+                "route": {
+                    "data": {
+                        "id": "Red",
+                        "type": "route"
+                    }
+                }
+            },
+            "type": "route_pattern"
+        },
+        {
+            "attributes": {
+                "direction_id": 0,
+                "name": "Alewife - Braintree",
+                "sort_order": 10010005,
+                "time_desc": null,
+                "typicality": 1
+            },
+            "id": "Red-3-0",
+            "links": {
+                "self": "/route_patterns/Red-3-0"
+            },
+            "relationships": {
+                "representative_trip": {
+                    "data": {
+                        "id": "50890817",
+                        "type": "trip"
+                    }
+                },
+                "route": {
+                    "data": {
+                        "id": "Red",
+                        "type": "route"
+                    }
+                }
+            },
+            "type": "route_pattern"
+        },
+        {
+            "attributes": {
+                "direction_id": 0,
+                "name": "Harvard - Ashmont",
+                "sort_order": 10010099,
+                "time_desc": null,
+                "typicality": 4
+            },
+            "id": "Red-1-0_70061_70067_2",
+            "links": {
+                "self": "/route_patterns/Red-1-0_70061_70067_2"
+            },
+            "relationships": {
+                "representative_trip": {
+                    "data": {
+                        "id": "50891413-AlewifeHarvard2",
+                        "type": "trip"
+                    }
+                },
+                "route": {
+                    "data": {
+                        "id": "Red",
+                        "type": "route"
+                    }
+                }
+            },
+            "type": "route_pattern"
+        },
+        {
+            "attributes": {
+                "direction_id": 0,
+                "name": "Harvard - Braintree",
+                "sort_order": 10010099,
+                "time_desc": null,
+                "typicality": 4
+            },
+            "id": "Red-3-0_70061_70067_2",
+            "links": {
+                "self": "/route_patterns/Red-3-0_70061_70067_2"
+            },
+            "relationships": {
+                "representative_trip": {
+                    "data": {
+                        "id": "50891584-AlewifeHarvard2",
+                        "type": "trip"
+                    }
+                },
+                "route": {
+                    "data": {
+                        "id": "Red",
+                        "type": "route"
+                    }
+                }
+            },
+            "type": "route_pattern"
+        },
+        {
+            "attributes": {
+                "direction_id": 1,
+                "name": "Ashmont - Alewife",
+                "sort_order": 10010104,
+                "time_desc": null,
+                "typicality": 1
+            },
+            "id": "Red-1-1",
+            "links": {
+                "self": "/route_patterns/Red-1-1"
+            },
+            "relationships": {
+                "representative_trip": {
+                    "data": {
+                        "id": "50890494",
+                        "type": "trip"
+                    }
+                },
+                "route": {
+                    "data": {
+                        "id": "Red",
+                        "type": "route"
+                    }
+                }
+            },
+            "type": "route_pattern"
+        },
+        {
+            "attributes": {
+                "direction_id": 1,
+                "name": "Braintree - Alewife",
+                "sort_order": 10010105,
+                "time_desc": null,
+                "typicality": 1
+            },
+            "id": "Red-3-1",
+            "links": {
+                "self": "/route_patterns/Red-3-1"
+            },
+            "relationships": {
+                "representative_trip": {
+                    "data": {
+                        "id": "50890710",
+                        "type": "trip"
+                    }
+                },
+                "route": {
+                    "data": {
+                        "id": "Red",
+                        "type": "route"
+                    }
+                }
+            },
+            "type": "route_pattern"
+        },
+        {
+            "attributes": {
+                "direction_id": 1,
+                "name": "Braintree - Harvard",
+                "sort_order": 10010199,
+                "time_desc": null,
+                "typicality": 4
+            },
+            "id": "Red-3-1_70068_70061_0",
+            "links": {
+                "self": "/route_patterns/Red-3-1_70068_70061_0"
+            },
+            "relationships": {
+                "representative_trip": {
+                    "data": {
+                        "id": "50891499-AlewifeHarvard0",
+                        "type": "trip"
+                    }
+                },
+                "route": {
+                    "data": {
+                        "id": "Red",
+                        "type": "route"
+                    }
+                }
+            },
+            "type": "route_pattern"
+        },
+        {
+            "attributes": {
+                "direction_id": 1,
+                "name": "Ashmont - Harvard",
+                "sort_order": 10010199,
+                "time_desc": null,
+                "typicality": 4
+            },
+            "id": "Red-1-1_70068_70061_0",
+            "links": {
+                "self": "/route_patterns/Red-1-1_70068_70061_0"
+            },
+            "relationships": {
+                "representative_trip": {
+                    "data": {
+                        "id": "50891327-AlewifeHarvard0",
+                        "type": "trip"
+                    }
+                },
+                "route": {
+                    "data": {
+                        "id": "Red",
+                        "type": "route"
+                    }
+                }
+            },
+            "type": "route_pattern"
+        },
+        {
+            "attributes": {
+                "direction_id": 0,
+                "name": "Ashmont - Mattapan",
+                "sort_order": 10011000,
+                "time_desc": null,
+                "typicality": 1
+            },
+            "id": "Mattapan-_-0",
+            "links": {
+                "self": "/route_patterns/Mattapan-_-0"
+            },
+            "relationships": {
+                "representative_trip": {
+                    "data": {
+                        "id": "50973684",
+                        "type": "trip"
+                    }
+                },
+                "route": {
+                    "data": {
+                        "id": "Mattapan",
+                        "type": "route"
+                    }
+                }
+            },
+            "type": "route_pattern"
+        },
+        {
+            "attributes": {
+                "direction_id": 1,
+                "name": "Mattapan - Ashmont",
+                "sort_order": 10011100,
+                "time_desc": null,
+                "typicality": 1
+            },
+            "id": "Mattapan-_-1",
+            "links": {
+                "self": "/route_patterns/Mattapan-_-1"
+            },
+            "relationships": {
+                "representative_trip": {
+                    "data": {
+                        "id": "50973682",
+                        "type": "trip"
+                    }
+                },
+                "route": {
+                    "data": {
+                        "id": "Mattapan",
+                        "type": "route"
+                    }
+                }
+            },
+            "type": "route_pattern"
+        },
+        {
+            "attributes": {
+                "direction_id": 0,
+                "name": "Oak Grove - Forest Hills",
+                "sort_order": 10020000,
+                "time_desc": null,
+                "typicality": 1
+            },
+            "id": "Orange-3-0",
+            "links": {
+                "self": "/route_patterns/Orange-3-0"
+            },
+            "relationships": {
+                "representative_trip": {
+                    "data": {
+                        "id": "51023386",
+                        "type": "trip"
+                    }
+                },
+                "route": {
+                    "data": {
+                        "id": "Orange",
+                        "type": "route"
+                    }
+                }
+            },
+            "type": "route_pattern"
+        },
+        {
+            "attributes": {
+                "direction_id": 1,
+                "name": "Forest Hills - Oak Grove",
+                "sort_order": 10020100,
+                "time_desc": null,
+                "typicality": 1
+            },
+            "id": "Orange-3-1",
+            "links": {
+                "self": "/route_patterns/Orange-3-1"
+            },
+            "relationships": {
+                "representative_trip": {
+                    "data": {
+                        "id": "51023461",
+                        "type": "trip"
+                    }
+                },
+                "route": {
+                    "data": {
+                        "id": "Orange",
+                        "type": "route"
+                    }
+                }
+            },
+            "type": "route_pattern"
+        },
+        {
+            "attributes": {
+                "direction_id": 0,
+                "name": "Government Center - Boston College",
+                "sort_order": 10032000,
+                "time_desc": null,
+                "typicality": 1
+            },
+            "id": "Green-B-812-0",
+            "links": {
+                "self": "/route_patterns/Green-B-812-0"
+            },
+            "relationships": {
+                "representative_trip": {
+                    "data": {
+                        "id": "50974004",
+                        "type": "trip"
+                    }
+                },
+                "route": {
+                    "data": {
+                        "id": "Green-B",
+                        "type": "route"
+                    }
+                }
+            },
+            "type": "route_pattern"
+        },
+        {
+            "attributes": {
+                "direction_id": 1,
+                "name": "Boston College - Government Center",
+                "sort_order": 10032100,
+                "time_desc": null,
+                "typicality": 1
+            },
+            "id": "Green-B-812-1",
+            "links": {
+                "self": "/route_patterns/Green-B-812-1"
+            },
+            "relationships": {
+                "representative_trip": {
+                    "data": {
+                        "id": "50974003",
+                        "type": "trip"
+                    }
+                },
+                "route": {
+                    "data": {
+                        "id": "Green-B",
+                        "type": "route"
+                    }
+                }
+            },
+            "type": "route_pattern"
+        },
+        {
+            "attributes": {
+                "direction_id": 0,
+                "name": "Government Center - Cleveland Circle",
+                "sort_order": 10033000,
+                "time_desc": null,
+                "typicality": 1
+            },
+            "id": "Green-C-832-0",
+            "links": {
+                "self": "/route_patterns/Green-C-832-0"
+            },
+            "relationships": {
+                "representative_trip": {
+                    "data": {
+                        "id": "50974143",
+                        "type": "trip"
+                    }
+                },
+                "route": {
+                    "data": {
+                        "id": "Green-C",
+                        "type": "route"
+                    }
+                }
+            },
+            "type": "route_pattern"
+        },
+        {
+            "attributes": {
+                "direction_id": 1,
+                "name": "Cleveland Circle - Government Center",
+                "sort_order": 10033100,
+                "time_desc": null,
+                "typicality": 1
+            },
+            "id": "Green-C-832-1",
+            "links": {
+                "self": "/route_patterns/Green-C-832-1"
+            },
+            "relationships": {
+                "representative_trip": {
+                    "data": {
+                        "id": "50974144",
+                        "type": "trip"
+                    }
+                },
+                "route": {
+                    "data": {
+                        "id": "Green-C",
+                        "type": "route"
+                    }
+                }
+            },
+            "type": "route_pattern"
+        },
+        {
+            "attributes": {
+                "direction_id": 0,
+                "name": "North Station - Riverside",
+                "sort_order": 10034000,
+                "time_desc": null,
+                "typicality": 1
+            },
+            "id": "Green-D-851-0",
+            "links": {
+                "self": "/route_patterns/Green-D-851-0"
+            },
+            "relationships": {
+                "representative_trip": {
+                    "data": {
+                        "id": "50974369",
+                        "type": "trip"
+                    }
+                },
+                "route": {
+                    "data": {
+                        "id": "Green-D",
+                        "type": "route"
+                    }
+                }
+            },
+            "type": "route_pattern"
+        },
+        {
+            "attributes": {
+                "direction_id": 0,
+                "name": "Union Square - Riverside",
+                "sort_order": 10034004,
+                "time_desc": "Weekday early mornings only",
+                "typicality": 3
+            },
+            "id": "Green-D-855-0",
+            "links": {
+                "self": "/route_patterns/Green-D-855-0"
+            },
+            "relationships": {
+                "representative_trip": {
+                    "data": {
+                        "id": "50974443",
+                        "type": "trip"
+                    }
+                },
+                "route": {
+                    "data": {
+                        "id": "Green-D",
+                        "type": "route"
+                    }
+                }
+            },
+            "type": "route_pattern"
+        },
+        {
+            "attributes": {
+                "direction_id": 0,
+                "name": "North Station - Reservoir",
+                "sort_order": 10034099,
+                "time_desc": null,
+                "typicality": 4
+            },
+            "id": "Green-D-851-0_70175_70161_0",
+            "links": {
+                "self": "/route_patterns/Green-D-851-0_70175_70161_0"
+            },
+            "relationships": {
+                "representative_trip": {
+                    "data": {
+                        "id": "50977301-ReservoirRiverside0",
+                        "type": "trip"
+                    }
+                },
+                "route": {
+                    "data": {
+                        "id": "Green-D",
+                        "type": "route"
+                    }
+                }
+            },
+            "type": "route_pattern"
+        },
+        {
+            "attributes": {
+                "direction_id": 0,
+                "name": "North Station - Newton Highlands",
+                "sort_order": 10034099,
+                "time_desc": null,
+                "typicality": 4
+            },
+            "id": "Green-D-851-0_70169_70161_0",
+            "links": {
+                "self": "/route_patterns/Green-D-851-0_70169_70161_0"
+            },
+            "relationships": {
+                "representative_trip": {
+                    "data": {
+                        "id": "50977301-NewtonHighlandsRiverside0",
+                        "type": "trip"
+                    }
+                },
+                "route": {
+                    "data": {
+                        "id": "Green-D",
+                        "type": "route"
+                    }
+                }
+            },
+            "type": "route_pattern"
+        }
+    ],
+    "jsonapi": {
+        "version": "1.0"
+    },
+    "links": {
+        "first": "https://api-v3.mbta.com/route_patterns?page[limit]=20&page[offset]=0",
+        "last": "https://api-v3.mbta.com/route_patterns?page[limit]=20&page[offset]=820",
+        "next": "https://api-v3.mbta.com/route_patterns?page[limit]=20&page[offset]=20"
+    }
+}

@@ -2,9 +2,66 @@
 
 use serde::de::DeserializeOwned;
 
-use super::{AlertAttributes, ClientError, FacilityAttributes, Resource, Response};
+use super::*;
+
 /// Base url for client request endpoints.
 pub const BASE_URL: &str = "https://api-v3.mbta.com";
+
+/// Procedural macro for quickly implementing MBTA client endpoints with multiple return objects.
+#[macro_export]
+macro_rules! mbta_endpoint_multiple {
+    (model=$return_type:ident, func=$endpoint_fn:ident) => {
+        impl Client {
+            #[doc = "Returns a list of"]
+            #[doc = stringify!($endpoint_fn)]
+            #[doc = "in the MBTA system."]
+            /// # Arguments
+            /// * `page_limit` - max number of results per page
+            /// * `page_offset` - zero-based number of results to offset by
+            pub fn $endpoint_fn(
+                &self,
+                page_limit: Option<u64>,
+                page_offset: Option<u64>,
+            ) -> Result<Response<Vec<Resource<$return_type>>>, ClientError> {
+                self.get(stringify!($endpoint_fn), page_limit, page_offset)
+            }
+        }
+    };
+}
+
+/// Procedural macro for quickly implementing MBTA client endpoints with single return objects.
+#[macro_export]
+macro_rules! mbta_endpoint_single {
+    (model=$return_type:ident, func=$endpoint_fn:ident, endpoint=$endpoint:expr) => {
+        impl Client {
+            #[doc = "Returns a"]
+            #[doc = stringify!($endpoint_fn)]
+            #[doc = "in the MBTA system given its id."]
+            /// # Arguments
+            #[doc = "* `id` - the id of the"]
+            #[doc = stringify!($endpoint_fn)]
+            #[doc = "to return"]
+            pub fn $endpoint_fn(
+                &self,
+                id: &str,
+            ) -> Result<Response<Resource<$return_type>>, ClientError> {
+                self.get(&format!("{}/{}", $endpoint, id), None, None)
+            }
+        }
+    };
+}
+
+mbta_endpoint_multiple!(model=AlertAttributes, func=alerts);
+mbta_endpoint_multiple!(model=FacilityAttributes, func=facilities);
+mbta_endpoint_multiple!(model=LineAttributes, func=lines);
+mbta_endpoint_multiple!(model=RouteAttributes, func=routes);
+mbta_endpoint_multiple!(model=RoutePatternAttributes, func=route_patterns);
+
+mbta_endpoint_single!(model=AlertAttributes, func=alert, endpoint="alerts");
+mbta_endpoint_single!(model=FacilityAttributes, func=facility, endpoint="facilities");
+mbta_endpoint_single!(model=LineAttributes, func=line, endpoint="lines");
+mbta_endpoint_single!(model=RouteAttributes, func=route, endpoint="routes");
+mbta_endpoint_single!(model=RoutePatternAttributes, func=route_pattern, endpoint="route_patterns");
 
 /// Synchronous client for interacting with the MBTA V3 API.
 #[derive(Debug, Clone, PartialEq)]
@@ -49,85 +106,6 @@ impl Client {
             api_key: None,
             base_url: base_url.into(),
         }
-    }
-
-    /// List all alerts in the MBTA system.
-    ///
-    /// # Arguments
-    ///
-    /// * `page_limit` - max number of results per page
-    /// * `page_offset` - zero-based number of results to offset by
-    pub fn alerts(
-        &self,
-        page_limit: Option<u64>,
-        page_offset: Option<u64>,
-    ) -> Result<Response<Vec<Resource<AlertAttributes>>>, ClientError> {
-        self.get("alerts", page_limit, page_offset)
-    }
-
-    /// Show a particular alert given its ID.
-    ///
-    /// # Arguments
-    ///
-    /// * `alert_id` - the ID of the alert
-    /// * `query_params` - query parameters for this request
-    pub fn alert(
-        &self,
-        alert_id: &str,
-    ) -> Result<Response<Resource<AlertAttributes>>, ClientError> {
-        self.get(&format!("alerts/{}", alert_id), None, None)
-    }
-
-    /// List all facilities (station amenities) in the MBTA system.
-    ///
-    /// # Arguments
-    ///
-    /// * `page_limit` - max number of results per page
-    /// * `page_offset` - zero-based number of results to offset by
-    pub fn facilities(
-        &self,
-        page_limit: Option<u64>,
-        page_offset: Option<u64>,
-    ) -> Result<Response<Vec<Resource<FacilityAttributes>>>, ClientError> {
-        self.get("facilities", page_limit, page_offset)
-    }
-
-    /// Show a particular facility given its ID.
-    ///
-    /// # Arguments
-    ///
-    /// * `facility_id` - the ID of the facility
-    pub fn facility(
-        &self,
-        facility_id: &str,
-    ) -> Result<Response<Resource<FacilityAttributes>>, ClientError> {
-        self.get(&format!("facility/{}", facility_id), None, None)
-    }
-
-    /// List all lines in the MBTA system.
-    ///
-    /// # Arguments
-    ///
-    /// * `page_limit` - max number of results per page
-    /// * `page_offset` - zero-based number of results to offset by
-    pub fn lines(
-        &self,
-        page_limit: Option<u64>,
-        page_offset: Option<u64>,
-    ) -> Result<Response<Vec<Resource<FacilityAttributes>>>, ClientError> {
-        self.get("lines", page_limit, page_offset)
-    }
-
-    // Show a particular line given its ID.
-    ///
-    /// # Arguments
-    ///
-    /// * `facility_id` - the ID of the line
-    pub fn line(
-        &self,
-        line_id: &str,
-    ) -> Result<Response<Vec<Resource<FacilityAttributes>>>, ClientError> {
-        self.get(&format!("lines/{}", line_id), None, None)
     }
 
     /// Helper method for making generalized GET requests to any endpoint with any query parameters.
@@ -315,6 +293,102 @@ mod tests_client {
 
         // Act
         let actual = client.facility("foobar").unwrap();
+
+        // Assert
+        mock_endpoint.assert();
+        assert_eq!(actual, expected);
+    }
+
+    #[rstest]
+    #[case::valid_response("routes.json")]
+    #[should_panic]
+    #[case::invalid_response("bad_request.json")]
+    fn tests_client_routes(#[case] file_path: &str) {
+        // Arrange
+        let response_body = load_json_test_file_contents(file_path);
+        let mock_server = MockServer::start();
+        let mock_endpoint = mock_server.mock(|when, then| {
+            when.method(GET).path("/routes");
+            then.status(200).body(&response_body);
+        });
+        let client = Client::with_url(mock_server.base_url());
+        let expected: Response<Vec<Resource<RouteAttributes>>> =
+            from_str(&response_body).expect("failed to parse");
+
+        // Act
+        let actual = client.routes(None, None).unwrap();
+
+        // Assert
+        mock_endpoint.assert();
+        assert_eq!(actual, expected);
+    }
+
+    #[rstest]
+    #[case::valid_response("route.json")]
+    #[should_panic]
+    #[case::invalid_response("bad_request.json")]
+    fn tests_client_route(#[case] file_path: &str) {
+        // Arrange
+        let response_body = load_json_test_file_contents(file_path);
+        let mock_server = MockServer::start();
+        let mock_endpoint = mock_server.mock(|when, then| {
+            when.method(GET).path("/routes/foobar");
+            then.status(200).body(&response_body);
+        });
+        let client = Client::with_url(mock_server.base_url());
+        let expected: Response<Resource<RouteAttributes>> =
+            from_str(&response_body).expect("failed to parse");
+
+        // Act
+        let actual = client.route("foobar").unwrap();
+
+        // Assert
+        mock_endpoint.assert();
+        assert_eq!(actual, expected);
+    }
+
+    #[rstest]
+    #[case::valid_response("route_patterns.json")]
+    #[should_panic]
+    #[case::invalid_response("bad_request.json")]
+    fn tests_client_route_patterns(#[case] file_path: &str) {
+        // Arrange
+        let response_body = load_json_test_file_contents(file_path);
+        let mock_server = MockServer::start();
+        let mock_endpoint = mock_server.mock(|when, then| {
+            when.method(GET).path("/route_patterns");
+            then.status(200).body(&response_body);
+        });
+        let client = Client::with_url(mock_server.base_url());
+        let expected: Response<Vec<Resource<RoutePatternAttributes>>> =
+            from_str(&response_body).expect("failed to parse");
+
+        // Act
+        let actual = client.route_patterns(None, None).unwrap();
+
+        // Assert
+        mock_endpoint.assert();
+        assert_eq!(actual, expected);
+    }
+
+    #[rstest]
+    #[case::valid_response("route_pattern.json")]
+    #[should_panic]
+    #[case::invalid_response("bad_request.json")]
+    fn tests_client_route_pattern(#[case] file_path: &str) {
+        // Arrange
+        let response_body = load_json_test_file_contents(file_path);
+        let mock_server = MockServer::start();
+        let mock_endpoint = mock_server.mock(|when, then| {
+            when.method(GET).path("/route_patterns/foobar");
+            then.status(200).body(&response_body);
+        });
+        let client = Client::with_url(mock_server.base_url());
+        let expected: Response<Resource<RoutePatternAttributes>> =
+            from_str(&response_body).expect("failed to parse");
+
+        // Act
+        let actual = client.route_pattern("foobar").unwrap();
 
         // Assert
         mock_endpoint.assert();

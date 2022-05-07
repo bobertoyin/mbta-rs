@@ -10,17 +10,13 @@ use serde_json::Value;
 pub struct FacilityAttributes {
     /// The type of facility.
     #[serde(rename = "type")]
-    #[serde(default)]
-    pub facility_type: Option<FacilityType>,
+    pub facility_type: FacilityType,
     /// The short name of the facility.
-    #[serde(default)]
-    pub short_name: Option<String>,
+    pub short_name: String,
     /// Additional facility properties.
-    #[serde(default)]
     pub properties: Vec<HashMap<String, Value>>, // would be nice to replace [Value] with some kind of union of String and Integer, based on the swagger docs
     /// The long name of the facility.
-    #[serde(default)]
-    pub long_name: Option<String>,
+    pub long_name: String,
     /// The latitude of the facility. Degrees North, in the WGS-84 coordinate system.
     #[serde(default)]
     pub latitude: Option<f64>,
