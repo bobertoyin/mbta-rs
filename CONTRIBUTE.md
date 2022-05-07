@@ -11,9 +11,17 @@
 
 ### Getting Started
 
-### Branches
+### Branch Policy
+
+### Continuous Integration
+
+The main CI pipeline declaration lives in the `test.yml` file under the `.github/workflows` directory. Running tests is done using `cargo test`, testing documentation compilation is done using `cargo do`, and linting is done with both `cargo clippy` (`cargo clippy --all-features -- -D warnings` as the full command) and `cargo fmt` (`cargo fmt --all -- --check` as the full command). It is recommended to run all of these steps locally as needed before making too many commits; use the argument-less version of any of the above commands to make in-place changes to your code or receive immediate feedback on your code.
+
+See the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) specification for how to format your git commit messages.
 
 ### Semantic Versioning
+
+### Releasing
 
 <!-- ROADMAP -->
 ## Roadmap
@@ -57,18 +65,6 @@ Here are some necessary things to setup:
 - issue template
 - PR template
 - branch protection?
-
-### **MAINTENANCE** - All the CI/CD Things
-
-Configure a Github Actions pipeline with the following necessary elements:
-
-- [x] `cargo test` step
-- [x] `cargo clippy` step
-- [x] `cargo fmt check` step
-
-and potential "nice to have" steps:
-
-- [convential commits](https://www.conventionalcommits.org/en/v1.0.0/) check
 
 ### **MAINTENANCE** - Benchmarks and Examples
 
