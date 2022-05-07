@@ -1,6 +1,6 @@
 //! Data models for MBTA services.
 
-use chrono::NaiveDate;
+use chrono::{Date, FixedOffset};
 use serde::{Deserialize, Serialize};
 
 use super::*;
@@ -12,7 +12,7 @@ pub struct ServiceAttributes {
     pub valid_days: Vec<Day>,
     /// Earliest date which is valid for this service.
     #[serde(with = "mbta_date_format")]
-    pub start_date: NaiveDate,
+    pub start_date: Date<FixedOffset>,
     /// Describes how well this schedule represents typical service for the listed schedule type.
     pub schedule_typicality: ScheduleTypicality,
     /// Description of the schedule type the service can be applied.
@@ -23,25 +23,25 @@ pub struct ServiceAttributes {
     pub removed_dates_notes: Vec<Option<String>>,
     /// Exceptional dates when the service is not valid.
     #[serde(with = "vec_mbta_date_format")]
-    pub removed_dates: Vec<NaiveDate>,
+    pub removed_dates: Vec<Date<FixedOffset>>,
     /// Earliest date which is a part of the rating (season) which contains this service.
     #[serde(with = "optional_mbta_date_format")]
-    pub rating_start_date: Option<NaiveDate>,
+    pub rating_start_date: Option<Date<FixedOffset>>,
     /// Latest date which is a part of the rating (season) which contains this service.
     #[serde(with = "optional_mbta_date_format")]
-    pub rating_end_date: Option<NaiveDate>,
+    pub rating_end_date: Option<Date<FixedOffset>>,
     /// Human-readable description of the rating (season), as it should appear on public-facing websites and applications.
     pub rating_description: Option<String>,
     /// Latest date which is valid for this service.
     #[serde(with = "mbta_date_format")]
-    pub end_date: NaiveDate,
+    pub end_date: Date<FixedOffset>,
     /// Human-readable description of the service, as it should appear on public-facing websites and applications.
     pub description: Option<String>,
     /// Extra information about additional dates (e.g. holiday name).
     pub added_dates_notes: Vec<Option<String>>,
     /// Additional dates when the service is valid.
     #[serde(with = "vec_mbta_date_format")]
-    pub added_dates: Vec<NaiveDate>,
+    pub added_dates: Vec<Date<FixedOffset>>,
 }
 
 /// Represents how well a schedule represents typical service for a listed schedule type.
