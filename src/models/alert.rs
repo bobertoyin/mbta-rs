@@ -5,7 +5,13 @@ use serde::{Deserialize, Serialize};
 
 use super::*;
 
-/// Attributes for an active or upcoming system alert.
+/// Multiple alerts
+pub type Alerts = Vec<Alert>;
+
+/// An active or upcoming system alert.
+pub type Alert = Resource<AlertAttributes>;
+
+/// Attributes for an alert.
 #[derive(Deserialize, Serialize, Debug, PartialEq, Clone)]
 pub struct AlertAttributes {
     /// A URL for extra details, such as outline construction or maintenance plans.

@@ -13,11 +13,7 @@ The MBTA V3 API is described as:
 
 > A fast, flexible, standards-based API for schedules, arrival predictions, vehicle locations, and service alerts.
 
-This project provides a simple synchronous client and "opinionated" data models to easily consume data from the API within your Rust code.
-
-> Opinionated? In what way is this crate "opinionated"?
-
-The models that are returned from the client are "opinionated" in that the fields that are to be returned are declared upfront, along with defining a subset of query parameters that are allowed for each endpoint. 
+This project provides a simple synchronous client and data models to easily consume data from the API within your Rust code.
 
 ### Built With
 

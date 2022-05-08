@@ -4,7 +4,13 @@ use serde::{Deserialize, Serialize};
 
 use super::*;
 
-/// Attributes for a path a vehicle travels during service.
+/// Multiple routes.
+pub type Routes = Vec<Route>;
+
+/// A path a vehicle travels during service.
+pub type Route = Resource<RouteAttributes>;
+
+/// Attributes for a route.
 #[derive(Deserialize, Serialize, Debug, PartialEq, Clone)]
 pub struct RouteAttributes {
     /// The type of route.

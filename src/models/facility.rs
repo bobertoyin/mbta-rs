@@ -5,7 +5,15 @@ use std::collections::HashMap;
 use serde::{Deserialize, Serialize};
 use serde_json::Value;
 
-/// Attributes for an amenity at a station stop such as an elevator, escalator, parking lot, or bike storage.
+use super::*;
+
+/// Multiple facilities.
+pub type Facilities = Vec<Facility>;
+
+/// An amenity at a station stop such as an elevator, escalator, parking lot, or bike storage.
+pub type Facility = Resource<FacilityAttributes>;
+
+/// Attributes for a facilit.
 #[derive(Deserialize, Serialize, Debug, PartialEq, Clone)]
 pub struct FacilityAttributes {
     /// The type of facility.

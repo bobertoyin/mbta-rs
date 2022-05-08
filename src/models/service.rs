@@ -5,7 +5,13 @@ use serde::{Deserialize, Serialize};
 
 use super::*;
 
-/// Attributes for a set of dates on which trips run.
+/// Multiple services.
+pub type Services = Vec<Service>;
+
+/// A set of dates on which trips run.
+pub type Service = Resource<ServiceAttributes>;
+
+/// Attributes for service.
 #[derive(Debug, PartialEq, Clone, Deserialize, Serialize)]
 pub struct ServiceAttributes {
     /// Days of the week.

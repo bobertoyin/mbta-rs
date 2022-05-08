@@ -2,7 +2,15 @@
 
 use serde::{Deserialize, Serialize};
 
-/// Attributes for a line, which represents a combination of routes.
+use super::*;
+
+/// Multiple lines.
+pub type Lines = Vec<Line>;
+
+/// A combination of routes.
+pub type Line = Resource<LineAttributes>;
+
+/// Attributes for a line.
 #[derive(Deserialize, Serialize, Debug, PartialEq, Clone)]
 pub struct LineAttributes {
     /// A color that corresponds to a line.

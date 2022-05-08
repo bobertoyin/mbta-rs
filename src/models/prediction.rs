@@ -5,7 +5,13 @@ use serde::{Deserialize, Serialize};
 
 use super::*;
 
-/// Attributes for the predicted arrival and departure time to/from a stop at a given sequence along a trip going a direction along a route.
+/// Multiple predictions.
+pub type Predictions = Vec<Prediction>;
+
+/// The predicted arrival and departure time to/from a stop at a given sequence along a trip going a direction along a route.
+pub type Prediction = Resource<PredictionAttributes>;
+
+/// Attributes for a prediction.
 #[derive(Debug, PartialEq, Clone, Deserialize, Serialize)]
 pub struct PredictionAttributes {
     /// The sequence the stop is arrived at during the trip.

@@ -2,7 +2,15 @@
 
 use serde::{Deserialize, Serialize};
 
-/// Attributes for a different variation of service that may be run within a single route, including when and how often they are operated.
+use super::*;
+
+/// Multiple route patterns.
+pub type RoutePatterns = Vec<RoutePattern>;
+
+/// A different variation of service that may be run within a single route, including when and how often they are operated.
+pub type RoutePattern = Resource<RoutePatternAttributes>;
+
+/// Attributes for route pattern.
 #[derive(Deserialize, Serialize, Debug, PartialEq, Clone)]
 pub struct RoutePatternAttributes {
     /// The direction in which the trip is traveling: 0 or 1.

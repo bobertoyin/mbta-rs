@@ -5,8 +5,14 @@ use serde::{Deserialize, Serialize};
 
 use super::*;
 
-/// Attributes for an arrival drop-off time and departure pick-up time to/from a stop at a given sequence along a trip
+/// Multiple schedules.
+pub type Schedules = Vec<Schedule>;
+
+/// An arrival drop-off time and departure pick-up time to/from a stop at a given sequence along a trip
 /// going in a direction on a route when the trip is following a service to determine when it is active.
+pub type Schedule = Resource<ScheduleAttributes>;
+
+/// Attributes for a schedule.
 #[derive(Deserialize, Serialize, Debug, PartialEq, Clone)]
 pub struct ScheduleAttributes {
     /// Whether time points for a schedule are exact or estimates.
