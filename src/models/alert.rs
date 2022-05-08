@@ -5,7 +5,7 @@ use serde::{Deserialize, Serialize};
 
 use super::*;
 
-/// Multiple alerts
+/// Multiple alerts.
 pub type Alerts = Vec<Alert>;
 
 /// An active or upcoming system alert.
