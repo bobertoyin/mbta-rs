@@ -1,0 +1,32 @@
+//! Data models for the V3 API.
+
+pub mod alert;
+pub use alert::*;
+pub mod datetime;
+pub use datetime::*;
+pub mod facility;
+pub use facility::*;
+pub mod line;
+pub use line::*;
+pub mod live_facility;
+pub use live_facility::*;
+pub mod prediction;
+pub use prediction::*;
+pub mod route;
+pub use route::*;
+pub mod route_pattern;
+pub use route_pattern::*;
+pub mod schedule;
+pub use schedule::*;
+pub mod service;
+pub use service::*;
+pub mod shape;
+pub use shape::*;
+pub mod shared;
+pub use shared::*;
+pub mod stop;
+pub use stop::*;
+pub mod trip;
+pub use trip::*;
+pub mod vehicle;
+pub use vehicle::*;
