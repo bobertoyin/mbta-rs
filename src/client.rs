@@ -27,16 +27,16 @@ macro_rules! mbta_endpoint_multiple {
             /// # Arguments
             ///
             /// * `query_params` - a [HashMap] of query parameter names to values
-            /// 
+            ///
             /// ```no_run
             /// # use std::{collections::HashMap, env};
             /// # use mbta_rs::Client;
-            /// # 
+            /// #
             /// # let client = match env::var("MBTA_TOKEN") {
             /// #     Ok(token) => Client::with_key(token),
             /// #     Err(_) => Client::without_key()
             /// # };
-            /// # 
+            /// #
             /// # let query_params = HashMap::from([
             /// #     ("page[limit]".to_string(), "3".to_string())
             /// # ]);
@@ -76,12 +76,12 @@ macro_rules! mbta_endpoint_single {
             /// ```no_run
             /// # use std::{collections::HashMap, env};
             /// # use mbta_rs::Client;
-            /// # 
+            /// #
             /// # let client = match env::var("MBTA_TOKEN") {
             /// #     Ok(token) => Client::with_key(token),
             /// #     Err(_) => Client::without_key()
             /// # };
-            /// # 
+            /// #
             /// # let id = "";
             #[doc = concat!("let ", stringify!($func), "_response = client.", stringify!($func), "(id);\n")]
             #[doc = concat!("if let Ok(item) = ", stringify!($func), "_response {\n")]
