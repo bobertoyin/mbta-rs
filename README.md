@@ -26,7 +26,7 @@ This project provides a simple synchronous client and data models to easily cons
 > Why provide a synchronous client rather than an asynchronous one?
 
 1. I didn't want this crate to be tied down to a specific `async` runtime
-2. I wanted to use the `ureq` crate for its simple API and small size, but it only provides a synchronous API
+2. I wanted to use the `ureq` crate for its simple API and small size, and it only provides a synchronous client
 
 > Why not auto-generate a client, given that the OpenAPI/Swagger client code-generators exists?
 
@@ -48,6 +48,28 @@ mbta-rs = "*"
 # if you need to manipulate/further inspect certain fields
 chrono = "*"
 serde_json = "*"
+```
+
+Simple example usage:
+```rust
+use std::{collections::HashMap, env};
+use mbta_rs::Client;
+
+let client = match env::var("MBTA_TOKEN") {
+    Ok(token) => Client::with_key(token),
+    Err(_) => Client::without_key()
+};
+
+let query_params = HashMap::from([
+    ("page[limit]".to_string(), "3".to_string())
+]);
+
+let alerts_response = client.alerts(query_params);
+if let Ok(response) = alerts_response {
+    for alert in response.data {
+        println!("MBTA alert: {}", alert.attributes.header);
+    }
+}
 ```
 
 <!-- CONTRIBUTE -->

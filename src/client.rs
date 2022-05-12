@@ -12,11 +12,9 @@ pub const BASE_URL: &str = "https://api-v3.mbta.com";
 /// Attribute macro for quickly implementing MBTA client endpoints with multiple return objects.
 #[macro_export]
 macro_rules! mbta_endpoint_multiple {
-    (model=$model:ident, func=$endpoint_fn:ident, allowed_query_params=$allowed_query_params:expr) => {
+    (model=$model:ident, func=$func:ident, allowed_query_params=$allowed_query_params:expr) => {
         impl Client {
-            #[doc = "Returns a [Vec] of"]
-            #[doc = stringify!($endpoint_fn)]
-            #[doc = "in the MBTA system."]
+            #[doc = concat!("Returns ", stringify!($func), " in the MBTA system.")]
             ///
             /// Consult the [API swagger docs](https://api-v3.mbta.com/docs/swagger/index.html) for each parameter's meaning and which are required,
             /// but the request will fail if you include any that are *not* the ones specified below
@@ -29,14 +27,37 @@ macro_rules! mbta_endpoint_multiple {
             /// # Arguments
             ///
             /// * `query_params` - a [HashMap] of query parameter names to values
-            pub fn $endpoint_fn(&self, query_params: HashMap<String, String>) -> Result<Response<$model>, ClientError> {
+            /// 
+            /// ```no_run
+            /// # use std::{collections::HashMap, env};
+            /// # use mbta_rs::Client;
+            /// # 
+            /// # let client = match env::var("MBTA_TOKEN") {
+            /// #     Ok(token) => Client::with_key(token),
+            /// #     Err(_) => Client::without_key()
+            /// # };
+            /// # 
+            /// # let query_params = HashMap::from([
+            /// #     ("page[limit]".to_string(), "3".to_string())
+            /// # ]);
+            #[doc = concat!("let ", stringify!($func), "_response = client.", stringify!($func), "(query_params);\n")]
+            #[doc = concat!("if let Ok(", stringify!($func), ") = ", stringify!($func), "_response {\n")]
+            #[doc = concat!("    for item in ", stringify!($func), ".data {\n")]
+            ///         println!("{}", item.id);
+            ///     }
+            /// }
+            /// ```
+            pub fn $func(&self, query_params: HashMap<String, String>) -> Result<Response<$model>, ClientError> {
                 let allowed_query_params: HashSet<String> = $allowed_query_params.into_iter().map(|s: &str| s.to_string()).collect();
                 for (k, v) in &query_params {
                     if !allowed_query_params.contains(&k.to_string()) {
-                        return Err(ClientError::InvalidQueryParam(k.to_string(), v.to_string()));
+                        return Err(ClientError::InvalidQueryParam {
+                            name: k.to_string(),
+                            value: v.to_string(),
+                        });
                     }
                 }
-                self.get(stringify!($endpoint_fn), query_params)
+                self.get(stringify!($func), query_params)
             }
         }
     };
@@ -45,17 +66,29 @@ macro_rules! mbta_endpoint_multiple {
 /// Attribute macro for quickly implementing MBTA client endpoints with single return objects.
 #[macro_export]
 macro_rules! mbta_endpoint_single {
-    (model=$model:ident, func=$endpoint_fn:ident, endpoint=$endpoint:expr, allowed_query_params=$allowed_query_params:expr) => {
+    (model=$model:ident, func=$func:ident, endpoint=$endpoint:expr, allowed_query_params=$allowed_query_params:expr) => {
         impl Client {
-            #[doc = "Returns a"]
-            #[doc = stringify!($endpoint_fn)]
-            #[doc = "in the MBTA system given its id."]
+            #[doc = concat!("Returns a ", stringify!($func), " in the MBTA system given its id.")]
             ///
             /// # Arguments
-            #[doc = "* `id` - the id of the"]
-            #[doc = stringify!($endpoint_fn)]
-            #[doc = "to return"]
-            pub fn $endpoint_fn(&self, id: &str) -> Result<Response<$model>, ClientError> {
+            #[doc = concat!("* `id` - the id of the ", stringify!($func), " to return")]
+            ///
+            /// ```no_run
+            /// # use std::{collections::HashMap, env};
+            /// # use mbta_rs::Client;
+            /// # 
+            /// # let client = match env::var("MBTA_TOKEN") {
+            /// #     Ok(token) => Client::with_key(token),
+            /// #     Err(_) => Client::without_key()
+            /// # };
+            /// # 
+            /// # let id = "";
+            #[doc = concat!("let ", stringify!($func), "_response = client.", stringify!($func), "(id);\n")]
+            #[doc = concat!("if let Ok(item) = ", stringify!($func), "_response {\n")]
+            ///     println!("{}", item.data.id);
+            /// }
+            /// ```
+            pub fn $func(&self, id: &str) -> Result<Response<$model>, ClientError> {
                 self.get(&format!("{}/{}", $endpoint, id), HashMap::new())
             }
         }
@@ -291,7 +324,8 @@ impl Client {
             None => request,
         };
         let request = query_params.iter().fold(request, |r, (k, v)| r.query(k, v));
-        request.call()?.into_json().map_err(|e| e.into())
+        let response: Response<T> = request.call()?.into_json()?;
+        Ok(response)
     }
 }
 
