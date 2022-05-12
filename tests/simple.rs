@@ -9,7 +9,6 @@ macro_rules! test_endpoint_plural_and_singular {
             use std::collections::HashMap;
 
             use rstest::*;
-            use ureq::Error;
 
             use mbta_rs::*;
 
@@ -47,15 +46,8 @@ macro_rules! test_endpoint_plural_and_singular {
                     .expect_err(&format!("{} did not fail", stringify!($plural_func)));
 
                 // Assert
-                if let ClientError::RequestError(e) = error {
-                    if let Error::Status(code, response) = *e {
-                        assert_eq!(code, 400);
-                        assert_eq!(response.status(), 400);
-                        assert_eq!(response.status_text(), "Bad Request");
-                        assert_eq!(response.get_url(), format!("https://api-v3.mbta.com/{}?sort=foobar", stringify!($plural_func)));
-                    } else {
-                        panic!("wrong request error type");
-                    }
+                if let ClientError::ResponseError { errors } = error {
+                    assert_eq!(errors.errors.len(), 1);
                 } else {
                     panic!("wrong error type");
                 }
@@ -71,9 +63,9 @@ macro_rules! test_endpoint_plural_and_singular {
                     .expect_err(&format!("{} did not fail", stringify!($plural_func)));
 
                 // Assert
-                if let ClientError::InvalidQueryParam(k, v) = error {
-                    assert_eq!(k, "foo");
-                    assert_eq!(v, "bar");
+                if let ClientError::InvalidQueryParam { name, value } = error {
+                    assert_eq!(name, "foo");
+                    assert_eq!(value, "bar");
                 } else {
                     panic!("wrong error type");
                 }
@@ -105,15 +97,8 @@ macro_rules! test_endpoint_plural_and_singular {
                 let error = client.$singular_func("foobar").expect_err("facility did not fail");
 
                 // Assert
-                if let ClientError::RequestError(e) = error {
-                    if let Error::Status(code, response) = *e {
-                        assert_eq!(code, 404);
-                        assert_eq!(response.status(), 404);
-                        assert_eq!(response.status_text(), "Not Found");
-                        assert_eq!(response.get_url(), format!("https://api-v3.mbta.com/{}/foobar", stringify!($plural_func)));
-                    } else {
-                        panic!("wrong request error type");
-                    }
+                if let ClientError::ResponseError { errors } = error {
+                    assert_eq!(errors.errors.len(), 1);
                 } else {
                     panic!("wrong error type");
                 }

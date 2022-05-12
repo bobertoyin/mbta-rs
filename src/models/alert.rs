@@ -50,7 +50,7 @@ pub struct AlertAttributes {
 }
 
 /// Start and end dates for an active alert.
-#[derive(Deserialize, Serialize, Debug, PartialEq, Clone)]
+#[derive(Deserialize, Serialize, Debug, PartialEq, Clone, Copy)]
 pub struct ActivePeriod {
     /// Start date for an active alert.
     #[serde(with = "mbta_datetime_format")]
