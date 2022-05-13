@@ -1,12 +1,15 @@
-<!-- PROJECT LOGO -->
+<!-- HEADER -->
 <div align="center">
-<img src="https://raw.githubusercontent.com/bobertoyin/bobertoyin/main/mbta-rs-logo.png" alt="MBTA Logo" width="80" height="80">
-<h2>MBTA-RS</h2>
+<image src="https://raw.githubusercontent.com/bobertoyin/bobertoyin/main/mbta-rs-logo.png" alt="MBTA Logo" width="80" height="80">
+<h2><b>MBTA-RS</b></h2>
+<image src="https://img.shields.io/crates/v/mbta-rs?style=flat-square">
+<image src ="https://img.shields.io/crates/l/mbta-rs?style=flat-square">
+<image src="https://img.shields.io/docsrs/mbta-rs?style=flat-square">
+<image src="https://img.shields.io/github/workflow/status/bobertoyin/mbta-rs/CI?style=flat-square">
+<hr>
 <p>A simple Rust client for interacting with the <a href="https://www.mbta.com/developers/v3-api">Massachusetts Bay Transport Authority's V3 API</a>*</p>
 <small>*This project is not affiliated with any official development work from the MBTA</small>
 </div>
-
----
 
 <!-- ABOUT THE PROJECT -->
 ## About
