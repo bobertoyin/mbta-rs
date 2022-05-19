@@ -43,9 +43,7 @@ See the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) s
 
 # Versioning
 
-See [SemVer specification](https://semver.org/) for the general idea behind semantic versioning, but versioning for this project will deviant from the SemVer specification somewhat to better match Rust library conventions.
-
-`PATCH` versioning will remain the same, being bumped whenever a bug fix is introduced. However, while this library is in `0.x.x`, `MINOR` version bumps *can* include breaking changes. This is because `0.x.x` releases are generally unstable in their APIs and signals to Rustaceans that the library still needs time to mature. However, once either `1.0.0` is released or some `0.x.x` release is deemed stable enough, breaking changes beyond that point warrant a `MAJOR` version bump, while backwards-compatible feature addition use the `MINOR` version bump instead.
+See [Cargo's SemVer compatability](https://doc.rust-lang.org/cargo/reference/semver.html) for how semantic versioning should be implemented within the context of the Rust ecosystem.
 
 ### Releasing
 

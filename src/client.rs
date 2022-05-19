@@ -10,6 +10,7 @@ use super::*;
 pub const BASE_URL: &str = "https://api-v3.mbta.com";
 
 /// Attribute macro for quickly implementing MBTA client endpoints with multiple return objects.
+#[doc(hidden)]
 #[macro_export]
 macro_rules! mbta_endpoint_multiple {
     (model=$model:ident, func=$func:ident, allowed_query_params=$allowed_query_params:expr) => {
@@ -28,7 +29,7 @@ macro_rules! mbta_endpoint_multiple {
             ///
             /// * `query_params` - a [HashMap] of query parameter names to values
             ///
-            /// ```no_run
+            /// ```
             /// # use std::{collections::HashMap, env};
             /// # use mbta_rs::Client;
             /// #
@@ -64,6 +65,7 @@ macro_rules! mbta_endpoint_multiple {
 }
 
 /// Attribute macro for quickly implementing MBTA client endpoints with single return objects.
+#[doc(hidden)]
 #[macro_export]
 macro_rules! mbta_endpoint_single {
     (model=$model:ident, func=$func:ident, endpoint=$endpoint:expr, allowed_query_params=$allowed_query_params:expr) => {
@@ -73,7 +75,7 @@ macro_rules! mbta_endpoint_single {
             /// # Arguments
             #[doc = concat!("* `id` - the id of the ", stringify!($func), " to return")]
             ///
-            /// ```no_run
+            /// ```
             /// # use std::{collections::HashMap, env};
             /// # use mbta_rs::Client;
             /// #
