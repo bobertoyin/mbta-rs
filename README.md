@@ -75,6 +75,66 @@ if let Ok(response) = alerts_response {
 }
 ```
 
+## Map Feature
+
+This library comes with an optional module for plotting location-related data models (stops, vehicles, shapes, etc.) onto a simple tile map.
+
+In your `Cargo.toml` file:
+```toml
+[dependencies]
+mbta-rs = { version = "*", features = ["map"] }
+
+# necessary to create the map itself
+staticmap = "*"
+```
+
+Simple example usage:
+```rust
+use std::{collections::HashMap, env};
+use staticmap::StaticMapBuilder;
+use mbta_rs::{Client, map::{Plottable, PlotStyle}};
+
+let client = match env::var("MBTA_TOKEN") {
+    Ok(token) => Client::with_key(token),
+    Err(_) => Client::without_key()
+};
+
+let routes = client.routes(HashMap::from([("filter[type]".into(), "0,1".into())])).expect("failed to get routes");
+let mut map = StaticMapBuilder::new()
+    .width(1000)
+    .height(1000)
+    .zoom(12)
+    .lat_center(42.326768)
+    .lon_center(-71.100099)
+    .build()
+    .expect("failed to build map");
+
+for route in routes.data {
+    let query = HashMap::from([("filter[route]".into(), route.id)]);
+    let shapes = client
+        .shapes(query.clone())
+        .expect("failed to get shapes");
+    for shape in shapes.data {
+        shape
+            .plot(&mut map, true, PlotStyle::new((route.attributes.color.clone(), 3.0), Some(("#FFFFFF".into(), 1.0))))
+            .expect("failed to plot shape");
+    }
+    let stops = client
+        .stops(query.clone())
+        .expect("failed to get stops");
+    for stop in stops.data {
+        stop.plot(
+            &mut map,
+            true,
+            PlotStyle::new((route.attributes.color.clone(), 3.0), Some(("#FFFFFF".into(), 1.0))),
+        )
+        .expect("failed to plot stop");
+    }
+}
+
+// save to file...
+```
+
 <!-- CONTRIBUTE -->
 ## Contribute
 

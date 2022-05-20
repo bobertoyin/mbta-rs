@@ -19,5 +19,7 @@ pub mod client;
 pub use client::*;
 pub mod error;
 pub use error::*;
+#[cfg(feature = "map")]
+pub mod map;
 pub mod models;
 pub use models::*;

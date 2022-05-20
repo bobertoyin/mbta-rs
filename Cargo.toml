@@ -1,6 +1,6 @@
 [package]
 name = "mbta-rs"
-version = "0.2.0"
+version = "0.2.1"
 edition = "2021"
 authors = ["Robert Yin <bobertoyin@gmail.com>"]
 description = "Simple Rust client for interacting with the MBTA V3 API."
@@ -11,12 +11,24 @@ documentation = "https://docs.rs/mbta-rs"
 keywords = ["mbta", "public-transit", "massachusetts"]
 categories = ["api-bindings", "web-programming::http-client"]
 
+[package.metadata.docs.rs]
+all-features = true
+
 [dev-dependencies]
+raster = "0.2.0"
 rstest = "0.12.0"
 
 [dependencies]
+colors-transform = { version = "0.2.11", optional = true }
 chrono = "0.4.19"
-ureq = { version = "2.4.0", features = ["json"] }
+geo-types = { version = "0.7.4", optional = true }
+polyline = { version = "0.9.0", optional = true }
 serde = { version = "1.0.136", features = ["derive"] }
 serde_json = "1.0.79"
+staticmap = { version = "0.4.0", optional = true }
 thiserror = "1.0.31"
+tiny-skia = { version = "0.6.3", optional = true }
+ureq = { version = "2.4.0", features = ["json"] }
+
+[features]
+map = ["dep:staticmap", "dep:polyline", "dep:geo-types", "dep:tiny-skia", "dep:colors-transform"]

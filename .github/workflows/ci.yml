@@ -16,12 +16,16 @@ jobs:
       MBTA_TOKEN: ${{ secrets.MBTA_TOKEN }}
     steps:
       - uses: actions/checkout@v3
-      - run: cargo test --verbose
+        with:
+          lfs: 'true'
+      - run: cargo test --verbose --all-features
   lint:
     name: Lint
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+        with:
+            lfs: 'true'
       - run: rustup component add clippy
       - run: rustup component add rustfmt
       - run: cargo clippy --all-features -- -D warnings
@@ -31,4 +35,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+        with:
+            lfs: 'true'
       - uses: webiny/action-conventional-commits@v1.0.3
