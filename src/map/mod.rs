@@ -127,11 +127,11 @@ pub trait Plottable<D> {
     /// * `map` - mutable reference to a tile map
     /// * `anti_alias` - whether to render with anti-aliasing or not
     /// * `plot_style` - plot style for the model
-    fn plot(self, map: &mut StaticMap, anti_alias: bool, extra_data: D) -> Result<(), PlotError>;
+    fn plot(&self, map: &mut StaticMap, anti_alias: bool, extra_data: D) -> Result<(), PlotError>;
 }
 
 impl Plottable<PlotStyle> for Stop {
-    fn plot(self, map: &mut StaticMap, anti_alias: bool, plot_style: PlotStyle) -> Result<(), PlotError> {
+    fn plot(&self, map: &mut StaticMap, anti_alias: bool, plot_style: PlotStyle) -> Result<(), PlotError> {
         if let Some(border_data) = plot_style.border {
             let border = CircleBuilder::new()
                 .lat_coordinate(self.attributes.latitude)
@@ -153,7 +153,7 @@ impl Plottable<PlotStyle> for Stop {
 }
 
 impl Plottable<IconStyle> for Vehicle {
-    fn plot(self, map: &mut StaticMap, _anti_alias: bool, icon_style: IconStyle) -> Result<(), PlotError> {
+    fn plot(&self, map: &mut StaticMap, _anti_alias: bool, icon_style: IconStyle) -> Result<(), PlotError> {
         let icon = IconBuilder::new()
             .lat_coordinate(self.attributes.latitude)
             .lon_coordinate(self.attributes.longitude)
@@ -167,7 +167,7 @@ impl Plottable<IconStyle> for Vehicle {
 }
 
 impl Plottable<PlotStyle> for Shape {
-    fn plot(self, map: &mut StaticMap, anti_alias: bool, plot_style: PlotStyle) -> Result<(), PlotError> {
+    fn plot(&self, map: &mut StaticMap, anti_alias: bool, plot_style: PlotStyle) -> Result<(), PlotError> {
         let points = decode_polyline(&self.attributes.polyline, 5).map_err(PlotError::PolylineError)?;
         if let Some(border_data) = plot_style.border {
             let border = LineBuilder::new()
