@@ -6,8 +6,6 @@ macro_rules! test_endpoint_plural_and_singular {
     (plural_func=$plural_func:ident, singular_func=$singular_func:ident) => {
         #[cfg(test)]
         mod $plural_func {
-            use std::collections::HashMap;
-
             use rstest::*;
 
             use mbta_rs::*;
@@ -24,11 +22,10 @@ macro_rules! test_endpoint_plural_and_singular {
             #[rstest]
             fn success_plural_models(client: Client) {
                 // Arrange
+                let params = [("page[limit]", "3")];
 
                 // Act
-                let $plural_func = client
-                    .$plural_func(HashMap::from([("page[limit]".into(), "3".into())]))
-                    .expect(&format!("failed to get {}", stringify!($plural_func)));
+                let $plural_func = client.$plural_func(&params).expect(&format!("failed to get {}", stringify!($plural_func)));
 
                 // Assert
                 assert_eq!($plural_func.data.len(), 3);
@@ -39,11 +36,10 @@ macro_rules! test_endpoint_plural_and_singular {
             #[rstest]
             fn request_failure_plural_models(client: Client) {
                 // Arrange
+                let params = [("sort", "foobar")];
 
                 // Act
-                let error = client
-                    .$plural_func(HashMap::from([("sort".into(), "foobar".into())]))
-                    .expect_err(&format!("{} did not fail", stringify!($plural_func)));
+                let error = client.$plural_func(&params).expect_err(&format!("{} did not fail", stringify!($plural_func)));
 
                 // Assert
                 if let ClientError::ResponseError { errors } = error {
@@ -56,11 +52,10 @@ macro_rules! test_endpoint_plural_and_singular {
             #[rstest]
             fn query_param_failure_plural_models(client: Client) {
                 // Arrange
+                let params = [("foo", "bar")];
 
                 // Act
-                let error = client
-                    .$plural_func(HashMap::from([("foo".into(), "bar".into())]))
-                    .expect_err(&format!("{} did not fail", stringify!($plural_func)));
+                let error = client.$plural_func(&params).expect_err(&format!("{} did not fail", stringify!($plural_func)));
 
                 // Assert
                 if let ClientError::InvalidQueryParam { name, value } = error {
@@ -74,9 +69,8 @@ macro_rules! test_endpoint_plural_and_singular {
             #[rstest]
             fn success_singular_model(client: Client) {
                 // Arrange
-                let $plural_func = client
-                    .$plural_func(HashMap::from([("page[limit]".into(), "3".into())]))
-                    .expect(&format!("failed to get {}", stringify!($plural_func)));
+                let params = [("page[limit]", "3")];
+                let $plural_func = client.$plural_func(&params).expect(&format!("failed to get {}", stringify!($plural_func)));
 
                 // Act & Assert
                 for $singular_func in $plural_func.data {

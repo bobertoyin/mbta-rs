@@ -55,7 +55,7 @@ serde_json = "*"
 
 Simple example usage:
 ```rust
-use std::{collections::HashMap, env};
+use std::env;
 use mbta_rs::Client;
 
 let client = match env::var("MBTA_TOKEN") {
@@ -63,11 +63,11 @@ let client = match env::var("MBTA_TOKEN") {
     Err(_) => Client::without_key()
 };
 
-let query_params = HashMap::from([
-    ("page[limit]".to_string(), "3".to_string())
-]);
+let query_params = [
+    ("page[limit]", "3")
+];
 
-let alerts_response = client.alerts(query_params);
+let alerts_response = client.alerts(&query_params);
 if let Ok(response) = alerts_response {
     for alert in response.data {
         println!("MBTA alert: {}", alert.attributes.header);
@@ -99,7 +99,7 @@ let client = match env::var("MBTA_TOKEN") {
     Err(_) => Client::without_key()
 };
 
-let routes = client.routes(HashMap::from([("filter[type]".into(), "0,1".into())])).expect("failed to get routes");
+let routes = client.routes(&[("filter[type]", "0,1")]).expect("failed to get routes");
 let mut map = StaticMapBuilder::new()
     .width(1000)
     .height(1000)
@@ -110,9 +110,9 @@ let mut map = StaticMapBuilder::new()
     .expect("failed to build map");
 
 for route in routes.data {
-    let query = HashMap::from([("filter[route]".into(), route.id)]);
+    let query_params = [("filter[route]", &route.id)];
     let shapes = client
-        .shapes(query.clone())
+        .shapes(&query_params)
         .expect("failed to get shapes");
     for shape in shapes.data {
         shape
@@ -120,7 +120,7 @@ for route in routes.data {
             .expect("failed to plot shape");
     }
     let stops = client
-        .stops(query.clone())
+        .stops(&query_params)
         .expect("failed to get stops");
     for stop in stops.data {
         stop.plot(
