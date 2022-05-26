@@ -1,6 +1,6 @@
 //! The client for interacting with the V3 API.
 
-use std::collections::{HashMap, HashSet};
+use std::collections::HashSet;
 
 use serde::de::DeserializeOwned;
 
@@ -27,10 +27,10 @@ macro_rules! mbta_endpoint_multiple {
             ///
             /// # Arguments
             ///
-            /// * `query_params` - a [HashMap] of query parameter names to values
+            /// * `query_params` - a slice of pairings of query parameter names to values
             ///
             /// ```
-            /// # use std::{collections::HashMap, env};
+            /// # use std::env;
             /// # use mbta_rs::Client;
             /// #
             /// # let client = match env::var("MBTA_TOKEN") {
@@ -38,23 +38,23 @@ macro_rules! mbta_endpoint_multiple {
             /// #     Err(_) => Client::without_key()
             /// # };
             /// #
-            /// # let query_params = HashMap::from([
-            /// #     ("page[limit]".to_string(), "3".to_string())
-            /// # ]);
-            #[doc = concat!("let ", stringify!($func), "_response = client.", stringify!($func), "(query_params);\n")]
+            /// # let query_params = [
+            /// #     ("page[limit]", "3")
+            /// # ];
+            #[doc = concat!("let ", stringify!($func), "_response = client.", stringify!($func), "(&query_params);\n")]
             #[doc = concat!("if let Ok(", stringify!($func), ") = ", stringify!($func), "_response {\n")]
             #[doc = concat!("    for item in ", stringify!($func), ".data {\n")]
             ///         println!("{}", item.id);
             ///     }
             /// }
             /// ```
-            pub fn $func(&self, query_params: HashMap<String, String>) -> Result<Response<$model>, ClientError> {
+            pub fn $func<K: AsRef<str>, V: AsRef<str>>(&self, query_params: &[(K, V)]) -> Result<Response<$model>, ClientError> {
                 let allowed_query_params: HashSet<String> = $allowed_query_params.into_iter().map(|s: &str| s.to_string()).collect();
-                for (k, v) in &query_params {
-                    if !allowed_query_params.contains(&k.to_string()) {
+                for (k, v) in query_params {
+                    if !allowed_query_params.contains(k.as_ref()) {
                         return Err(ClientError::InvalidQueryParam {
-                            name: k.to_string(),
-                            value: v.to_string(),
+                            name: k.as_ref().to_string(),
+                            value: v.as_ref().to_string(),
                         });
                     }
                 }
@@ -76,7 +76,7 @@ macro_rules! mbta_endpoint_single {
             #[doc = concat!("* `id` - the id of the ", stringify!($func), " to return")]
             ///
             /// ```
-            /// # use std::{collections::HashMap, env};
+            /// # use std::env;
             /// # use mbta_rs::Client;
             /// #
             /// # let client = match env::var("MBTA_TOKEN") {
@@ -91,7 +91,7 @@ macro_rules! mbta_endpoint_single {
             /// }
             /// ```
             pub fn $func(&self, id: &str) -> Result<Response<$model>, ClientError> {
-                self.get(&format!("{}/{}", $endpoint, id), HashMap::new())
+                self.get::<$model, String, String>(&format!("{}/{}", $endpoint, id), &[])
             }
         }
     };
@@ -279,7 +279,7 @@ pub struct Client {
 impl Client {
     /// Create a [Client] without an API key.
     ///
-    /// "Without an api key in the query string or as a request header, requests will be tracked by IP address and have stricter rate limit."
+    /// > "Without an api key in the query string or as a request header, requests will be tracked by IP address and have stricter rate limit." - Massachusetts Bay Transportation Authority
     pub fn without_key() -> Self {
         Self {
             api_key: None,
@@ -312,20 +312,24 @@ impl Client {
         }
     }
 
-    /// Helper method for making generalized GET requests to any endpoint with any query parameters.
-    /// Presumes that all query parameters given in the [HashMap] are valid.
+    /// Helper method for making generalized `GET` requests to any endpoint with any query parameters.
+    /// Presumes that all query parameters given are valid.
     ///
     /// # Arguments
     ///
-    /// * query_params - a [HashMap] of query parameter names to values
-    fn get<T: DeserializeOwned>(&self, endpoint: &str, query_params: HashMap<String, String>) -> Result<Response<T>, ClientError> {
+    /// * query_params - a slice of pairings of query parameter names to values
+    fn get<T: DeserializeOwned, K: AsRef<str>, V: AsRef<str>>(
+        &self,
+        endpoint: &str,
+        query_params: &[(K, V)],
+    ) -> Result<Response<T>, ClientError> {
         let path = format!("{}/{}", self.base_url, endpoint);
         let request = ureq::get(&path);
         let request = match &self.api_key {
             Some(key) => request.set("x-api-key", key),
             None => request,
         };
-        let request = query_params.iter().fold(request, |r, (k, v)| r.query(k, v));
+        let request = query_params.iter().fold(request, |r, (k, v)| r.query(k.as_ref(), v.as_ref()));
         let response: Response<T> = request.call()?.into_json()?;
         Ok(response)
     }

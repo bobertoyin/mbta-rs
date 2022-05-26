@@ -1,6 +1,6 @@
 //! Simple tests for tile map plotting.
 
-use std::{collections::HashMap, fs::remove_file, path::PathBuf};
+use std::{fs::remove_file, path::PathBuf};
 
 use mbta_rs::{map::*, *};
 use raster::{compare::similar, open};
@@ -24,7 +24,8 @@ fn image_file(relative_path: &str) -> PathBuf {
 #[rstest]
 fn test_simple_map_render(client: Client) {
     // Arrange
-    let routes = client.routes(HashMap::from([("filter[type]".into(), "0,1".into())])).expect("failed to get routes");
+    let route_params = [("filter[type]", "0,1")];
+    let routes = client.routes(&route_params).expect("failed to get routes");
     let mut map = StaticMapBuilder::new()
         .width(1000)
         .height(1000)
@@ -40,19 +41,19 @@ fn test_simple_map_render(client: Client) {
 
     // Act
     for route in routes.data {
-        let query = HashMap::from([("filter[route]".into(), route.id)]);
-        let shapes = client.shapes(query.clone()).expect("failed to get shapes");
+        let params = [("filter[route]", &route.id)];
+        let shapes = client.shapes(&params).expect("failed to get shapes");
         for shape in shapes.data {
             shape
                 .plot(&mut map, true, PlotStyle::new((route.attributes.color.clone(), 3.0), Some(("#FFFFFF".into(), 1.0))))
                 .expect("failed to plot shape");
         }
-        let stops = client.stops(query.clone()).expect("failed to get stops");
+        let stops = client.stops(&params).expect("failed to get stops");
         for stop in stops.data {
             stop.plot(&mut map, true, PlotStyle::new((route.attributes.color.clone(), 3.0), Some(("#FFFFFF".into(), 1.0))))
                 .expect("failed to plot stop");
         }
-        let vehicles = client.vehicles(query).expect("failed to get vehicles");
+        let vehicles = client.vehicles(&params).expect("failed to get vehicles");
         for vehicle in vehicles.data {
             vehicle
                 .plot(&mut map, true, IconStyle::new(image_file("train.png"), 12.5, 12.5))

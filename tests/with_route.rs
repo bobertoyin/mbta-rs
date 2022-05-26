@@ -7,8 +7,6 @@ macro_rules! test_endpoint_plural_with_route {
     (plural_func=$plural_func:ident) => {
         #[cfg(test)]
         mod $plural_func {
-            use std::collections::HashMap;
-
             use rstest::*;
 
             use mbta_rs::*;
@@ -25,15 +23,12 @@ macro_rules! test_endpoint_plural_with_route {
             #[rstest]
             fn success_plural_models(client: Client) {
                 // Arrange
-                let routes = client.routes(HashMap::from([("page[limit]".into(), "1".into())])).expect("failed to get routes");
+                let route_params = [("page[limit]", "1")];
+                let routes = client.routes(&route_params).expect("failed to get routes");
+                let params = [("page[limit]", "3"), ("filter[route]", &routes.data[0].id.clone())];
 
                 // Act
-                let $plural_func = client
-                    .$plural_func(HashMap::from([
-                        ("page[limit]".into(), "3".into()),
-                        ("filter[route]".into(), routes.data[0].id.clone()),
-                    ]))
-                    .expect(&format!("failed to get {}", stringify!($plural_func)));
+                let $plural_func = client.$plural_func(&params).expect(&format!("failed to get {}", stringify!($plural_func)));
 
                 // Assert
                 assert_eq!($plural_func.data.len(), 3);
@@ -44,11 +39,10 @@ macro_rules! test_endpoint_plural_with_route {
             #[rstest]
             fn request_failure_plural_models(client: Client) {
                 // Arrange
+                let params = [("sort", "foobar")];
 
                 // Act
-                let error = client
-                    .$plural_func(HashMap::from([("sort".into(), "foobar".into())]))
-                    .expect_err(&format!("{} did not fail", stringify!($plural_func)));
+                let error = client.$plural_func(&params).expect_err(&format!("{} did not fail", stringify!($plural_func)));
 
                 // Assert
                 if let ClientError::ResponseError { errors } = error {
@@ -61,11 +55,10 @@ macro_rules! test_endpoint_plural_with_route {
             #[rstest]
             fn query_param_failure_plural_models(client: Client) {
                 // Arrange
+                let params = [("foo", "bar")];
 
                 // Act
-                let error = client
-                    .$plural_func(HashMap::from([("foo".into(), "bar".into())]))
-                    .expect_err(&format!("{} did not fail", stringify!($plural_func)));
+                let error = client.$plural_func(&params).expect_err(&format!("{} did not fail", stringify!($plural_func)));
 
                 // Assert
                 if let ClientError::InvalidQueryParam { name, value } = error {
@@ -86,8 +79,6 @@ macro_rules! test_endpoint_singular_with_route {
     (plural_func=$plural_func:ident, singular_func=$singular_func:ident) => {
         #[cfg(test)]
         mod $singular_func {
-            use std::collections::HashMap;
-
             use rstest::*;
 
             use mbta_rs::*;
@@ -104,13 +95,10 @@ macro_rules! test_endpoint_singular_with_route {
             #[rstest]
             fn success_singular_model(client: Client) {
                 // Arrange
-                let routes = client.routes(HashMap::from([("page[limit]".into(), "1".into())])).expect("failed to get routes");
-                let $plural_func = client
-                    .$plural_func(HashMap::from([
-                        ("page[limit]".into(), "3".into()),
-                        ("filter[route]".into(), routes.data[0].id.clone()),
-                    ]))
-                    .expect(&format!("failed to get {}", stringify!($plural_func)));
+                let route_params = [("page[limit]", "1")];
+                let routes = client.routes(&route_params).expect("failed to get routes");
+                let params = [("page[limit]", "3"), ("filter[route]", &routes.data[0].id.clone())];
+                let $plural_func = client.$plural_func(&params).expect(&format!("failed to get {}", stringify!($plural_func)));
 
                 // Act & Assert
                 for $singular_func in $plural_func.data {
