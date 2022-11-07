@@ -1,6 +1,6 @@
 <!-- HEADER -->
 <div align="center">
-<image src="https://raw.githubusercontent.com/bobertoyin/bobertoyin/main/mbta-rs-logo.png" alt="MBTA Logo" width="80" height="80">
+<image src="https://raw.githubusercontent.com/bobertoyin/mbta-rs/main/mbta-rs-logo.png" alt="MBTA Logo" width="80" height="80">
 <h2><b>MBTA-RS</b></h2>
 <image src="https://img.shields.io/crates/v/mbta-rs?style=flat-square">
 <image src ="https://img.shields.io/crates/l/mbta-rs?style=flat-square">
